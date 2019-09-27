@@ -1,0 +1,32 @@
+export interface Project {
+  title: string
+  subtitle: string
+  date: string
+  points: string[]
+  link: string
+}
+
+export const projects: Project[] = [
+  {
+    title: 'Cave Dungeon',
+    subtitle: 'Procedurally generated RPG written in JavaFX',
+    date: 'Second semester',
+    points: [
+      'Used Gradle to run, debug and test the game',
+      'Implemented an algorithm to randomly generate map and room layouts',
+      'Learned JavaFX to make a unique graphic interface'
+    ],
+    link: 'https://github.com/MarioJim/CaveDungeon'
+  },
+  {
+    title: 'Knocki App mockup',
+    subtitle: 'Port of my Design Fundament\'s final project to React + TypeScript',
+    date: 'Summer 2019',
+    points: [
+      'Built using Create React App and Redux',
+      'Written in TypeScript to improve readability through type checking',
+      'Uploaded and hosted on a Heroku server'
+    ],
+    link: 'https://github.com/MarioJim/knocki-app'
+  }
+]
