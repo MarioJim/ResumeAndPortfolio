@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^4.3.5",
     "@types/styled-components": "^4.1.19",
     "animate.css": "^3.7.2",
+    "data": "file:../data",
     "minireset.css": "^0.0.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

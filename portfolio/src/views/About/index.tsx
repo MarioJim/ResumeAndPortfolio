@@ -1,21 +1,15 @@
 import React from 'react';
+import {
+  schools,
+  projects,
+  skills,
+  additional
+} from 'data';
 
-// Education
-import EducationListing from '../../components/EducationListing';
-import { schools } from '../../data/education';
-
-// Software Projects
-import ProjectListing from '../../components/ProjectListing';
-import { projects } from '../../data/projects';
-
-// Skills
-import SkillListing from '../../components/SkillListing';
-import { skills } from '../../data/skills';
-
-// Additional Experience and Awards
 import AdditionalListing from '../../components/AdditionalListing';
-import { additional } from '../../data/additional';
-
+import EducationListing from '../../components/EducationListing';
+import ProjectListing from '../../components/ProjectListing';
+import SkillListing from '../../components/SkillListing';
 import { StyledWrapper, SectionTitle, Section } from './styles';
 
 const About: React.FC = () => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Skill } from '../../data/skills';
+import { Skill } from 'data';
 import { Wrapper, Point } from './styles';
 import { Subtitle as Title } from '../../styles/shared-components';
 

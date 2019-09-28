@@ -1,0 +1,21 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "Data for my portfolio and resume",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "MarioJim",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "typescript": "^3.6.3"
+  }
+}

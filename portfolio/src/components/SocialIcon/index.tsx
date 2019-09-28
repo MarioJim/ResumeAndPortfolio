@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialLink } from '../../data/profile';
+import { SocialLink } from 'data';
 import { StyledLink } from './styles';
 
 interface Props {

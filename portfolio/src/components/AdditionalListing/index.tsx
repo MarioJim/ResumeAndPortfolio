@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdditionalProject } from '../../data/additional';
+import { AdditionalProject } from 'data';
 import { Wrapper } from './styles';
 import { Subtitle as Title, Date, Points } from '../../styles/shared-components';
 

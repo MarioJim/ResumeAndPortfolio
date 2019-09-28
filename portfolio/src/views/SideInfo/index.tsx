@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGrin } from '@fortawesome/free-solid-svg-icons';
 
-import { myProfile } from '../../data/profile';
+import { myProfile } from 'data';
 import SocialIcon from '../../components/SocialIcon';
 
 import { StyledSide, ProfilePicture, Title, Description, SocialIconsWrapper } from './styles';

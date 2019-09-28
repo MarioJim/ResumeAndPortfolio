@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { School } from '../../data/education';
+import { School } from 'data';
 import { Wrapper, Location } from './styles';
 import { Title, Subtitle, Date, Points } from '../../styles/shared-components';
 
