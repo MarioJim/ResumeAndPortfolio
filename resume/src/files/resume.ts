@@ -6,7 +6,7 @@ const filecontent = (files: FileToWrite[]) =>
 \\usepackage{fontawesome}
 \\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 \\fontdir[fonts/]
-\\colorlet{awesome}{awesome-skyblue}
+\\colorlet{awesome}{blue}
 \\setbool{acvSectionColorHighlight}{true}
 \\renewcommand{\\acvHeaderSocialSep}{\\quad\\textbar\\quad}
 \\makeatletter
