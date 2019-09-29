@@ -11,7 +11,7 @@ export const skills: Skill[] = [
     ]
   },
   {
-    title: 'Web Dev',
+    title: 'Web Development',
     points: [
       'JavaScript (fluent), TypeScript, React, Node.js, HTML5, CSS3'
     ]
