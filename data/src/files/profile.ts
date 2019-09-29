@@ -8,20 +8,10 @@ export interface SocialLink {
   icon: IconProp
 }
 
-export const SocialLinks: SocialLink[] = [
-  {
-    title: 'Email',
-    link: 'mailto:mario.emilio.j@gmail.com',
-    icon: faEnvelope,
-  },
-  {
-    title: 'GitHub',
-    link: 'https://github.com/MarioJim/',
-    icon: faGithub,
-  },
+const socialLinks: SocialLink[] = [
   {
     title: 'Resume',
-    link: '', // TODO: Add resume link
+    link: 'resume.pdf',
     icon: faAddressCard,
   }
 ];
@@ -29,11 +19,32 @@ export const SocialLinks: SocialLink[] = [
 interface Profile {
   name: string
   description: string
+  phone: string
+  mail: string
+  github: string
   socialLinks: SocialLink[]
 }
+
+const mail = 'mario.emilio.j@gmail.com';
+const github = 'MarioJim';
 
 export const myProfile: Profile = {
   name: 'Mario Jiménez',
   description: 'Computer Science Student',
-  socialLinks: SocialLinks,
+  phone: '(+52) 961 2096280',
+  mail,
+  github,
+  socialLinks: [
+    {
+      title: 'Email',
+      link: `mailto:${mail}`,
+      icon: faEnvelope,
+    },
+    {
+      title: 'GitHub',
+      link: `https://github.com/${github}/`,
+      icon: faGithub,
+    },
+    ...socialLinks,
+  ]
 }

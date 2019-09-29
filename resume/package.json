@@ -1,0 +1,18 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "My Resume",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "ts-node src/index.ts"
+  },
+  "author": "MarioJim",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^12.7.8",
+    "data": "file:../data",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  }
+}

@@ -10,7 +10,7 @@ export const schools: School[] = [
   {
     schoolName: 'Tec de Monterrey CCM',
     title: 'B.S. Computer Science and Technology',
-    date: 'August 2018 - Exp. December 2022',
+    date: 'Aug 2018 - Exp. Dec 2022',
     location: 'Mexico City, Mexico',
     points: [
       'Currently in my third semester',

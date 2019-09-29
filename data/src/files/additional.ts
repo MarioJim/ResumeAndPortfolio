@@ -9,7 +9,7 @@ export const additional: AdditionalProject[] = [
   {
     title: 'Participated in ICPC\'s Gran Premio de México 2019',
     date: 'May, September 2019',
-    location: 'Tec de Monterrey, Monterrey',
+    location: 'Mexico City, Mexico',
     points: [
       'First time competing in a programming contest',
       'Solved 6 problems during three events'
@@ -35,7 +35,7 @@ export const additional: AdditionalProject[] = [
   {
     title: 'Attended a Processing.js course at University of Texas',
     date: 'Summer 2016',
-    location: 'Texas, US',
+    location: 'Dallas, Texas',
     points: [
       'Learned the basic syntax of JavaScript',
       'Used the p5.js library to create little animations'
