@@ -35,7 +35,7 @@ parse() {
     if (( $# == 0 )); then
         echo "No arguments passed."
         print_help
-        exit 1
+        exit 0
     fi
     while [[ "$1" == -* ]]; do
         case "$1" in
@@ -57,26 +57,22 @@ parse() {
     done
 }
 
-compile() {
-    log yarn build
-}
-
 installDependencies() {
     if [ ! -d "node_modules" ]; then
-        echo " ✔ Installing data dependencies"
+        echo " ✔ Installing $1 dependencies"
         log yarn install
     fi
 }
 
 buildData() {
     pushd data > /dev/null
-    installDependencies
+    installDependencies "data"
     if [ -d "lib" ]; then
         echo " ✔ Cleaning up data folder"
         rm -r lib
     fi
     echo " ✔ Compiling data to JavaScript"
-    compile
+    log yarn build
     popd > /dev/null
 }
 
@@ -97,9 +93,17 @@ checkDestGitRepo() {
     fi
 }
 
+printWebsiteRepoStatus() {
+    echo " ✔ Status of webpage:"
+    pushd ../mariojim.github.io > /dev/null
+    git restore LICENSE README.md
+    git status
+    popd > /dev/null
+}
+
 buildResume() {
     pushd resume > /dev/null
-    installDependencies
+    installDependencies "resume"
     checkSymlink2Data
     if [ -d "build" ]; then
         echo " ✔ Cleaning up build folder"
@@ -107,7 +111,7 @@ buildResume() {
     fi
     mkdir -p build/sections
     echo " ✔ Compiling data to LaTeX"
-    compile
+    log yarn build
     cp -r static/* build
     echo " ✔ Compiling LaTeX to pdf"
     pushd build > /dev/null
@@ -120,29 +124,28 @@ buildResume() {
         echo " ✔ Copying resume.pdf to webpage"
         cp build/resume.pdf ../../mariojim.github.io/resume.pdf
     fi
-    echo " ✔ Cleaning up"
+    echo " ✔ Cleaning up resume folder"
     rm -r build
     popd > /dev/null
+    if ! $PORTFOLIO; then
+        printWebsiteRepoStatus
+    fi
 }
 
 buildPortfolio() {
     pushd portfolio > /dev/null
-    installDependencies
+    installDependencies "portfolio"
     checkSymlink2Data
     echo " ✔ Compiling to a webpage"
-    compile
+    log yarn build
     checkDestGitRepo
     echo " ✔ Clearing mariojim.github.io"
     rm -r ../../mariojim.github.io/*
     echo " ✔ Moving files to mariojim.github.io"
     mv build/* ../../mariojim.github.io
     rmdir build
-    echo " ✔ Status of webpage:"
     popd > /dev/null
-    pushd ../mariojim.github.io > /dev/null
-    git restore LICENSE README.md
-    git status
-    popd > /dev/null
+    printWebsiteRepoStatus
 }
 
 main() {
