@@ -2,6 +2,7 @@
 
 PORTFOLIO=false
 RESUME=false
+SHOW_STATUS=false
 # 0 = quiet, 1 = normal, 2 = verbose
 VERBOSITY=1
 
@@ -11,7 +12,7 @@ log() {
         "$@" &>/dev/null
     elif ((VERBOSITY == 1))
     then
-        "$@" 1>/dev/null 
+        "$@" 1>/dev/null
     else
         "$@"
     fi
@@ -24,6 +25,7 @@ Script to compile and build my portfolio and/or my resume.
 
     -p, --portfolio     Build my portfolio
     -r, --resume        Build my resume
+    -s, --status        Show 'git status' on the website repository
     -v, --verbose       Verbose (stdout and stderr)
     -q, --quiet         Quiet (only progress)
     -h, --help          Show help (this)
@@ -41,6 +43,7 @@ parse() {
         case "$1" in
             -p|--portfolio) PORTFOLIO=true;;
             -r|--resume) RESUME=true;;
+            -s|--status) SHOW_STATUS=true;;
             -v|--verbose) VERBOSITY=2;;
             -q|--quiet) VERBOSITY=0;;
             -h|--help)
@@ -127,9 +130,6 @@ buildResume() {
     echo " ✔ Cleaning up resume folder"
     rm -r build
     popd > /dev/null
-    if ! $PORTFOLIO; then
-        printWebsiteRepoStatus
-    fi
 }
 
 buildPortfolio() {
@@ -145,7 +145,6 @@ buildPortfolio() {
     mv build/* ../../mariojim.github.io
     rmdir build
     popd > /dev/null
-    printWebsiteRepoStatus
 }
 
 main() {
@@ -158,6 +157,9 @@ main() {
     fi
     if $PORTFOLIO; then
         buildPortfolio
+    fi
+    if $SHOW_STATUS; then
+        printWebsiteRepoStatus
     fi
 }
 
