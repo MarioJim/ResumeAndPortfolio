@@ -1,7 +1,6 @@
 import React from 'react';
 import { Project } from 'data';
-import { Wrapper, Link } from './styles';
-import { Title, Subtitle, Points } from '../../styles/shared-components';
+import { Wrapper, Link, Title, Subtitle, Points, Point } from '../../styles/components';
 
 interface Props {
   project: Project
@@ -17,7 +16,7 @@ const ProjectListing: React.FC<Props> = ({ project }) => {
       <Subtitle>{subtitle}</Subtitle>
       <Points>
         {points.map((point, key) => (
-          <li key={key}>{point}</li>
+          <Point key={key}>{point}</Point>
         ))}
       </Points>
     </Wrapper>

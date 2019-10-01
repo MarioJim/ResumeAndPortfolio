@@ -1,7 +1,7 @@
 import React from 'react';
 import { Skill } from 'data';
 import { Wrapper, Point } from './styles';
-import { Subtitle as Title } from '../../styles/shared-components';
+import { Subtitle as Title } from '../../styles/components';
 
 interface Props {
   skill: Skill

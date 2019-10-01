@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 25% 75%;
-  margin: 4px 0;
+  grid-template-columns: 30% 70%;
+  margin-top: 6px;
 `;
 
 export const Point = styled.p`

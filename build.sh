@@ -144,6 +144,10 @@ buildPortfolio() {
     echo " ✔ Moving files to mariojim.github.io"
     mv build/* ../../mariojim.github.io
     rmdir build
+    pushd ../../mariojim.github.io > /dev/null
+    log git restore LICENSE README.md
+    log git add .
+    popd > /dev/null
     popd > /dev/null
 }
 

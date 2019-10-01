@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as fonts from '../../styles/fonts';
 
 export const StyledSide = styled.div`
   display: flex;
@@ -13,12 +14,13 @@ export const ProfilePicture = styled.img`
 `;
 
 export const Title = styled.h1`
-  margin: 20px 0 0 0;
+  margin-top: 20px;
+  font-size: 32px;
 `;
 
 export const Description = styled.h3`
-  margin-top: 0;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: ${fonts.light};
 `;
 
 export const SocialIconsWrapper = styled.div`

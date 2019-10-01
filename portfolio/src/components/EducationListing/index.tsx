@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { School } from 'data';
-import { Wrapper, Location } from './styles';
-import { Title, Subtitle, Date, Points } from '../../styles/shared-components';
+import { Wrapper, Title, Subtitle, Date, Location, Points, Point } from '../../styles/components';
 
 interface Props {
   school: School
@@ -18,7 +16,7 @@ const EducationListing: React.FC<Props> = ({ school }) => {
       <Location>{location}</Location>
       <Points>
         {points.map((point, key) => (
-          <li key={key}>{point}</li>
+          <Point key={key}>{point}</Point>
         ))}
       </Points>
     </Wrapper>

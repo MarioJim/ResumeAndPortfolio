@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as colors from '../../styles/colors';
+import * as fonts from '../../styles/fonts';
 
 export const StyledWrapper = styled.div`
   margin-left: 30px;
@@ -9,12 +10,13 @@ export const StyledWrapper = styled.div`
 
 export const Section = styled.section`
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 48px;
 `;
 
 export const SectionTitle = styled.h2`
   margin: 0;
   font-size: 2em;
+  font-weight: ${fonts.bold};
 
   &:before {
     content: "";

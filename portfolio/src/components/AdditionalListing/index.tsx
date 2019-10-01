@@ -1,7 +1,6 @@
 import React from 'react';
 import { AdditionalProject } from 'data';
-import { Wrapper } from './styles';
-import { Subtitle as Title, Date, Points } from '../../styles/shared-components';
+import { Wrapper, Title, Date, Points, Point } from '../../styles/components';
 
 interface Props {
   additional: AdditionalProject
@@ -11,11 +10,12 @@ const AdditionalListing: React.FC<Props> = ({ additional }) => {
   const { title, date, points } = additional;
   return (
     <Wrapper>
-      <Date>{date}</Date>
       <Title>{title}</Title>
+      <br />
+      <Date>{date}</Date>
       <Points>
         {points.map((point, key) => (
-          <li key={key}>{point}</li>
+          <Point key={key}>{point}</Point>
         ))}
       </Points>
     </Wrapper>
