@@ -136,14 +136,18 @@ buildPortfolio() {
     pushd portfolio > /dev/null
     installDependencies "portfolio"
     checkSymlink2Data
+    if [ -d "public" ]; then
+        echo " ✔ Cleaning up public folder"
+        rm -r public
+    fi
     echo " ✔ Compiling to a webpage"
     log yarn build
     checkDestGitRepo
     echo " ✔ Clearing mariojim.github.io"
     rm -r ../../mariojim.github.io/*
     echo " ✔ Moving files to mariojim.github.io"
-    mv build/* ../../mariojim.github.io
-    rmdir build
+    mv public/* ../../mariojim.github.io
+    rmdir public
     pushd ../../mariojim.github.io > /dev/null
     log git restore LICENSE README.md
     log git add .

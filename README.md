@@ -12,4 +12,4 @@ Forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
 ## Portfolio
 My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/).
 
-Made with React and TypeScript, compiled with [Gatsby](https://www.gatsbyjs.org/).
+Made with React and TypeScript, compiled with [Gatsby.js](https://www.gatsbyjs.org/).
