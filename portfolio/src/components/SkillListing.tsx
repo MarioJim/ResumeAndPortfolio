@@ -1,7 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Skill } from 'data';
-import { Wrapper, Point } from './styles';
-import { Subtitle as Title } from '../../styles/components';
+import { Subtitle as Title } from './shared-components';
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-top: 6px;
+`;
+
+const Point = styled.p`
+  align-self: center;
+  grid-column-start: 2;
+`;
 
 interface Props {
   skill: Skill

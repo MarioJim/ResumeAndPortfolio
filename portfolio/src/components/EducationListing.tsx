@@ -1,6 +1,6 @@
 import React from 'react';
 import { School } from 'data';
-import { Wrapper, Title, Subtitle, Date, Location, Points, Point } from '../../styles/components';
+import { Wrapper, Title, Subtitle, Date, Location, Points, Point } from './shared-components';
 
 interface Props {
   school: School

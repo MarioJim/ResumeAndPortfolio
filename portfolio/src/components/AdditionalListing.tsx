@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdditionalProject } from 'data';
-import { Wrapper, Title, Date, Points, Point } from '../../styles/components';
+import { Wrapper, Title, Date, Points, Point } from './shared-components';
 
 interface Props {
   additional: AdditionalProject
