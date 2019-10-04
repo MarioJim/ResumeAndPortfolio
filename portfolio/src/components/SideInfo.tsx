@@ -1,9 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGrin } from '@fortawesome/free-solid-svg-icons';
 import { icons } from 'data';
 import SocialIcon from './SocialIcon';
 import * as fonts from '../styles/fonts';
@@ -13,11 +12,6 @@ const StyledSide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-`;
-
-const ProfilePicture = styled.img`
-  width: 200px;
-  height: 200px;
 `;
 
 const Title = styled.h1`
@@ -37,8 +31,7 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const SideInfo: React.FC = () => {
-  const showProfilePic = false;
-  const { profile } = useStaticQuery(
+  const { profile, placeholderImage } = useStaticQuery(
     graphql`
       query {
         profile {
@@ -53,6 +46,13 @@ const SideInfo: React.FC = () => {
             }
           }
         }
+        placeholderImage: file(relativePath: { eq: "profilepic.jpeg" }) {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );
@@ -60,9 +60,10 @@ const SideInfo: React.FC = () => {
   icons.forEach(icon => library.add(icon));
   return (
     <StyledSide>
-      { showProfilePic ?
-        <ProfilePicture /> :
-        <FontAwesomeIcon icon={faGrin} size="10x" />}
+      <Img
+        style={{ width: '200px', height: '200px', borderRadius: '50%', }}
+        fluid={placeholderImage.childImageSharp.fluid}
+      />
       <Title>{name}</Title>
       <Description>{description}</Description>
       <SocialIconsWrapper>
