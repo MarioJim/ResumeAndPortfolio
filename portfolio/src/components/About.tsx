@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-
 import AdditionalListing from './AdditionalListing';
 import EducationListing from './EducationListing';
 import ProjectListing from './ProjectListing';
@@ -12,7 +11,13 @@ import * as fonts from '../styles/fonts';
 const StyledWrapper = styled.div`
   margin-left: 30px;
   border-left: 6px solid white;
-  padding-left: 44px;
+  padding-left: 41px;
+
+  @media (max-width: 820px) {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
 `;
 
 const Section = styled.section`
@@ -33,10 +38,14 @@ const SectionTitle = styled.h2`
     color: white;
     background-color: white;
     position: absolute;
-    left: -62px;
+    left: -59px;
     top: 8px;
     border: 7px solid ${colors.background};
     box-sizing: border-box;
+    
+    @media (max-width: 820px) {
+      content: none;
+    }
   }
 `;
 

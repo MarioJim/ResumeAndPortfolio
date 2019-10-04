@@ -1,6 +1,6 @@
 import React from 'react';
+import { SocialLink } from 'data';
 import styled from 'styled-components';
-import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledLink = styled.a`
@@ -8,21 +8,18 @@ const StyledLink = styled.a`
   opacity: 0.8;
   margin: 0 10px;
   transition: opacity 0.2s ease-in-out;
-  &:hover {
-    opacity: 1;
-  }
+  &:hover { opacity: 1; }
 `;
 
 interface Props {
-  socialLink: any
+  socialLink: SocialLink
 }
 
 const SocialIcon: React.FC<Props> = ({ socialLink }) => {
   const { link, title, icon } = socialLink;
-  const iconDef = findIconDefinition(icon);
   return (
     <StyledLink target="_blank" href={link} title={title}>
-      <FontAwesomeIcon icon={iconDef} size="2x" />
+      <FontAwesomeIcon icon={icon} size="2x" />
     </StyledLink>
   );
 }

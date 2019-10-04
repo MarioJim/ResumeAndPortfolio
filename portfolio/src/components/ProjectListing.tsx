@@ -10,7 +10,7 @@ const ProjectListing: React.FC<Props> = ({ project }) => {
   const { link, title, subtitle, points } = project;
   return (
     <Wrapper>
-      <Link target="_blank" href={link}>
+      <Link target="_blank" href={link} rel="noopener">
         <Title>{title}</Title>
       </Link>
       <Subtitle>{subtitle}</Subtitle>

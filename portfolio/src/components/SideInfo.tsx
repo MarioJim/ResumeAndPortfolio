@@ -3,9 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGrin, fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-
+import { faGrin } from '@fortawesome/free-solid-svg-icons';
+import { icons } from 'data';
 import SocialIcon from './SocialIcon';
 import * as fonts from '../styles/fonts';
 
@@ -58,7 +57,7 @@ const SideInfo: React.FC = () => {
     `
   );
   const { name, description, socialLinks } = profile;
-  library.add(fas, fab);
+  icons.forEach(icon => library.add(icon));
   return (
     <StyledSide>
       { showProfilePic ?

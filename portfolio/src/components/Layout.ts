@@ -12,9 +12,13 @@ export const Root = styled.div`
 
 export const Wrapper = styled.div`
   margin: 50px auto 0 auto;
-  padding: 40px 0;
+  padding: 40px;
   max-width: 960px;
   width: 100%;
   display: grid;
   grid-template-columns: 30% 70%;
+
+  @media (max-width: 820px) {
+    display: block;
+  }
 `;

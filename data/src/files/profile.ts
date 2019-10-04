@@ -1,11 +1,15 @@
-import { IconLookup } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+export const icons: IconDefinition[] = [
+  faEnvelope, faAddressCard, faGithub
+];
 
 export interface SocialLink {
   link: string
   title: string
-  icon: IconLookup
+  icon: IconDefinition
 }
 
 const socialLinks: SocialLink[] = [

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-
 import * as colors from '../styles/colors';
 import * as fonts from '../styles/fonts';
 

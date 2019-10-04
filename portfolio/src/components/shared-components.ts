@@ -20,10 +20,14 @@ export const Title = styled.h2`
     color: white;
     background-color: white;
     position: absolute;
-    left: -57px;
+    left: -54px;
     top: 14px;
     border: 5px solid ${colors.background};
     box-sizing: border-box;
+
+    @media (max-width: 820px) {
+      content: none;
+    }
   }
 `;
 
@@ -43,6 +47,10 @@ export const Date = styled.p`
   float: right;
   font-size: 1em;
   font-weight: ${fonts.light};
+
+  @media (max-width: 820px) {
+    float: unset;
+  }
 `;
 
 export const Location = styled.p`

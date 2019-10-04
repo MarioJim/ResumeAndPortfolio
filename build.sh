@@ -121,7 +121,7 @@ buildResume() {
     log xelatex resume.tex
     popd > /dev/null
     echo " ✔ Copying resume.pdf to portfolio"
-    cp build/resume.pdf ../portfolio/public/resume.pdf
+    cp build/resume.pdf ../portfolio/static/resume.pdf
     checkDestGitRepo
     if ! $PORTFOLIO; then
         echo " ✔ Copying resume.pdf to webpage"
