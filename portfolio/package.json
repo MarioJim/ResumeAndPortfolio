@@ -4,6 +4,12 @@
   "description": "My portfolio",
   "version": "1.0.0",
   "author": "Mario Jiménez",
+  "scripts": {
+    "clean": "if [ -d \"public\" ]; then rm -r public; fi",
+    "compile": "gatsby build",
+    "build": "yarn clean && yarn compile",
+    "develop": "gatsby develop"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
@@ -34,12 +40,5 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve"
-  }
+  "license": "MIT"
 }
