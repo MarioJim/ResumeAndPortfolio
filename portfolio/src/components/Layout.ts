@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as colors from '../styles/colors';
 
 export const Root = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,15 +14,28 @@ export const Root = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  margin: 50px auto 0 auto;
-  padding: 40px;
-  max-width: 960px;
+const BasicWrapper = styled.div`
+  margin: 60px auto 0 auto;
+  padding: 20px 40px;
+  max-width: 1000px;
   width: 100%;
+`;
+
+export const Wrapper = styled(BasicWrapper)`
   display: grid;
   grid-template-columns: 30% 70%;
-
   @media (max-width: 820px) {
     display: block;
   }
+`;
+
+export const ProjectWrapper = styled(BasicWrapper)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Title = styled.h1`
+  font-size: 2.2em;
+  margin-bottom: 10px;
 `;
