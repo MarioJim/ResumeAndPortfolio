@@ -23,6 +23,10 @@ const StyledWrapper = styled.div`
 const Section = styled.section`
   position: relative;
   margin-bottom: 48px;
+
+  @media (max-width: 820px) {
+    margin-bottom: 32px;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -88,34 +92,30 @@ const About: React.FC = () => {
       }
     `
   );
-  const schools = allSchool.nodes;
-  const projects = allProject.nodes;
-  const skills = allSkill.nodes;
-  const additional = allAdditional.nodes;
 
   return (
     <StyledWrapper>
       <Section className="animated fadeInUp">
         <SectionTitle>Education</SectionTitle>
-        {schools.map((school, key) => (
+        {allSchool.nodes.map((school, key) => (
           <EducationListing school={school} key={key} />
         ))}
       </Section>
       <Section className="animated fadeInUp">
         <SectionTitle>Software Projects</SectionTitle>
-        {projects.map((project, key) => (
+        {allProject.nodes.map((project, key) => (
           <ProjectListing project={project} key={key}  />
         ))}
       </Section>
       <Section className="animated fadeInUp">
         <SectionTitle>Skills</SectionTitle>
-        {skills.map((skill, key) => (
+        {allSkill.nodes.map((skill, key) => (
           <SkillListing skill={skill} key={key}  />
         ))}
       </Section>
       <Section className="animated fadeInUp">
         <SectionTitle>Additional Experience and Awards</SectionTitle>
-        {additional.map((add, key) => (
+        {allAdditional.nodes.map((add, key) => (
           <AdditionalListing additional={add} key={key}  />
         ))}
       </Section>

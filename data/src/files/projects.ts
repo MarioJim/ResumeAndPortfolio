@@ -4,6 +4,7 @@ export interface Project {
   date: string
   points: string[]
   link: string
+  includeInCV: boolean
 }
 
 export const projects: Project[] = [
@@ -17,6 +18,7 @@ export const projects: Project[] = [
       'Website hosted on GitHub Pages (mariojim.github.io)'
     ],
     link: 'https://github.com/MarioJim/ResumeAndPortfolio',
+    includeInCV: true,
   },
   {
     title: 'Cave Dungeon',
@@ -28,6 +30,7 @@ export const projects: Project[] = [
       'Learned JavaFX to make a unique graphic interface'
     ],
     link: 'https://github.com/MarioJim/CaveDungeon',
+    includeInCV: true,
   },
   {
     title: 'Knocki App mockup',
@@ -39,5 +42,6 @@ export const projects: Project[] = [
       'Uploaded and hosted on a Heroku server'
     ],
     link: 'https://github.com/MarioJim/knocki-app',
+    includeInCV: true,
   }
 ]

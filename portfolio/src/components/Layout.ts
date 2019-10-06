@@ -8,6 +8,10 @@ export const Root = styled.div`
   -moz-osx-font-smoothing: grayscale;
   background-color: ${colors.background};
   color: ${colors.font};
+
+  @media (max-width: 820px) {
+    font-size: 14px;
+  }
 `;
 
 export const Wrapper = styled.div`

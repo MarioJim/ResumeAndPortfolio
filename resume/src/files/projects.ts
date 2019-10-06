@@ -5,7 +5,9 @@ import { FileToWrite } from '../types';
 const filedata: string =
 `\\cvsection{Software Projects}
 \\begin{cventries}
-${projects.map(project => 
+${projects.map(project => {
+  if (project.includeInCV)
+    return (
 `  \\cventry
     {${project.subtitle}}
     {${project.title}}
@@ -15,7 +17,10 @@ ${projects.map(project =>
       \\begin{cvitems}
 ${project.points.map(point => `        \\item {${point}}`).join('\n')}
       \\end{cvitems}
-    }`).join('\n\n')}
+    }
+
+`);
+}).join('')}
 \\end{cventries}`;
 
 const file: FileToWrite = {

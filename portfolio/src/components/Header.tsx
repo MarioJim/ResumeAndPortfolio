@@ -25,7 +25,7 @@ const StyledLink = styled(Link)<{ activeClassName: string }>`
   color: white;
   cursor: pointer;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.4em;
 
   &.${props => props.activeClassName} {
     font-weight: ${fonts.bold};
@@ -34,7 +34,7 @@ const StyledLink = styled(Link)<{ activeClassName: string }>`
 
 const Separator = styled.div`
   margin: 0 30px;
-  font-size: 20px;
+  font-size: 1.4em;
   font-weight: ${fonts.bold};
 `;
 

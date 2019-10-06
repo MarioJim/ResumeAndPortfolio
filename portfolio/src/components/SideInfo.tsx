@@ -16,11 +16,11 @@ const StyledSide = styled.div`
 
 const Title = styled.h1`
   margin-top: 20px;
-  font-size: 32px;
+  font-size: 2em;
 `;
 
 const Description = styled.h3`
-  font-size: 18px;
+  font-size: 1.3em;
   font-weight: ${fonts.light};
 `;
 

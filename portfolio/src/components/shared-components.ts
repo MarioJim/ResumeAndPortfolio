@@ -3,7 +3,7 @@ import * as colors from  '../styles/colors';
 import * as fonts from '../styles/fonts';
 
 export const Wrapper = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   position: relative;
 `;
 
@@ -66,6 +66,11 @@ export const Points = styled.ul`
 `;
 
 export const Point = styled.li`
+  font-weight: ${fonts.light};
   margin-bottom: 8px;
-  font-weight: ${fonts.light}
+  
+  @media (max-width: 820px) {
+    font-size: 1.2em;
+    margin-bottom: 4px;
+  }
 `;
