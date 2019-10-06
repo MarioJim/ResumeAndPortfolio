@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "data",
+    "resume",
+    "portfolio"
+  ],
+  "npmClient": "yarn",
+  "version": "1.0.0"
+}

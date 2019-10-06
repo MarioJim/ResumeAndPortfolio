@@ -1,17 +1,25 @@
 {
   "name": "resume",
   "version": "1.0.0",
-  "description": "My Resume",
+  "description": "My resume",
   "main": "src/index.ts",
   "scripts": {
-    "build": "ts-node src/index.ts"
+    "clean": "if [ -d \"build\" ]; then rm -r build; fi",
+    "mkdirs": "mkdir -p build/sections",
+    "prepare": "yarn clean && yarn mkdirs",
+    "compile2tex": "ts-node src/index.ts",
+    "copyStatic": "cp -r static/* build",
+    "compile2pdf": "cd build && xelatex resume.tex",
+    "compile": "yarn compile2tex && yarn copyStatic && yarn compile2pdf",
+    "copy": "cp build/resume.pdf ../portfolio/static/resume.pdf",
+    "build": "yarn prepare && yarn compile && yarn copy && yarn clean"
   },
   "author": "MarioJim",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "@types/node": "^12.7.8",
-    "data": "file:../data",
+    "data": "^1.0.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   }
