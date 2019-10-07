@@ -22,6 +22,7 @@ const Title = styled.h1`
 const Description = styled.h3`
   font-size: 1.3em;
   font-weight: ${fonts.light};
+  text-align: center;
 `;
 
 const SocialIconsWrapper = styled.div`

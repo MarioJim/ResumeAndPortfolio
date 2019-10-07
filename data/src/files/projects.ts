@@ -45,3 +45,11 @@ export const projects: Project[] = [
     includeInCV: true,
   }
 ]
+
+export const allowedRepos: number[] = [
+  206996709, // ResumeAndPortfolio
+  207170678, // mariojim.github.io
+  196892751, // knocki-app
+  201521942, // CaveDungeon
+  202829177, // PatasTeam/Homeworks
+];

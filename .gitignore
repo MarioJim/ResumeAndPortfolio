@@ -15,3 +15,7 @@ yarn-error.log*
 
 # Compiled resume
 /resume/build
+
+# Portfolio secrets
+portfolio/.env.development
+portfolio/.env.production
