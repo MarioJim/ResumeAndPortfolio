@@ -3,10 +3,22 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { allowedRepos } from 'data';
 import ProjectItem from './ProjectItem';
 
+interface StaticProject {
+  image: string
+  name: string
+  description: string
+  owner: string
+  url: string
+  tags: string[]
+}
+
 const Projects: React.FC = () => {
-  const { github } = useStaticQuery(
+  const { graphsimg, github } = useStaticQuery(
     graphql`
       query {
+        graphsimg: file(relativePath: { eq: "graphs.png" }) {
+          publicURL
+        }
         github {
           viewer {
             repositories(first: 50, privacy: PUBLIC,  orderBy: {field: PUSHED_AT, direction: DESC}) {
@@ -41,6 +53,17 @@ const Projects: React.FC = () => {
   // );
   const repos = github.viewer.repositories.nodes
       .filter(repo => allowedRepos.includes(repo.databaseId));
+  const staticProjects: StaticProject[] = [
+    {
+      image: graphsimg.publicURL,
+      name: 'Graph Algorithms',
+      description: 'Showcase of different graph-related algorithms',
+      url: '/projects/graphs',
+      owner: undefined,
+      tags: ['p5.js', 'typescript', 'graphs'],
+    },
+  ];
+
   return (
     <div>
       {repos.map(repo => (
@@ -56,6 +79,17 @@ const Projects: React.FC = () => {
               .map(node => node.topic.name)
               .slice(0, 4)
           }
+        />
+      ))}
+      {staticProjects.map((project, i) => (
+        <ProjectItem
+          key={`project-${i}`}
+          image={project.image}
+          title={project.name}
+          description={project.description}
+          owner={project.owner}
+          url={project.url}
+          tags={project.tags}
         />
       ))}
     </div>

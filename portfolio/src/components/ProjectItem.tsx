@@ -66,10 +66,11 @@ interface Props {
 
 const ProjectItem: React.FC<Props> = props => {
   const { image, title, owner, description, url, tags } = props;
+  console.log(image);
   return (
     <ItemWrapper href={url} target="_blank" rel="noopener">
       <Image src={image} />
-      <Title>{owner} / {title}</Title>
+      <Title>{owner && (`${owner} / `)}{title}</Title>
       <Info>{description}</Info>
       <Tags>
         {tags.map((tag, i) =>

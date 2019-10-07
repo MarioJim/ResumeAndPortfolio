@@ -69,7 +69,7 @@ const Graphs = (p: p5) => {
   }
 
   p.setup = () => {
-    p.createCanvas(920, 700);
+    p.createCanvas(1280, 640);
     p.noLoop();
     p.frameRate(1);
     p.textAlign(p.CENTER, p.CENTER);
