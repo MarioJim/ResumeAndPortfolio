@@ -5,9 +5,11 @@ import React from 'react';
 import p5 from 'p5';
 import styled from 'styled-components';
 
+const breakpoint = '680px';
+
 const Wrapper = styled.div`
   position: relative;
-  @media (max-width: 920px) {
+  @media (max-width: ${breakpoint}) {
     display: none;
   }
 `;
@@ -15,7 +17,7 @@ const Wrapper = styled.div`
 const Error = styled.p`
   display: none;
   font-size: 1.2em;
-  @media (max-width: 920px) {
+  @media (max-width: ${breakpoint}) {
     display: block;
   }
 `;

@@ -69,14 +69,14 @@ const Graphs = (p: p5) => {
   }
 
   p.setup = () => {
-    p.createCanvas(1280, 640);
+    p.createCanvas(p.constrain(p.windowWidth - 100, 580, 1400), p.windowHeight - 170);
     p.noLoop();
     p.frameRate(1);
     p.textAlign(p.CENTER, p.CENTER);
     // Prim's Algorithm's Button
     const btnPrim = p.createButton('Prim');
     btnPrim
-      .position(20, 10)
+      .position(p.width / 2 - 170, 50)
       .style('width', '100px')
       .style('height', '30px')
       .mousePressed(() => {
@@ -90,7 +90,7 @@ const Graphs = (p: p5) => {
     // Kruskal's Algorithm's Button
     const btnKruskal = p.createButton('Kruskal');
     btnKruskal
-      .position(140, 10)
+      .position(p.width / 2 - 50, 50)
       .style('width', '100px')
       .style('height', '30px')
       .mousePressed(() => {
@@ -104,7 +104,7 @@ const Graphs = (p: p5) => {
     // Dijkstra's Algorithm's Button
     const btnDijkstra = p.createButton('Dijkstra');
     btnDijkstra
-      .position(260, 10)
+      .position(p.width / 2 + 70, 50)
       .style('width', '100px')
       .style('height', '30px')
       .mousePressed(() => {
@@ -119,8 +119,8 @@ const Graphs = (p: p5) => {
     // Button to add Neighbors
     const btnAddNeigh = p.createButton('Add neighbors');
     btnAddNeigh
-      .position(p.width - 530, 15)
-      .style('width', '115px')
+      .position(p.width / 2 - 270, 15)
+      .style('width', '120px')
       .mousePressed(() => {
         stopAndReset(p);
         addNeighborsButton();
@@ -129,8 +129,8 @@ const Graphs = (p: p5) => {
     // Button to clear neighbors
     const btnClearNeigh = p.createButton('Clear neighbors');
     btnClearNeigh
-      .position(p.width - 400, 15)
-      .style('width', '115px')
+      .position(p.width / 2 - 130, 15)
+      .style('width', '120px')
       .mousePressed(() => {
         stopAndReset(p);
         clearNeighborsButton();
@@ -139,8 +139,8 @@ const Graphs = (p: p5) => {
     // Button to delete last spot
     const btnDeleteLastSpot = p.createButton('Delete last spot');
     btnDeleteLastSpot
-      .position(p.width - 270, 15)
-      .style('width', '115px')
+      .position(p.width / 2 + 10, 15)
+      .style('width', '120px')
       .mousePressed(() => {
         stopAndReset(p);
         spots.pop();
@@ -149,8 +149,8 @@ const Graphs = (p: p5) => {
     // Button to reset board
     const btnResetBoard = p.createButton('Reset board');
     btnResetBoard
-      .position(p.width - 140, 15)
-      .style('width', '115px')
+      .position(p.width / 2 + 150, 15)
+      .style('width', '120px')
       .mousePressed(() => {
         spots = [];
         stopAndReset(p);
@@ -162,7 +162,7 @@ const Graphs = (p: p5) => {
     // Rectangle behind buttons
     p.noStroke();
     p.fill(255);
-    p.rect(0, 0, p.width, 50);
+    p.rect(0, 0, p.width, 90);
     // Switch for every algorithm to run
     switch (currentyRunning) {
       case currentlyRunningEnum.nothing:
