@@ -29,9 +29,7 @@ const SkillListing: React.FC<Props> = ({ skill }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      {points.map((point, key) => (
-        <Point key={key}>{point}</Point>
-      ))}
+      <Point>{points}</Point>
     </Wrapper>
   );
 }

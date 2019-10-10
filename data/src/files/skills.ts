@@ -1,19 +1,19 @@
 export interface Skill {
   title: string
-  points: string[]
+  points: string
 }
 
 export const skills: Skill[] = [
   {
-    title: 'Programming',
-    points: [
-      'Java (proficient), C++, Python'
-    ]
+    title: 'Languages',
+    points: 'Java (proficient), JavaScript (fluent), C++, TypeScript, Python, Shell',
   },
   {
-    title: 'Web Development',
-    points: [
-      'JavaScript (fluent), TypeScript, React, Node.js'
-    ]
+    title: 'Frameworks',
+    points: 'React, JavaFX, GraphQL, Express, p5.js',
+  },
+  {
+    title: 'Tools',
+    points: 'Git, Gradle, Chrome DevTools',
   }
 ]

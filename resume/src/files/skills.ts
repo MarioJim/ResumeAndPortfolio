@@ -8,7 +8,7 @@ const filedata: string = `
 ${skills.map(skill => 
 `  \\cvskill
     {${skill.title}}
-    {${skill.points[0]}}`).join('\n\n')}
+    {${skill.points}}`).join('\n\n')}
 \\end{cvskills}`;
 
 const file: FileToWrite = {

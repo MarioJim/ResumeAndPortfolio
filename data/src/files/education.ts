@@ -16,7 +16,7 @@ export const schools: School[] = [
       'Currently in my third semester',
       'Participated as a TA on our Competitive Programming Club',
       'Relevant courses: Data Structures',
-      'Major GPA: 3.9'
+      'Major GPA: 95/100'
     ],
   }
 ];
