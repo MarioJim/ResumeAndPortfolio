@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
         }
         github {
           viewer {
-            repositories(first: 50, privacy: PUBLIC,  orderBy: {field: PUSHED_AT, direction: DESC}) {
+            topRepositories(first: 50,  orderBy: {field: PUSHED_AT, direction: DESC}) {
               nodes {
                 databaseId
                 name
@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
                 url
                 openGraphImageUrl
                 description
-                repositoryTopics(first: 10) {
+                repositoryTopics(first: 4) {
                   nodes {
                     topic {
                       name
@@ -47,11 +47,11 @@ const Projects: React.FC = () => {
   );
 
   // Used to see the repo's id in GitHub's database
-  // console.log(github.viewer.repositories.nodes
-  //   .map(repo => `${repo.name} - ${repo.databaseId}`)
+  // console.log(github.viewer.topRepositories.nodes
+  //   .map(repo => `${repo.owner.login}/${repo.name} - ${repo.databaseId}`)
   //   .join('\n')
   // );
-  const repos = github.viewer.repositories.nodes
+  const repos = github.viewer.topRepositories.nodes
       .filter(repo => allowedRepos.includes(repo.databaseId));
   const staticProjects: StaticProject[] = [
     {
@@ -64,34 +64,42 @@ const Projects: React.FC = () => {
     },
   ];
 
+  const projectItems: React.FC[] = repos.map(repo => (
+    <ProjectItem
+      key={repo.databaseId}
+      image={repo.openGraphImageUrl}
+      title={repo.name}
+      description={repo.description}
+      owner={repo.owner.login}
+      url={repo.url}
+      tags={
+        repo.repositoryTopics.nodes
+          .map(node => node.topic.name)
+      }
+    />
+  )).concat(staticProjects.map((project, i) => (
+    <ProjectItem
+      key={`project-${i}`}
+      image={project.image}
+      title={project.name}
+      description={project.description}
+      owner={project.owner}
+      url={project.url}
+      tags={project.tags}
+    />
+  )));
+
+  // Fisher-Yates shuffle for the projects
+  for (let i = 0; i < projectItems.length - 1; ++i) {
+    const j = i + Math.floor(Math.random() * (projectItems.length - i));
+    const swapped = projectItems[i];
+    projectItems[i] = projectItems[j];
+    projectItems[j] = swapped;
+  }
+
   return (
     <div>
-      {repos.map(repo => (
-        <ProjectItem
-          key={repo.databaseId}
-          image={repo.openGraphImageUrl}
-          title={repo.name}
-          description={repo.description}
-          owner={repo.owner.login}
-          url={repo.url}
-          tags={
-            repo.repositoryTopics.nodes
-              .map(node => node.topic.name)
-              .slice(0, 4)
-          }
-        />
-      ))}
-      {staticProjects.map((project, i) => (
-        <ProjectItem
-          key={`project-${i}`}
-          image={project.image}
-          title={project.name}
-          description={project.description}
-          owner={project.owner}
-          url={project.url}
-          tags={project.tags}
-        />
-      ))}
+      {projectItems}
     </div>
   );
 }

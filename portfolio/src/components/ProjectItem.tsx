@@ -66,7 +66,6 @@ interface Props {
 
 const ProjectItem: React.FC<Props> = props => {
   const { image, title, owner, description, url, tags } = props;
-  console.log(image);
   return (
     <ItemWrapper href={url} target="_blank" rel="noopener">
       <Image src={image} />

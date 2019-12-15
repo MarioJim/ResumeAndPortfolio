@@ -12,7 +12,7 @@ export const additional: AdditionalProject[] = [
     location: 'Mexico City, Mexico',
     points: [
       'First time competing in a programming contest',
-      'Solved 6 problems during three events'
+      'Wrote mainly C++ but also learned the basic syntax of C and Python'
     ],
   },
   {
@@ -30,15 +30,6 @@ export const additional: AdditionalProject[] = [
     points: [
       'Created a Python script to scrape videogame store\'s prices',
       'Later, rewrote it entirely in Node.js',
-    ],
-  },
-  {
-    title: 'Attended a Processing.js course at University of Texas',
-    date: 'Summer 2016',
-    location: 'Dallas, Texas',
-    points: [
-      'Learned the basic syntax of JavaScript',
-      'Used the p5.js library to create little animations'
     ],
   }
 ]

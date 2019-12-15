@@ -13,10 +13,10 @@ export const schools: School[] = [
     date: 'Aug 2018 - Exp. Dec 2022',
     location: 'Mexico City, Mexico',
     points: [
-      'Currently in my third semester',
+      'Currently in my fourth semester',
       'Participated as a TA on our Competitive Programming Club',
-      'Relevant courses: Data Structures',
-      'Major GPA: 95/100'
+      'Relevant courses: OOP, Data Structures, Databases, Networks',
+      'Major GPA: 96/100'
     ],
   }
 ];

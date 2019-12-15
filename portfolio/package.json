@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Mario Jiménez",
   "scripts": {
-    "clean": "if [ -d \"public\" ]; then rm -r public; fi",
+    "clean": "if [ -d \"public\" ]; then rm -r public; fi; if [ -d \".cache\" ]; then rm -r .cache; fi",
     "compile": "gatsby build",
     "build": "yarn clean && yarn compile",
     "develop": "gatsby develop"
@@ -20,7 +20,7 @@
     "@types/styled-components": "^4.1.19",
     "animate.css": "^3.7.2",
     "babel-plugin-styled-components": "^1.10.6",
-    "data": "^1.0.0",
+    "data": "^1.0.1",
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
     "gatsby-plugin-manifest": "^2.2.20",
@@ -32,12 +32,13 @@
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-source-graphql": "^2.1.17",
     "gatsby-transformer-sharp": "^2.2.19",
-    "minireset.css": "^0.0.5",
-    "p5": "^0.9.0",
+    "minireset.css": "^0.0.6",
+    "p5": "^0.10.2",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-helmet": "^5.2.1",
+    "sharp": "^0.23.4",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {

@@ -1,5 +1,4 @@
 import p5 from 'p5';
-import 'p5/lib/addons/p5.dom';
 import Spot from './spot';
 import prim, { alreadyInTreeType as primType } from './prim';
 import kruskal, { kruskalType } from './kruskal';

@@ -10,10 +10,10 @@ export const skills: Skill[] = [
   },
   {
     title: 'Frameworks',
-    points: 'React, JavaFX, GraphQL, Express, p5.js',
+    points: 'React, JavaFX, Sass, Express, p5.js',
   },
   {
     title: 'Tools',
-    points: 'Git, Gradle, Chrome DevTools',
+    points: 'Git, Maven, Gradle, Chrome DevTools',
   }
 ]
