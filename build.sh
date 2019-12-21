@@ -51,12 +51,12 @@ parse() {
 
 checkDependencies() {
     echo " ✔ Checking dependencies"
-    if [ $(which lerna > /dev/null 2>&1) ]; then
-        echo "lerna not installed, run 'sudo npm i lerna -g'"
+    if ! [ -x "$(command -v lerna)" ]; then
+        echo "lerna not installed, run 'sudo npm i lerna -g'" >&2
         exit 1
     fi
-    if [ $(which xelatex > /dev/null 2>&1) ]; then
-        echo "xelatex not installed, add package 'texlive'"
+    if ! [ -x "$(command -v xelatex)" ]; then
+        echo "xelatex not installed, add package 'texlive'" >&2
         exit 1
     fi
 }
