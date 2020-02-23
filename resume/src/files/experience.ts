@@ -1,29 +1,19 @@
 import path from 'path';
+import { experiences } from 'data';
 import { FileToWrite } from '../types';
 
-// TODO: Replace for imports from data
-interface Job {
-  title: string
-  organization: string
-  location: string
-  date: string
-  points: string[]
-}
-
-const jobs: Job[] = [];
-
 const filedata: string =
-`\\cvsection{Work Experience}
+  `\\cvsection{Work Experience}
 \\begin{cventries}
-${jobs.map(job => 
-`  \\cventry
-    {${job.organization}}
-    {${job.title}}
-    {${job.date}}
-    {${job.location}}
+${experiences.map(experience =>
+    `  \\cventry
+    {${experience.workPlace}}
+    {${experience.title}}
+    {${experience.date}}
+    {${experience.location}}
     {
       \\begin{cvitems}
-${job.points.map(point => `        \\item {${point}}`).join('\n')}
+${experience.points.map(point => `        \\item {${point}}`).join('\n')}
       \\end{cvitems}
     }`).join('\n\n')}
 \\end{cventries}`;

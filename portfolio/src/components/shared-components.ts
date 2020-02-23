@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as colors from  '../styles/colors';
+import * as colors from '../styles/colors';
 import * as fonts from '../styles/fonts';
 
 export const Wrapper = styled.div`
@@ -40,7 +40,7 @@ export const Link = styled.a`
   text-decoration: none;
   color: white;
   border-bottom: 2px dashed #FFFFFFC0;
-  padding-bottom: 4px;
+  padding-bottom: 1px;
 `;
 
 export const Date = styled.p`

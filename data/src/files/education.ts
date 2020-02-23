@@ -14,7 +14,7 @@ export const schools: School[] = [
     location: 'Mexico City, Mexico',
     points: [
       'Currently in my fourth semester',
-      'Participated as a TA on our Competitive Programming Club',
+      'Participated as a TA on our Competitive Programming Club for two semesters',
       'Relevant courses: OOP, Data Structures, Databases, Networks',
       'Major GPA: 96/100'
     ],

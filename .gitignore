@@ -17,5 +17,5 @@ yarn-error.log*
 /resume/build
 
 # Portfolio secrets
-portfolio/.env.development
-portfolio/.env.production
+portfolio/.env
+

@@ -11,7 +11,7 @@ import summary from './files/summary';
 
 const files: FileToWrite[] = [
   // summary,
-  // experience,
+  experience,
   education,
   projects,
   skills,

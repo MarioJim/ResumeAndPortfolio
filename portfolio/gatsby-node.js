@@ -1,6 +1,14 @@
 const data = require('data');
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  actions.createNode({
+    ...data.myProfile,
+    id: createNodeId(`My-Profile`),
+    internal: {
+      type: 'Profile',
+      contentDigest: createContentDigest(data.myProfile),
+    },
+  });
   data.additional.forEach(add => {
     actions.createNode({
       ...add,
@@ -9,15 +17,17 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         type: 'Additional',
         contentDigest: createContentDigest(add),
       },
-    })
+    });
   });
-  actions.createNode({
-    ...data.myProfile,
-    id: createNodeId(`My-Profile`),
-    internal: {
-      type: 'Profile',
-      contentDigest: createContentDigest(data.myProfile),
-    },
+  data.experiences.forEach(exp => {
+    actions.createNode({
+      ...exp,
+      id: createNodeId(`Experience-${exp.workPlace}`),
+      internal: {
+        type: 'Experience',
+        contentDigest: createContentDigest(exp),
+      },
+    });
   });
   data.projects.forEach(project => {
     actions.createNode({
@@ -37,7 +47,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         type: 'School',
         contentDigest: createContentDigest(school),
       },
-    })
+    });
   });
   data.skills.forEach(skill => {
     actions.createNode({
@@ -47,7 +57,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         type: 'Skill',
         contentDigest: createContentDigest(skill),
       },
-    })
+    });
   });
 }
 
@@ -73,6 +83,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
         ],
       },
-    })
+    });
   }
 }

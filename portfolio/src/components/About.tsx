@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import AdditionalListing from './AdditionalListing';
 import EducationListing from './EducationListing';
+import ExperienceListing from './ExperienceListing';
 import ProjectListing from './ProjectListing';
 import SkillListing from './SkillListing';
 import * as colors from '../styles/colors';
@@ -54,9 +55,26 @@ const SectionTitle = styled.h2`
 `;
 
 const About: React.FC = () => {
-  const { allProject, allAdditional, allSchool, allSkill } = useStaticQuery(
+  const { allAdditional, allExperience, allProject, allSchool, allSkill } = useStaticQuery(
     graphql`
       query {
+        allAdditional {
+          nodes {
+            title
+            points
+            location
+            date
+          }
+        }
+        allExperience {
+          nodes {
+            date
+            location
+            points
+            title
+            workPlace
+          }
+        }
         allProject {
           nodes {
             date
@@ -66,14 +84,7 @@ const About: React.FC = () => {
             title
           }
         }
-        allAdditional {
-          nodes {
-            title
-            points
-            location
-            date
-          }
-        }
+
         allSchool {
           nodes {
             date
@@ -96,6 +107,12 @@ const About: React.FC = () => {
   return (
     <StyledWrapper>
       <Section className="animated fadeInUp">
+        <SectionTitle>Experience</SectionTitle>
+        {allExperience.nodes.map((exp, key) => (
+          <ExperienceListing exp={exp} key={key} />
+        ))}
+      </Section>
+      <Section className="animated fadeInUp">
         <SectionTitle>Education</SectionTitle>
         {allSchool.nodes.map((school, key) => (
           <EducationListing school={school} key={key} />
@@ -104,19 +121,19 @@ const About: React.FC = () => {
       <Section className="animated fadeInUp">
         <SectionTitle>Software Projects</SectionTitle>
         {allProject.nodes.map((project, key) => (
-          <ProjectListing project={project} key={key}  />
+          <ProjectListing project={project} key={key} />
         ))}
       </Section>
       <Section className="animated fadeInUp">
         <SectionTitle>Skills</SectionTitle>
         {allSkill.nodes.map((skill, key) => (
-          <SkillListing skill={skill} key={key}  />
+          <SkillListing skill={skill} key={key} />
         ))}
       </Section>
       <Section className="animated fadeInUp">
         <SectionTitle>Additional Experience and Awards</SectionTitle>
         {allAdditional.nodes.map((add, key) => (
-          <AdditionalListing additional={add} key={key}  />
+          <AdditionalListing additional={add} key={key} />
         ))}
       </Section>
     </StyledWrapper>
