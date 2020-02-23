@@ -22,14 +22,5 @@ export const additional: AdditionalProject[] = [
     points: [
       'Made an Android app prototype that accurately blocks phishing links and ads',
     ],
-  },
-  {
-    title: 'Participated in HackMTY 2018',
-    date: 'August 2018',
-    location: 'Monterrey, Mexico',
-    points: [
-      'Created a Python script to scrape videogame store\'s prices',
-      'Later, rewrote it entirely in Node.js',
-    ],
   }
 ]
