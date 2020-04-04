@@ -11,23 +11,24 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.5",
     "@types/p5": "^0.9.0",
     "@types/react-helmet": "^5.0.15",
-    "@types/styled-components": "^5.0.0",
     "animate.css": "^3.7.2",
-    "babel-plugin-styled-components": "^1.10.7",
     "data": "1.0.1",
     "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
+    "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
-    "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-source-graphql": "^2.1.33",
@@ -38,8 +39,7 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-helmet": "^5.2.1",
-    "sharp": "^0.24.1",
-    "styled-components": "^5.0.1"
+    "sharp": "^0.24.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { icons } from 'data';
 import SocialIcon from './SocialIcon';

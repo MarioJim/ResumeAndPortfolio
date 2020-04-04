@@ -3,7 +3,7 @@
 
 import React from 'react';
 import p5 from 'p5';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const breakpoint = '680px';
 
@@ -32,12 +32,12 @@ export interface P5WrapperState {
   wrapper: HTMLElement;
 }
 
-export default class P5Wrapper extends React.Component <P5WrapperProps, P5WrapperState> {
+export default class P5Wrapper extends React.Component<P5WrapperProps, P5WrapperState> {
   wrapper: HTMLElement;
 
   constructor(props: any) {
     super(props);
-    this.state  = {
+    this.state = {
       sketch: props.sketch,
       canvas: null,
       wrapper: null
@@ -52,7 +52,7 @@ export default class P5Wrapper extends React.Component <P5WrapperProps, P5Wrappe
     })
   }
 
-  static getDerivedStateFromProps(props: P5WrapperProps, state: P5WrapperState){
+  static getDerivedStateFromProps(props: P5WrapperProps, state: P5WrapperState) {
     let canvas = state.canvas;
     if (state.sketch !== props.sketch) {
       state.wrapper.removeChild(state.wrapper.childNodes[0]);
@@ -68,8 +68,8 @@ export default class P5Wrapper extends React.Component <P5WrapperProps, P5Wrappe
   }
 
   componentWillUnmount() {
-		this.state.canvas.remove();
-	}
+    this.state.canvas.remove();
+  }
 
   render() {
     return (

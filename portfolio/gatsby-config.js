@@ -29,8 +29,15 @@ module.exports = {
         fetchOptions: {},
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ['Source Sans Pro\:300,400,600'],
+        display: 'swap'
+      }
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialLink } from 'data';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledLink = styled.a`

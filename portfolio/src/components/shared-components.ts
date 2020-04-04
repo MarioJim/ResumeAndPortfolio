@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import * as colors from '../styles/colors';
 import * as fonts from '../styles/fonts';
 
@@ -45,7 +45,6 @@ export const Link = styled.a`
 
 export const Date = styled.p`
   float: right;
-  font-size: 1em;
   font-weight: ${fonts.light};
 
   @media (max-width: 820px) {
@@ -67,10 +66,5 @@ export const Points = styled.ul`
 
 export const Point = styled.li`
   font-weight: ${fonts.light};
-  margin-bottom: 8px;
-  
-  @media (max-width: 820px) {
-    font-size: 1.2em;
-    margin-bottom: 4px;
-  }
+  margin-bottom: 4px;
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import * as colors from '../styles/colors';
 import * as fonts from '../styles/fonts';
@@ -21,7 +21,7 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const StyledLink = styled(Link)<{ activeClassName: string }>`
+const StyledLink = styled(Link) <{ activeClassName: string }>`
   color: white;
   cursor: pointer;
   text-decoration: none;

@@ -1,16 +1,12 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import * as colors from '../styles/colors';
+import * as fonts from '../styles/fonts';
 
 export const Root = styled.div`
   min-height: calc(100vh - 60px);
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: ${fonts.name}, sans-serif;
   background-color: ${colors.background};
   color: ${colors.font};
-  @media (max-width: 820px) {
-    font-size: 14px;
-  }
 `;
 
 const BasicWrapper = styled.div`

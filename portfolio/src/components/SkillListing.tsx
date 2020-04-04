@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Skill } from 'data';
 import { Subtitle as Title } from './shared-components';
 import * as fonts from '../styles/fonts';
