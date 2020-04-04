@@ -5,9 +5,8 @@
   "version": "1.0.0",
   "author": "Mario Jiménez",
   "scripts": {
-    "clean": "if [ -d \"public\" ]; then rm -r public; fi; if [ -d \".cache\" ]; then rm -r .cache; fi",
-    "compile": "gatsby build",
-    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf public .cache",
+    "build": "yarn clean && gatsby build",
     "develop": "gatsby develop"
   },
   "dependencies": {
@@ -31,7 +30,7 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-source-graphql": "^2.1.33",
+    "gatsby-source-graphql": "2.3.0",
     "gatsby-transformer-sharp": "^2.3.14",
     "minireset.css": "^0.0.6",
     "p5": "^0.10.2",

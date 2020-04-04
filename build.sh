@@ -1,49 +1,30 @@
 #!/bin/sh
 
 COPY_FILES=false
-SHOW_STATUS=false
-VERBOSITY=1 # 0 = quiet, 1 = normal, 2 = verbose
-
-log() {
-    if ((VERBOSITY == 0)); then
-        "$@" &>/dev/null
-    elif ((VERBOSITY == 1)); then
-        "$@" 1>/dev/null
-    else
-        "$@"
-    fi
-}
+QUIET=false # 0 (quiet), 1 (normal), 2 (verbose)
 
 print_help() {
     cat <<HELP
 Usage: ./$(basename $0) [options]
-Script to compile and build my portfolio and my resume.
+Script to compile and publish my portfolio and resume
 
-    -c, --copy          Copy files into the website repository          
-    -s, --status        Show 'git status' on the website repository
-    -v, --verbose       Verbose (stdout and stderr)
+    -c, --copy          Copy files into the website repository
+    -C, --only-copy     Only copy the files to the website repo
     -q, --quiet         Quiet (only progress)
     -h, --help          Show help (this)
 
 HELP
+    exit 0
 }
 
 parse() {
     while [[ "$1" == -* ]]; do
         case "$1" in
             -c|--copy) COPY_FILES=true;;
-            -s|--status) SHOW_STATUS=true;;
-            -v|--verbose) VERBOSITY=2;;
-            -q|--quiet) VERBOSITY=0;;
-            -h|--help)
-                print_help
-                exit 0
-                ;;
-            *)
-                echo "Unrecognized "$1" argument passed."
-                print_help
-                exit 1
-                ;;
+            -C|--only-copy) copyToRepo; exit 0;;
+            -q|--quiet) QUIET=true;;
+            -h|--help) print_help;;
+            *) echo "Unrecognized "$1" argument passed"; print_help;;
         esac
         shift
     done
@@ -51,55 +32,45 @@ parse() {
 
 checkDependencies() {
     echo " ✔ Checking dependencies"
-    if ! [ -x "$(command -v lerna)" ]; then
-        echo "lerna not installed, run 'sudo npm i lerna -g'" >&2
+    [ -x "$(command -v xelatex)" ] || {
+        echo "xelatex not installed, run 'yay -S texlive-bin'"
         exit 1
-    fi
-    if ! [ -x "$(command -v xelatex)" ]; then
-        echo "xelatex not installed, add package 'texlive'" >&2
-        exit 1
-    fi
+    }
 }
 
-copyToRepo() {
-    if [ ! -d "../mariojim.github.io" ]; then
-        echo " ✔ Cloning server repository"
-        pushd ../ > /dev/null
-        log git clone https://github.com/MarioJim/mariojim.github.io.git
-        popd > /dev/null
-    fi
-    echo " ✔ Clearing mariojim.github.io"
-    rm -r ../mariojim.github.io/*
-    echo " ✔ Moving files to mariojim.github.io"
-    mv portfolio/public/* ../mariojim.github.io
-    rmdir portfolio/public
-    pushd ../mariojim.github.io > /dev/null
-    log git restore LICENSE README.md
-    log git add .
+log() {
+    [ "$QUIET" = true ] &&"$@" &>/dev/null || "$@"
+}
+
+cloneRepo() {
+    echo " ✔ Cloning server repository"
+    pushd .. > /dev/null
+    log git clone git@github.com:MarioJim/mariojim.github.io.git
     popd > /dev/null
 }
 
-printWebsiteRepoStatus() {
+copyToRepo() {
+    [ ! -d "../mariojim.github.io" ] && cloneRepo
+    echo " ✔ Emptying mariojim.github.io"
+    rm -rf ../mariojim.github.io/*
+    echo " ✔ Moving files to mariojim.github.io"
+    mv portfolio/public/* ../mariojim.github.io
+    rmdir portfolio/public
     echo " ✔ Status of webpage:"
     pushd ../mariojim.github.io > /dev/null
-    git restore LICENSE README.md
+    log git restore LICENSE README.md
     git status
     popd > /dev/null
 }
 
-main() {
-    parse "$@"
-    checkDependencies
-    echo " ✔ Installing and symlinking dependecies"
-    log lerna bootstrap
-    echo " ✔ Building and compiling, please wait"
-    log lerna run build
-    if $COPY_FILES; then
-        copyToRepo
-    fi
-    if $SHOW_STATUS; then
-        printWebsiteRepoStatus
-    fi
-}
-
-main "$@"
+parse "$@"
+checkDependencies
+echo " ✔ Installing and symlinking dependecies"
+log yarn install
+echo " ✔ Compiling data module"
+log yarn workspace data build
+echo " ✔ Compiling resume"
+log yarn workspace resume build
+echo " ✔ Building portfolio"
+log yarn workspace portfolio build
+$COPY_FILES && copyToRepo || exit 0

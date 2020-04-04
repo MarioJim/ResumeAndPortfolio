@@ -1,10 +1,10 @@
 # ResumeAndPortfolio
 Repository to version control my resume and portfolio.
 
-Managed with [Lerna](https://lerna.js.org/) and a shell script.
+Managed with [Yarn workspaces](https://classic.yarnpkg.com/blog/2017/08/02/introducing-workspaces/) and built with a shell script.
 
 ## Data
-TypeScript module to keep the same "database" for building my Resume and my Portfolio.
+TypeScript module to keep the same database for building my resume and my portfolio.
 
 ## Resume
 Compiles from template strings in TypeScript to LaTeX and finally to pdf.
@@ -17,3 +17,4 @@ My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/).
 Made with React and TypeScript, compiled with [Gatsby.js](https://www.gatsbyjs.org/).
 
 Design based on [kitze.io](https://kitze.io/).
+

@@ -4,7 +4,7 @@
   "description": "My resume",
   "main": "src/index.ts",
   "scripts": {
-    "clean": "if [ -d \"build\" ]; then rm -r build; fi",
+    "clean": "rm -rf build",
     "mkdirs": "mkdir -p build/sections",
     "prepare": "yarn clean && yarn mkdirs",
     "compile2tex": "ts-node src/index.ts",

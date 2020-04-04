@@ -1,7 +1,11 @@
 {
   "name": "ResumeAndPortfolio",
   "private": true,
-  "devDependencies": {
-    "lerna": "^3.16.4"
+  "workspaces": {
+    "packages": [
+      "data",
+      "resume",
+      "portfolio"
+    ]
   }
 }
