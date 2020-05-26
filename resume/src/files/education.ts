@@ -3,10 +3,10 @@ import { schools } from 'data';
 import { FileToWrite } from '../types';
 
 const filedata: string =
-`\\cvsection{Education}
+  `\\cvsection{Education}
 \\begin{cventries}
-${schools.map(school => 
-`  \\cventry
+${schools.map(school =>
+    `  \\cventry
     {${school.schoolName}}
     {${school.title}}
     {${school.date}}

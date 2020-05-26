@@ -5,8 +5,8 @@ import { FileToWrite } from '../types';
 const filedata: string = `
 \\cvsection{Skills}
 \\begin{cvskills}
-${skills.map(skill => 
-`  \\cvskill
+${skills.map(skill =>
+  `  \\cvskill
     {${skill.title}}
     {${skill.points}}`).join('\n\n')}
 \\end{cvskills}`;

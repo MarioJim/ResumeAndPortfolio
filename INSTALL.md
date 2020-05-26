@@ -17,6 +17,7 @@ In tllocalmgr I ran `status` to update my packages and then I installed:
  - tcolorbox
  - trimspaces
  - xifthen
+ - fontawesome5
 
 And then ran `texhash` to update the database.
 

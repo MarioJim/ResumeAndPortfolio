@@ -5,7 +5,7 @@ import { FileToWrite } from '../types';
 const summary: string = '';
 
 const filedata: string =
-`\\cvsection{Summary}
+  `\\cvsection{Summary}
 \\begin{cvparagraph}
   ${summary}
 \\end{cvparagraph}`;

@@ -5,8 +5,8 @@ import { FileToWrite } from '../types';
 const filedata: string = `
 \\cvsection{Additional Experience and Awards}
 \\begin{cventries}
-${additional.map(add => 
-`  \\cventry
+${additional.map(add =>
+  `  \\cventry
     {${add.location}}
     {${add.title}}
     {${add.date}}
