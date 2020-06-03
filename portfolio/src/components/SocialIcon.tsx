@@ -18,7 +18,7 @@ const SocialIcon: React.FC<Props> = ({ socialLink }) => {
   const { link, title, icon: Icon } = socialLink;
   return (
     <StyledLink target="_blank" href={link} title={title}>
-      <Icon size="2x" />
+      <Icon size="2.8em" />
     </StyledLink>
   );
 }
