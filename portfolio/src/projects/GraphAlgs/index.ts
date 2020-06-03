@@ -52,7 +52,7 @@ const Graphs = (p: p5) => {
   p.mousePressed = () => {
     if (spots.length === 26) return;
     if (p.mouseY > 60 && p.mouseY < p.height - 10 &&
-        p.mouseX > 10 && p.mouseX < p.width - 10) {
+      p.mouseX > 10 && p.mouseX < p.width - 10) {
       stopAndReset(p);
       // Create new spot at mouse coordinates
       const newSpot = new Spot(p, p.mouseX, p.mouseY);
@@ -177,7 +177,7 @@ const Graphs = (p: p5) => {
             spots[treePrim[i][0]].x, spots[treePrim[i][0]].y,
             spots[treePrim[i][1]].x, spots[treePrim[i][1]].y
           );
-        // Show blue line ("currenty adding")
+        // Show blue line (currenty adding)
         p.stroke(colorAdding);
         if (currentFrame <= treePrim.length)
           p.line(

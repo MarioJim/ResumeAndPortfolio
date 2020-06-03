@@ -31,17 +31,9 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const SideInfo: React.FC = () => {
-  const { profile, placeholderImage } = useStaticQuery(
+  const { placeholderImage } = useStaticQuery(
     graphql`
       query {
-        profile {
-          name
-          description
-          socialLinks {
-            title
-            link
-          }
-        }
         placeholderImage: file(relativePath: { eq: "profilepic.jpeg" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
@@ -49,11 +41,9 @@ const SideInfo: React.FC = () => {
             }
           }
         }
-      }
-    `
+      }`
   );
-  const { name, description } = profile;
-  const { socialLinks } = myProfile;
+  const { name, description, socialLinks } = myProfile;
   return (
     <StyledSide>
       <Img

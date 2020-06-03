@@ -3,7 +3,7 @@ import 'minireset.css';
 
 import Header from '../../components/Header';
 import { Root, ProjectWrapper, Title } from '../../components/Layout';
-import SEO from "../../components/SEO";
+import SEO from '../../components/SEO';
 import sketch from '../../projects/GraphAlgs';
 import P5Wrapper from '../../components/P5Wrapper';
 

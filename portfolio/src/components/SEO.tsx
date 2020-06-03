@@ -24,10 +24,7 @@ const SEO: React.FC<Props> = ({ title }) => {
   const siteTitle = title || site.siteMetadata.title;
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: 'en', }}
-      title={siteTitle}
-    >
+    <Helmet htmlAttributes={{ lang: 'en' }} title={siteTitle}>
       <meta name="description" content={site.siteMetadata.description} />
       <meta property="og:url" content={site.siteMetadata.siteUrl} />
       <meta property="og.title" content={siteTitle} />

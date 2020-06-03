@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { additional, experiences, projects, schools, skills } from 'data';
 import styled from '@emotion/styled';
 import AdditionalListing from './AdditionalListing';
 import EducationListing from './EducationListing';
@@ -54,90 +54,39 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const About: React.FC = () => {
-  const { allAdditional, allExperience, allProject, allSchool, allSkill } = useStaticQuery(
-    graphql`
-      query {
-        allAdditional {
-          nodes {
-            title
-            points
-            location
-            date
-          }
-        }
-        allExperience {
-          nodes {
-            date
-            location
-            points
-            title
-            workPlace
-          }
-        }
-        allProject {
-          nodes {
-            date
-            link
-            points
-            subtitle
-            title
-          }
-        }
-
-        allSchool {
-          nodes {
-            date
-            location
-            points
-            schoolName
-            title
-          }
-        }
-        allSkill {
-          nodes {
-            points
-            title
-          }
-        }
-      }
-    `
-  );
-
-  return (
-    <StyledWrapper>
-      <Section className="animated fadeInUp">
-        <SectionTitle>Experience</SectionTitle>
-        {allExperience.nodes.map((exp, key) => (
-          <ExperienceListing exp={exp} key={key} />
-        ))}
-      </Section>
-      <Section className="animated fadeInUp">
-        <SectionTitle>Education</SectionTitle>
-        {allSchool.nodes.map((school, key) => (
-          <EducationListing school={school} key={key} />
-        ))}
-      </Section>
-      <Section className="animated fadeInUp">
-        <SectionTitle>Software Projects</SectionTitle>
-        {allProject.nodes.map((project, key) => (
-          <ProjectListing project={project} key={key} />
-        ))}
-      </Section>
-      <Section className="animated fadeInUp">
-        <SectionTitle>Skills</SectionTitle>
-        {allSkill.nodes.map((skill, key) => (
-          <SkillListing skill={skill} key={key} />
-        ))}
-      </Section>
-      <Section className="animated fadeInUp">
-        <SectionTitle>Additional Experience and Awards</SectionTitle>
-        {allAdditional.nodes.map((add, key) => (
-          <AdditionalListing additional={add} key={key} />
-        ))}
-      </Section>
-    </StyledWrapper>
-  );
-}
+const About: React.FC = () => (
+  <StyledWrapper>
+    <Section className="animated fadeInUp">
+      <SectionTitle>Experience</SectionTitle>
+      {experiences.map((exp, key) => (
+        <ExperienceListing exp={exp} key={key} />
+      ))}
+    </Section>
+    <Section className="animated fadeInUp">
+      <SectionTitle>Education</SectionTitle>
+      {schools.map((school, key) => (
+        <EducationListing school={school} key={key} />
+      ))}
+    </Section>
+    <Section className="animated fadeInUp">
+      <SectionTitle>Software Projects</SectionTitle>
+      {projects.map((project, key) => (
+        <ProjectListing project={project} key={key} />
+      ))}
+    </Section>
+    <Section className="animated fadeInUp">
+      <SectionTitle>Skills</SectionTitle>
+      {skills.map((skill, key) => (
+        <SkillListing skill={skill} key={key} />
+      ))}
+    </Section>
+    <Section className="animated fadeInUp">
+      <SectionTitle>Additional Experience and Awards</SectionTitle>
+      {additional.map((add, key) => (
+        <AdditionalListing additional={add} key={key} />
+      ))}
+    </Section>
+  </StyledWrapper>
+);
 
 export default About;

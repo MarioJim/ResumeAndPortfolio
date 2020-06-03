@@ -21,7 +21,7 @@ export default class Spot {
     this.distToSource = Number.MAX_VALUE;
   }
 
-  // Method to "print" this spot
+  // Method to display this spot
   show() {
     this.p.stroke(this.color);
     this.p.strokeWeight(20);
@@ -49,7 +49,7 @@ export default class Spot {
       // Given three colinear points p, q, r, checks if point q lies on line segment pr
       function onSegment(p: Spot, q: Spot, r: Spot) {
         return !!(q.x <= Math.max(p.x, r.x) && q.x >= Math.min(p.x, r.x) &&
-            q.y <= Math.max(p.y, r.y) && q.y >= Math.min(p.y, r.y));
+          q.y <= Math.max(p.y, r.y) && q.y >= Math.min(p.y, r.y));
       }
       // Find the four orientations needed for general and special cases
       const o = [
@@ -102,8 +102,8 @@ export default class Spot {
 
   addNeighborsDistance(spots: Spot[], neighbors: number[]) {
     // Fill it with the distances to each neighbor
-    this.distToNeighbors = neighbors.map(neighbor => 
-        Math.round(this.distToSpot(spots[neighbor]))
-      );
+    this.distToNeighbors = neighbors.map(neighbor =>
+      Math.round(this.distToSpot(spots[neighbor]))
+    );
   }
 }

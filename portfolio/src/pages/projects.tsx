@@ -5,10 +5,10 @@ import 'animate.css';
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/Layout';
 import Projects from '../components/Projects';
-import SEO from "../components/SEO";
+import SEO from '../components/SEO';
 import SideInfo from '../components/SideInfo';
 
-const ProjectsPage = () => (
+const ProjectsPage: React.FC = () => (
   <Root>
     <SEO />
     <Header />

@@ -1,66 +1,5 @@
 const data = require('data');
 
-exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  actions.createNode({
-    ...data.myProfile,
-    id: createNodeId(`My-Profile`),
-    internal: {
-      type: 'Profile',
-      contentDigest: createContentDigest(data.myProfile),
-    },
-  });
-  data.additional.forEach(add => {
-    actions.createNode({
-      ...add,
-      id: createNodeId(`Additional-${add.title}`),
-      internal: {
-        type: 'Additional',
-        contentDigest: createContentDigest(add),
-      },
-    });
-  });
-  data.experiences.forEach(exp => {
-    actions.createNode({
-      ...exp,
-      id: createNodeId(`Experience-${exp.workPlace}`),
-      internal: {
-        type: 'Experience',
-        contentDigest: createContentDigest(exp),
-      },
-    });
-  });
-  data.projects.forEach(project => {
-    actions.createNode({
-      ...project,
-      id: createNodeId(`Project-${project.title}`),
-      internal: {
-        type: 'Project',
-        contentDigest: createContentDigest(project),
-      },
-    })
-  });
-  data.schools.forEach(school => {
-    actions.createNode({
-      ...school,
-      id: createNodeId(`School-${school.schoolName}`),
-      internal: {
-        type: 'School',
-        contentDigest: createContentDigest(school),
-      },
-    });
-  });
-  data.skills.forEach(skill => {
-    actions.createNode({
-      ...skill,
-      id: createNodeId(`Skill-${skill.title}`),
-      internal: {
-        type: 'Skill',
-        contentDigest: createContentDigest(skill),
-      },
-    });
-  });
-}
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
     module: {
@@ -73,7 +12,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       ],
     },
   });
-  if (stage === "build-html") {
+  if (stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
         rules: [
@@ -85,4 +24,4 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
     });
   }
-}
+};
