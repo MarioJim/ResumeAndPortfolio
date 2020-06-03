@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
   //   .join('\n')
   // );
   const repos = github.viewer.topRepositories.nodes
-      .filter(repo => allowedRepos.includes(repo.databaseId));
+    .filter(repo => allowedRepos.includes(repo.databaseId));
   const staticProjects: StaticProject[] = [
     {
       image: graphsimg.publicURL,
@@ -72,10 +72,7 @@ const Projects: React.FC = () => {
       description={repo.description}
       owner={repo.owner.login}
       url={repo.url}
-      tags={
-        repo.repositoryTopics.nodes
-          .map(node => node.topic.name)
-      }
+      tags={repo.repositoryTopics.nodes.map(node => node.topic.name)}
     />
   )).concat(staticProjects.map((project, i) => (
     <ProjectItem

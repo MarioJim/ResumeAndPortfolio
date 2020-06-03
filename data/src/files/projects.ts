@@ -51,8 +51,11 @@ export const allowedRepos: number[] = [
   207170678, // mariojim.github.io
   196892751, // knocki-app
   201521942, // CaveDungeon
-  202829177, // PatasTeam/Homeworks
   220822569, // PatasTeam/GraphicAVLTree
   218893835, // dotfiles
   167217902, // CompetitiveProgramming
+  252565333, // finite-automata-graph
+  259530650, // grammar-parsing-tree
+  172366859, // mTouch
+  245031161, // KevinTMtz/GunnedDown
 ];
