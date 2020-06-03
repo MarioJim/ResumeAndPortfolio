@@ -86,14 +86,6 @@ const Projects: React.FC = () => {
     />
   )));
 
-  // Fisher-Yates shuffle for the projects
-  for (let i = 0; i < projectItems.length - 1; ++i) {
-    const j = i + Math.floor(Math.random() * (projectItems.length - i));
-    const swapped = projectItems[i];
-    projectItems[i] = projectItems[j];
-    projectItems[j] = swapped;
-  }
-
   return (
     <div>
       {projectItems}

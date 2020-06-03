@@ -15,5 +15,5 @@ export const skills: Skill[] = [
   {
     title: 'Tools',
     points: 'Git, Maven, Chrome DevTools',
-  }
-]
+  },
+];

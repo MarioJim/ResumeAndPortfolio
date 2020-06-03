@@ -1,23 +1,20 @@
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import React from 'react';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
-export const icons: IconDefinition[] = [
-  faEnvelope, faAddressCard, faGithub
-];
 
 export interface SocialLink {
   link: string
   title: string
-  icon: IconDefinition
+  icon: React.SFC<Partial<FontAwesomeIconProps>>
 }
 
 const socialLinks: SocialLink[] = [
   {
     title: 'Resume',
     link: 'resume.pdf',
-    icon: faAddressCard,
-  }
+    icon: props => <FontAwesomeIcon {...props} icon={faAddressCard} />,
+  },
 ];
 
 interface Profile {
@@ -42,13 +39,13 @@ export const myProfile: Profile = {
     {
       title: 'Email',
       link: `mailto:${mail}`,
-      icon: faEnvelope,
+      icon: props => <FontAwesomeIcon {...props} icon={faEnvelope} />,
     },
     {
       title: 'GitHub',
       link: `https://github.com/${github}/`,
-      icon: faGithub,
+      icon: props => <FontAwesomeIcon {...props} icon={faGithub} />,
     },
     ...socialLinks,
-  ]
-}
+  ],
+};

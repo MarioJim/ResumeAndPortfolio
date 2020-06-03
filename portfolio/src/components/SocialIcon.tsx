@@ -1,7 +1,6 @@
 import React from 'react';
 import { SocialLink } from 'data';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledLink = styled.a`
   color: white;
@@ -16,10 +15,10 @@ interface Props {
 }
 
 const SocialIcon: React.FC<Props> = ({ socialLink }) => {
-  const { link, title, icon } = socialLink;
+  const { link, title, icon: Icon } = socialLink;
   return (
     <StyledLink target="_blank" href={link} title={title}>
-      <FontAwesomeIcon icon={icon} size="2x" />
+      <Icon size="2x" />
     </StyledLink>
   );
 }

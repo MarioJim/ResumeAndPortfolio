@@ -15,7 +15,7 @@ export const projects: Project[] = [
     points: [
       'Wrote TypeScript packages for compiling the data to a static React website and to .tex files',
       'Controlled with a shell script that builds both projects starting from a fresh git clone',
-      'Website hosted on GitHub Pages (mariojim.github.io)'
+      'Website hosted on GitHub Pages (mariojim.github.io)',
     ],
     link: 'https://github.com/MarioJim/ResumeAndPortfolio',
     includeInCV: true,
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     points: [
       'Used Gradle to run, debug and test the game',
       'Implemented an algorithm to randomly generate map and room layouts',
-      'Learned JavaFX to make a unique graphic interface'
+      'Learned JavaFX to make a unique graphic interface',
     ],
     link: 'https://github.com/MarioJim/CaveDungeon',
     includeInCV: true,
@@ -39,12 +39,12 @@ export const projects: Project[] = [
     points: [
       'Built using Create React App and Redux',
       'Written in TypeScript to improve readability through type checking',
-      'Uploaded and hosted on a Heroku server'
+      'Uploaded and hosted on a Heroku server',
     ],
     link: 'https://github.com/MarioJim/knocki-app',
     includeInCV: true,
-  }
-]
+  },
+];
 
 export const allowedRepos: number[] = [
   206996709, // ResumeAndPortfolio

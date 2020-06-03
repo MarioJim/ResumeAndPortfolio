@@ -2,8 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { icons } from 'data';
+import { myProfile } from 'data';
 import SocialIcon from './SocialIcon';
 import * as fonts from '../styles/fonts';
 
@@ -41,10 +40,6 @@ const SideInfo: React.FC = () => {
           socialLinks {
             title
             link
-            icon {
-              prefix
-              iconName
-            }
           }
         }
         placeholderImage: file(relativePath: { eq: "profilepic.jpeg" }) {
@@ -57,8 +52,8 @@ const SideInfo: React.FC = () => {
       }
     `
   );
-  const { name, description, socialLinks } = profile;
-  icons.forEach(icon => library.add(icon));
+  const { name, description } = profile;
+  const { socialLinks } = myProfile;
   return (
     <StyledSide>
       <Img

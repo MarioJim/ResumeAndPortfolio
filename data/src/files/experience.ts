@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
     points: [
       'Helped build a tool to assess cybersecurity risks that affect the institution in a day to day basis',
       'Calculated the possible threats through vulnerability and probability analysis',
-      'Had a hands on experience on how companies defend themselves against hackers and other cyber-threats'
+      'Had a hands on experience on how companies defend themselves against hackers and other cyber-threats',
     ],
-  }
+  },
 ];
