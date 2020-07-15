@@ -1,28 +1,25 @@
 import React from 'react';
-import { FaAddressCard, FaEnvelope, FaGithub } from 'react-icons/fa';
+import {
+  FaAddressCard,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+} from 'react-icons/fa';
 import { IconBaseProps } from 'react-icons/lib/cjs';
 
 export interface SocialLink {
-  link: string
-  title: string
-  icon: React.SFC<IconBaseProps>
+  link: string;
+  title: string;
+  icon: React.SFC<IconBaseProps>;
 }
 
-const socialLinks: SocialLink[] = [
-  {
-    title: 'Resume',
-    link: 'resume.pdf',
-    icon: props => <FaAddressCard {...props} />,
-  },
-];
-
 interface Profile {
-  name: string
-  description: string
-  phone: string
-  mail: string
-  github: string
-  socialLinks: SocialLink[]
+  name: string;
+  description: string;
+  phone: string;
+  mail: string;
+  github: string;
+  socialLinks: SocialLink[];
 }
 
 const mail = 'mario.emilio.j@gmail.com';
@@ -45,6 +42,15 @@ export const myProfile: Profile = {
       link: `https://github.com/${github}/`,
       icon: props => <FaGithub {...props} />,
     },
-    ...socialLinks,
+    {
+      title: 'LinkedIn',
+      link: 'https://www.linkedin.com/in/mariojim/',
+      icon: props => <FaLinkedin {...props} />,
+    },
+    {
+      title: 'Resume',
+      link: 'resume.pdf',
+      icon: props => <FaAddressCard {...props} />,
+    },
   ],
 };
