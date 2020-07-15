@@ -4,7 +4,7 @@ import 'minireset.css';
 
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/Layout';
-import SEO from "../components/SEO";
+import SEO from '../components/SEO';
 import SideInfo from '../components/SideInfo';
 import * as fonts from '../styles/fonts';
 
@@ -30,7 +30,7 @@ const Description = styled.p`
   font-weight: ${fonts.light};
 `;
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC = () => (
   <Root>
     <SEO title="404: Not found" />
     <Header />

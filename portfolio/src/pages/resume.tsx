@@ -2,21 +2,19 @@ import React from 'react';
 import 'minireset.css';
 import 'animate.css';
 
-import About from '../components/About';
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/Layout';
 import SEO from '../components/SEO';
-import SideInfo from '../components/SideInfo';
+import EmbeddedPDF from '../components/EmbeddedPDF';
 
-const IndexPage: React.FC = () => (
+const ResumePage: React.FC = () => (
   <Root>
     <SEO />
     <Header />
     <Wrapper>
-      <SideInfo />
-      <About />
+      <EmbeddedPDF src="/resume.pdf" />
     </Wrapper>
   </Root>
 );
 
-export default IndexPage;
+export default ResumePage;

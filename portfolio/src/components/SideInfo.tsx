@@ -41,13 +41,14 @@ const SideInfo: React.FC = () => {
             }
           }
         }
-      }`
+      }
+    `,
   );
   const { name, description, socialLinks } = myProfile;
   return (
     <StyledSide>
       <Img
-        style={{ width: '200px', height: '200px', borderRadius: '50%', }}
+        style={{ width: '200px', height: '200px', borderRadius: '50%' }}
         fluid={placeholderImage.childImageSharp.fluid}
       />
       <Title>{name}</Title>

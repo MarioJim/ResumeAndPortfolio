@@ -1,9 +1,17 @@
 import React from 'react';
 import { Experience } from 'data';
-import { Wrapper, Title, Subtitle, Date, Location, Points, Point } from './shared-components';
+import {
+  Wrapper,
+  Title,
+  Subtitle,
+  Date,
+  Location,
+  Points,
+  Point,
+} from './shared-components';
 
 interface Props {
-  exp: Experience
+  exp: Experience;
 }
 
 const ExperienceListing: React.FC<Props> = ({ exp }) => {
@@ -21,6 +29,6 @@ const ExperienceListing: React.FC<Props> = ({ exp }) => {
       </Points>
     </Wrapper>
   );
-}
+};
 
 export default ExperienceListing;

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface Props {
-  title?: string
+  title?: string;
 }
 
 const SEO: React.FC<Props> = ({ title }) => {
@@ -19,7 +19,7 @@ const SEO: React.FC<Props> = ({ title }) => {
           }
         }
       }
-    `
+    `,
   );
   const siteTitle = title || site.siteMetadata.title;
 
@@ -32,6 +32,6 @@ const SEO: React.FC<Props> = ({ title }) => {
       <meta property="og:type" content="website" />
     </Helmet>
   );
-}
+};
 
 export default SEO;

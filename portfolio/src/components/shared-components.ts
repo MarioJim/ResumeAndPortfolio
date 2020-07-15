@@ -13,7 +13,7 @@ export const Title = styled.h2`
   display: inline-block;
 
   &:before {
-    content: "";
+    content: '';
     width: 20px;
     height: 20px;
     border-radius: 100%;
@@ -39,12 +39,13 @@ export const Subtitle = styled.h3`
 export const Link = styled.a`
   text-decoration: none;
   color: white;
-  border-bottom: 2px dashed #FFFFFFC0;
+  border-bottom: 2px dashed #ffffffc0;
   padding-bottom: 1px;
 `;
 
 export const Date = styled.p`
   float: right;
+  font-size: 18px;
   font-weight: ${fonts.light};
 
   @media (max-width: 820px) {
@@ -53,7 +54,7 @@ export const Date = styled.p`
 `;
 
 export const Location = styled.p`
-  font-size: 1em;
+  font-size: 18px;
   font-weight: ${fonts.light};
   margin-bottom: 6px;
 `;
@@ -66,5 +67,6 @@ export const Points = styled.ul`
 
 export const Point = styled.li`
   font-weight: ${fonts.light};
+  font-size: 18px;
   margin-bottom: 4px;
 `;

@@ -1,9 +1,17 @@
 import React from 'react';
 import { School } from 'data';
-import { Wrapper, Title, Subtitle, Date, Location, Points, Point } from './shared-components';
+import {
+  Wrapper,
+  Title,
+  Subtitle,
+  Date,
+  Location,
+  Points,
+  Point,
+} from './shared-components';
 
 interface Props {
-  school: School
+  school: School;
 }
 
 const EducationListing: React.FC<Props> = ({ school }) => {
@@ -21,6 +29,6 @@ const EducationListing: React.FC<Props> = ({ school }) => {
       </Points>
     </Wrapper>
   );
-}
+};
 
 export default EducationListing;

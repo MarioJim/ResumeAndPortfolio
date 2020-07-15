@@ -1,9 +1,9 @@
 export interface Experience {
-  workPlace: string
-  title: string
-  date: string
-  location: string
-  points: string[]
+  workPlace: string;
+  title: string;
+  date: string;
+  location: string;
+  points: string[];
 }
 
 export const experiences: Experience[] = [
@@ -13,9 +13,10 @@ export const experiences: Experience[] = [
     date: 'Jan 2020 - Jul 2020',
     location: 'Mexico City, Mexico',
     points: [
-      'Helped build a tool to assess cybersecurity risks that affect the institution in a day to day basis',
-      'Calculated the possible threats through vulnerability and probability analysis',
-      'Had a hands on experience on how companies defend themselves against hackers and other cyber-threats',
+      'Built a dashboard to help assess cybersecurity risks that affect the institution in a day-to-day basis using React',
+      'Created several graph and hierarchy visualizations rendered by D3.js',
+      'Developed Python scripts to clean and transform the data from Excel spreadsheets to a variety of JSON and CSV files for easier use in the web app',
+      'Had a hands-on experience on how companies defend themselves against malware and other cyber-threats',
     ],
   },
 ];

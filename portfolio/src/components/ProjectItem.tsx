@@ -56,12 +56,12 @@ const Tag = styled.li`
 `;
 
 interface Props {
-  image: string
-  title: string
-  owner: string
-  description: string
-  url: string
-  tags: string[]
+  image: string;
+  title: string;
+  owner: string;
+  description: string;
+  url: string;
+  tags: string[];
 }
 
 const ProjectItem: React.FC<Props> = props => {
@@ -69,12 +69,15 @@ const ProjectItem: React.FC<Props> = props => {
   return (
     <ItemWrapper href={url} target="_blank" rel="noopener">
       <Image src={image} />
-      <Title>{owner && (`${owner} / `)}{title}</Title>
+      <Title>
+        {owner && `${owner} / `}
+        {title}
+      </Title>
       <Info>{description}</Info>
       <Tags>
-        {tags.map((tag, i) =>
+        {tags.map((tag, i) => (
           <Tag key={`${title}-${i}`}>{tag}</Tag>
-        )}
+        ))}
       </Tags>
     </ItemWrapper>
   );

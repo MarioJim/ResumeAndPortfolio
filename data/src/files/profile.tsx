@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  FaAddressCard,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IconBaseProps } from 'react-icons/lib/cjs';
 
 export interface SocialLink {
@@ -46,11 +41,6 @@ export const myProfile: Profile = {
       title: 'LinkedIn',
       link: 'https://www.linkedin.com/in/mariojim/',
       icon: props => <FaLinkedin {...props} />,
-    },
-    {
-      title: 'Resume',
-      link: 'resume.pdf',
-      icon: props => <FaAddressCard {...props} />,
     },
   ],
 };

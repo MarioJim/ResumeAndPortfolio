@@ -21,7 +21,7 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const StyledLink = styled(Link) <{ activeClassName: string }>`
+const StyledLink = styled(Link)<{ activeClassName: string }>`
   color: white;
   cursor: pointer;
   text-decoration: none;
@@ -41,9 +41,17 @@ const Separator = styled.div`
 const Header: React.FC = () => (
   <Wrapper>
     <Center>
-      <StyledLink to="/" activeClassName="active">about me</StyledLink>
+      <StyledLink to="/" activeClassName="active">
+        about me
+      </StyledLink>
       <Separator>/</Separator>
-      <StyledLink to="/projects" activeClassName="active">projects</StyledLink>
+      <StyledLink to="/resume" activeClassName="active">
+        resume
+      </StyledLink>
+      <Separator>/</Separator>
+      <StyledLink to="/projects" activeClassName="active">
+        projects
+      </StyledLink>
     </Center>
   </Wrapper>
 );

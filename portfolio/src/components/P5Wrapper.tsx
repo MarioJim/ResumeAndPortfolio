@@ -32,7 +32,10 @@ export interface P5WrapperState {
   wrapper: HTMLElement;
 }
 
-export default class P5Wrapper extends React.Component<P5WrapperProps, P5WrapperState> {
+export default class P5Wrapper extends React.Component<
+  P5WrapperProps,
+  P5WrapperState
+> {
   wrapper: HTMLElement;
 
   constructor(props: any) {
@@ -40,7 +43,7 @@ export default class P5Wrapper extends React.Component<P5WrapperProps, P5Wrapper
     this.state = {
       sketch: props.sketch,
       canvas: null,
-      wrapper: null
+      wrapper: null,
     };
   }
 
@@ -48,20 +51,23 @@ export default class P5Wrapper extends React.Component<P5WrapperProps, P5Wrapper
     const canvas = new p5(this.state.sketch, this.wrapper);
     this.setState({
       canvas: canvas,
-      wrapper: this.wrapper
-    })
+      wrapper: this.wrapper,
+    });
   }
 
-  static getDerivedStateFromProps(props: P5WrapperProps, state: P5WrapperState) {
+  static getDerivedStateFromProps(
+    props: P5WrapperProps,
+    state: P5WrapperState,
+  ) {
     let canvas = state.canvas;
     if (state.sketch !== props.sketch) {
       state.wrapper.removeChild(state.wrapper.childNodes[0]);
       canvas.remove();
-      canvas = new p5(props.sketch, state.wrapper)
+      canvas = new p5(props.sketch, state.wrapper);
       return {
         ...state,
         sketch: props.sketch,
-        canvas: canvas
+        canvas: canvas,
       };
     }
     return state;
@@ -74,7 +80,7 @@ export default class P5Wrapper extends React.Component<P5WrapperProps, P5Wrapper
   render() {
     return (
       <React.Fragment>
-        <Wrapper ref={wrapper => this.wrapper = wrapper} />
+        <Wrapper ref={wrapper => (this.wrapper = wrapper)} />
         <Error>For a better experience, open this in a wider screen.</Error>
       </React.Fragment>
     );

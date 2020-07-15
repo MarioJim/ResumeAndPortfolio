@@ -1,4 +1,4 @@
 export interface FileToWrite {
-  filepath: string
-  filedata: string
+  filepath: string;
+  filedata: string;
 }

@@ -7,11 +7,13 @@ const StyledLink = styled.a`
   opacity: 0.8;
   margin: 0 10px;
   transition: opacity 0.2s ease-in-out;
-  &:hover { opacity: 1; }
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 interface Props {
-  socialLink: SocialLink
+  socialLink: SocialLink;
 }
 
 const SocialIcon: React.FC<Props> = ({ socialLink }) => {
@@ -21,6 +23,6 @@ const SocialIcon: React.FC<Props> = ({ socialLink }) => {
       <Icon size="2.8em" />
     </StyledLink>
   );
-}
+};
 
 export default SocialIcon;

@@ -8,8 +8,7 @@
   ],
   "scripts": {
     "clean": "if [ -d \"lib\" ]; then rm -r lib; fi",
-    "compile": "tsc --noImplicitUseStrict",
-    "build": "yarn clean && yarn compile",
+    "build": "tsc --noImplicitUseStrict",
     "prepare": "yarn build"
   },
   "author": "MarioJim",

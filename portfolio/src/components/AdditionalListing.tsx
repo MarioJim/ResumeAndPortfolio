@@ -3,7 +3,7 @@ import { AdditionalProject } from 'data';
 import { Wrapper, Title, Date, Points, Point } from './shared-components';
 
 interface Props {
-  additional: AdditionalProject
+  additional: AdditionalProject;
 }
 
 const AdditionalListing: React.FC<Props> = ({ additional }) => {
@@ -20,6 +20,6 @@ const AdditionalListing: React.FC<Props> = ({ additional }) => {
       </Points>
     </Wrapper>
   );
-}
+};
 
 export default AdditionalListing;

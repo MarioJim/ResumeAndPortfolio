@@ -1,13 +1,27 @@
 export interface Project {
-  title: string
-  subtitle: string
-  date: string
-  points: string[]
-  link: string
-  includeInCV: boolean
+  title: string;
+  subtitle: string;
+  date: string;
+  points: string[];
+  link: string;
+  includeInCV: boolean;
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Alvap Store Prototype',
+    subtitle:
+      'A store prototype with a React frontend and a Express and SQLite backend',
+    date: 'Fourth semester',
+    points: [
+      'Frontend developed using Create React App with TypeScript, styled components and react-router',
+      'Backend based on Express routes, and using a SQLite database to make it portable and self-contained',
+      'Written in TypeScript to improve readability through type checking',
+      'Uploaded and hosted on a Heroku server',
+    ],
+    link: 'https://github.com/MarioJim/alvap-store',
+    includeInCV: true,
+  },
   {
     title: 'Resume and Portfolio',
     subtitle: 'LaTeX pdf and React App compiled from the same database',
@@ -32,23 +46,11 @@ export const projects: Project[] = [
     link: 'https://github.com/MarioJim/CaveDungeon',
     includeInCV: true,
   },
-  {
-    title: 'Knocki App mockup',
-    subtitle: 'Port of my Design Fundament\'s final project to React + TypeScript',
-    date: 'Summer 2019',
-    points: [
-      'Built using Create React App and Redux',
-      'Written in TypeScript to improve readability through type checking',
-      'Uploaded and hosted on a Heroku server',
-    ],
-    link: 'https://github.com/MarioJim/knocki-app',
-    includeInCV: true,
-  },
 ];
 
 export const allowedRepos: number[] = [
   206996709, // ResumeAndPortfolio
-  207170678, // mariojim.github.io
+  267439763, // alvap-store
   196892751, // knocki-app
   201521942, // CaveDungeon
   220822569, // PatasTeam/GraphicAVLTree

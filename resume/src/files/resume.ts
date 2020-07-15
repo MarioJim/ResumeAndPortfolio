@@ -12,7 +12,7 @@ const filecontent = (files: FileToWrite[]) =>
 \\patchcmd{\\@sectioncolor}{\\color}{\\mdseries\\color}{}{}
 \\makeatother
 
-\\name{${myProfile.name.split(" ")[0]}}{${myProfile.name.split(" ")[1]}}
+\\name{${myProfile.name.split(' ')[0]}}{${myProfile.name.split(' ')[1]}}
 \\position{${myProfile.description}}
 \\mobile{${myProfile.phone}}
 \\email{${myProfile.mail}}
@@ -25,10 +25,9 @@ const filecontent = (files: FileToWrite[]) =>
 ${files.map(({ filepath }) => `  \\input{${filepath}}`).join('\n')}
 \\end{document}`;
 
-const file: (files: FileToWrite[]) => FileToWrite =
-  (files: FileToWrite[]) => ({
-    filepath: 'resume.tex',
-    filedata: filecontent(files),
-  });
+const file: (files: FileToWrite[]) => FileToWrite = (files: FileToWrite[]) => ({
+  filepath: 'resume.tex',
+  filedata: filecontent(files),
+});
 
 export default file;

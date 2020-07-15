@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 30% 70%;
   margin-top: 6px;
-  
+
   @media (max-width: 820px) {
     display: block;
   }
@@ -21,7 +21,7 @@ const Point = styled.p`
 `;
 
 interface Props {
-  skill: Skill
+  skill: Skill;
 }
 
 const SkillListing: React.FC<Props> = ({ skill }) => {
@@ -32,6 +32,6 @@ const SkillListing: React.FC<Props> = ({ skill }) => {
       <Point>{points}</Point>
     </Wrapper>
   );
-}
+};
 
 export default SkillListing;

@@ -22,9 +22,6 @@ const resumeFile = resume(files);
 
 files.push(resumeFile);
 
-files.forEach(
-  file => fs.writeFileSync(
-    path.join('.', 'build', file.filepath),
-    file.filedata
-  )
+files.forEach(file =>
+  fs.writeFileSync(path.join('.', 'build', file.filepath), file.filedata),
 );

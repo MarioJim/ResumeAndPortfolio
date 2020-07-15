@@ -1,13 +1,13 @@
 export interface AdditionalProject {
-  title: string
-  date: string
-  location: string
-  points: string[]
+  title: string;
+  date: string;
+  location: string;
+  points: string[];
 }
 
 export const additional: AdditionalProject[] = [
   {
-    title: 'Participated in ICPC\'s Gran Premio de México 2019',
+    title: "Participated in ICPC's Gran Premio de México 2019",
     date: 'May, September 2019',
     location: 'Mexico City, Mexico',
     points: [
@@ -16,7 +16,7 @@ export const additional: AdditionalProject[] = [
     ],
   },
   {
-    title: 'First place on Banorte\'s Challenge at HackMTY 2019',
+    title: "First place on Banorte's Challenge at HackMTY 2019",
     date: 'August 2019',
     location: 'Monterrey, Mexico',
     points: [

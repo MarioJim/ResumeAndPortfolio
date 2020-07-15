@@ -36,7 +36,7 @@ const SectionTitle = styled.h2`
   font-weight: ${fonts.bold};
 
   &:before {
-    content: "";
+    content: '';
     width: 30px;
     height: 30px;
     border-radius: 100%;
@@ -47,7 +47,7 @@ const SectionTitle = styled.h2`
     top: 8px;
     border: 7px solid ${colors.background};
     box-sizing: border-box;
-    
+
     @media (max-width: 820px) {
       content: none;
     }
