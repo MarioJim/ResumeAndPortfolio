@@ -25,7 +25,7 @@ const StyledLink = styled(Link)<{ activeClassName: string }>`
   color: white;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.4em;
+  font-size: 1.2em;
 
   &.${props => props.activeClassName} {
     font-weight: ${fonts.bold};

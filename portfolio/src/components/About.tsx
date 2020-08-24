@@ -32,7 +32,7 @@ const Section = styled.section`
 
 const SectionTitle = styled.h2`
   margin: 0;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: ${fonts.bold};
 
   &:before {

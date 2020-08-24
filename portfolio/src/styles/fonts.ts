@@ -1,3 +1,3 @@
-export const name = 'Source Sans Pro';
+export const name = 'Inter';
 export const light = '300';
 export const bold = '600';

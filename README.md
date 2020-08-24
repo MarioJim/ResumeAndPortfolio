@@ -15,7 +15,7 @@ TypeScript module to keep the same database for building my resume and my portfo
 
 ## Portfolio
 
-My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Written in React and TypeScript and compiled with [Gatsby.js](https://www.gatsbyjs.org/), with a design based on [kitze.io](https://kitze.io/).
+My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Written in React and TypeScript and compiled with [Gatsby.js](https://www.gatsbyjs.org/).
 
 ## Resume
 

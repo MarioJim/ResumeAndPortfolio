@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Mario Jiménez',
-    description: 'MarioJim\'s portfolio',
+    description: "MarioJim's portfolio",
     author: 'MarioJim',
     siteUrl: 'https://mariojim.github.io/',
   },
@@ -33,9 +33,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Source Sans Pro\:300,400,600'],
+        fonts: ['Inter:300,400,600'],
         display: 'swap',
-      }
+      },
     },
     'gatsby-plugin-sharp',
     {

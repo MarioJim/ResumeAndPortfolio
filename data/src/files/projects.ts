@@ -60,4 +60,5 @@ export const allowedRepos: number[] = [
   259530650, // grammar-parsing-tree
   172366859, // mTouch
   245031161, // KevinTMtz/GunnedDown
+  282499927, // memory_admin_simulator
 ];

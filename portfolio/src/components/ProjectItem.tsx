@@ -11,7 +11,7 @@ const ItemWrapper = styled.a`
   margin: 0 auto 24px auto;
   border-radius: 8px;
   color: black;
-  background-color: #fafafa;
+  background-color: #f5f5f5;
   width: 90%;
   text-decoration: none;
 `;
@@ -20,7 +20,7 @@ const Image = styled.img`
   display: block;
   margin: 4px;
   height: 25vw;
-  max-height: 250px;
+  max-height: 240px;
   border-radius: 4px;
   @media (max-width: 820px) {
     height: auto;

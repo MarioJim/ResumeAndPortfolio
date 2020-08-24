@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 6px 0;
   display: inline-block;
 
@@ -45,7 +45,6 @@ export const Link = styled.a`
 
 export const Date = styled.p`
   float: right;
-  font-size: 18px;
   font-weight: ${fonts.light};
 
   @media (max-width: 820px) {
@@ -54,7 +53,6 @@ export const Date = styled.p`
 `;
 
 export const Location = styled.p`
-  font-size: 18px;
   font-weight: ${fonts.light};
   margin-bottom: 6px;
 `;
@@ -67,6 +65,6 @@ export const Points = styled.ul`
 
 export const Point = styled.li`
   font-weight: ${fonts.light};
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 4px;
 `;
