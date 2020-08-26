@@ -28,7 +28,7 @@ export const projects: Project[] = [
     date: 'Since third semester',
     points: [
       'Wrote TypeScript packages for compiling the data to a static React website and to .tex files',
-      'Controlled with a shell script that builds both projects starting from a fresh git clone',
+      'Encapsulated my development environment within a Docker container so that it can be easily and exactly replicated with Visual Studio Code and the Remote - Containers extension',
       'Website hosted on GitHub Pages (mariojim.github.io)',
     ],
     link: 'https://github.com/MarioJim/ResumeAndPortfolio',

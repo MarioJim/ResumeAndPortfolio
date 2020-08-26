@@ -9,6 +9,8 @@ Repository to version control my resume and portfolio.
 
 Managed with [Yarn workspaces](https://classic.yarnpkg.com/blog/2017/08/02/introducing-workspaces/) and built with a [shell script](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/build.sh).
 
+Using the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) Visual Studio Code extension to generate the development environment needed to compile the LaTeX pdf and Gatsby SPA from a [Docker image](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/.devcontainer/Dockerfile).
+
 ## Data
 
 TypeScript module to keep the same database for building my resume and my portfolio.
@@ -20,16 +22,3 @@ My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Writ
 ## Resume
 
 Compiles from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
-
-### Installation
-
-Using [texlive-core](https://www.archlinux.org/packages/extra/any/texlive-core/) and [tllocalmgr-git](https://aur.archlinux.org/packages/tllocalmgr-git/) to install these dependencies from CTAN:
-
-- enumitem
-- environ
-- ifmtarg
-- sourcesanspro
-- tcolorbox
-- trimspaces
-- xifthen
-- fontawesome5

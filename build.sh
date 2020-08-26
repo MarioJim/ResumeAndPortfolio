@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 COPY_FILES=false
 QUIET=false # 0 (quiet), 1 (normal), 2 (verbose)
@@ -18,7 +18,7 @@ HELP
 }
 
 parse() {
-    while [[ "$1" == -* ]]; do
+    while [[ $# -gt 0 ]]; do
         case "$1" in
             -c|--copy) COPY_FILES=true;;
             -C|--only-copy) copyToRepo; exit 0;;
@@ -30,14 +30,6 @@ parse() {
     done
 }
 
-checkDependencies() {
-    echo " ✔ Checking dependencies"
-    [ -x "$(command -v xelatex)" ] || {
-        echo "xelatex not installed, run 'yay -S texlive-bin'"
-        exit 1
-    }
-}
-
 log() {
     [ "$QUIET" = true ] &&"$@" &>/dev/null || "$@"
 }
@@ -45,7 +37,7 @@ log() {
 cloneRepo() {
     echo " ✔ Cloning server repository"
     pushd .. > /dev/null
-    log git clone git@github.com:MarioJim/mariojim.github.io.git
+    log git clone https://github.com/MarioJim/mariojim.github.io.git
     popd > /dev/null
 }
 
@@ -64,7 +56,6 @@ copyToRepo() {
 }
 
 parse "$@"
-checkDependencies
 echo " ✔ Installing and symlinking dependecies"
 log yarn install
 echo " ✔ Compiling data module"

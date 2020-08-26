@@ -6,7 +6,7 @@
   "author": "Mario Jiménez",
   "scripts": {
     "clean": "rm -rf public .cache",
-    "build": "yarn clean && gatsby build",
+    "build": "GATSBY_TELEMETRY_DISABLED=1 && yarn clean && gatsby build",
     "develop": "gatsby develop"
   },
   "dependencies": {
