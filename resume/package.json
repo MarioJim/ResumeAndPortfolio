@@ -11,8 +11,8 @@
     "copyStatic": "cp -r static/* build",
     "compile2pdf": "cd build && xelatex resume.tex",
     "compile": "yarn compile2tex && yarn copyStatic && yarn compile2pdf",
-    "copy": "cp build/resume.pdf ../portfolio/static/resume.pdf",
-    "build": "yarn prepare && yarn compile && yarn copy && yarn clean"
+    "build": "yarn prepare && yarn compile",
+    "move": "mv build/resume.pdf ../portfolio/public && yarn clean"
   },
   "author": "MarioJim",
   "license": "MIT",
