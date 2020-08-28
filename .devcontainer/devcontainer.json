@@ -1,11 +1,10 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
   "name": "ResumeAndPortfolio",
-  "dockerfile": "Dockerfile",
+  "image": "mariojim/resume-portfolio:latest",
   "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
   "forwardPorts": [8000],
   "postCreateCommand": "yarn install",
-  "dockerFile": "Dockerfile",
   "context": "..",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"

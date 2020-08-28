@@ -1,5 +1,3 @@
-const data = require('data');
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   actions.setWebpackConfig({
     module: {
@@ -7,7 +5,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         {
           test: /\.(graphql|gql)$/,
           exclude: /node_modules/,
-          loader: "graphql-tag/loader",
+          loader: 'graphql-tag/loader',
         },
       ],
     },

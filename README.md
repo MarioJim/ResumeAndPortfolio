@@ -9,7 +9,9 @@ Repository to version control my resume and portfolio.
 
 Managed with [Yarn workspaces](https://classic.yarnpkg.com/blog/2017/08/02/introducing-workspaces/) and built with a [shell script](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/build.sh).
 
-Using the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) Visual Studio Code extension to generate the development environment needed to compile the LaTeX pdf and Gatsby SPA from a [Docker image](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/.devcontainer/Dockerfile).
+Using the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) Visual Studio Code extension to generate the development environment needed to compile the LaTeX pdf and Gatsby project from a [Docker image](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/Dockerfile).
+
+Continuous deployment on every push thanks to [GitHub actions](https://github.com/MarioJim/ResumeAndPortfolio/blob/master/.github/workflows/deployment.yml), using the same Docker image.
 
 ## Data
 

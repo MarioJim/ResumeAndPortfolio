@@ -1,0 +1,44 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Continuous Deployment to mariojim.github.io
+    runs-on: ubuntu-latest
+    container:
+      image: mariojim/resume-portfolio:latest
+      env:
+        GRAPHQL_GITHUB_KEY: ${{ secrets.GRAPHQL_GITHUB_KEY }}
+        API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
+
+    steps:
+      - name: Clone source
+        uses: actions/checkout@v2
+        with:
+          path: 'source'
+
+      - name: Clone website repo
+          uses: actions/checkout@v2
+          with:
+            repository: MarioJim/mariojim.github.io
+            path: 'website'
+            token: ${{ secrets.API_KEY_GITHUB_REPO }}
+
+      - name: Build website
+        run: |
+          rm -rf ./website/*
+          git restore LICENSE README.md
+          ./source/build.sh
+          mv ./source/portfolio/public/* ./website
+
+      - name: Push website repo
+        run: |
+          cd website
+          git config user.name MarioJim
+          git config user.mail mario.emilio.j@gmail.com
+          git commit -m "[CD] $COMMIT_NAME"
+          git push

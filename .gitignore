@@ -10,8 +10,9 @@ yarn-error.log*
 /data/lib
 
 # Compiled portfolio
-/portfolio/public
 /portfolio/.cache
+/portfolio/public
+/portfolio/static
 
 # Compiled resume
 /resume/build
