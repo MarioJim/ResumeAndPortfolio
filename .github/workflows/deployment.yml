@@ -30,12 +30,14 @@ jobs:
 
       - name: Build website
         run: |
-          ./source/build.sh
-          cd website
+          cd source
+          ./build.sh
+          cd ../website
           git rm -r *
           git restore LICENSE README.md
           mv ../source/portfolio/public/* .
           git add *
+
       - name: Push website repo
         run: |
           cd website
