@@ -41,7 +41,7 @@ jobs:
       - name: Push website repo
         run: |
           cd website
-          git config user.name MarioJim
-          git config user.mail mario.emilio.j@gmail.com
+          git config --global user.name "MarioJim"
+          git config --global user.email "mario.emilio.j@gmail.com"
           git commit -m "[CD] $COMMIT_NAME"
           git push
