@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import HeaderLink from './HeaderLink';
 import * as colors from '../styles/colors';
 import * as fonts from '../styles/fonts';
 
@@ -21,17 +21,6 @@ const Center = styled.div`
   align-items: center;
 `;
 
-const StyledLink = styled(Link)<{ activeClassName: string }>`
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1.2em;
-
-  &.${props => props.activeClassName} {
-    font-weight: ${fonts.bold};
-  }
-`;
-
 const Separator = styled.div`
   margin: 0 30px;
   font-size: 1.4em;
@@ -41,17 +30,11 @@ const Separator = styled.div`
 const Header: React.FC = () => (
   <Wrapper>
     <Center>
-      <StyledLink to="/" activeClassName="active">
-        about me
-      </StyledLink>
+      <HeaderLink to="/" title="about me" partiallyActive={false} />
       <Separator>/</Separator>
-      <StyledLink to="/resume" activeClassName="active">
-        resume
-      </StyledLink>
+      <HeaderLink to="/resume" title="resume" />
       <Separator>/</Separator>
-      <StyledLink to="/projects" activeClassName="active">
-        projects
-      </StyledLink>
+      <HeaderLink to="/projects" title="projects" />
     </Center>
   </Wrapper>
 );

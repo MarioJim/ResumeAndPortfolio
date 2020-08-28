@@ -6,7 +6,7 @@ import * as fonts from '../styles/fonts';
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
   margin-top: 6px;
 
   @media (max-width: 820px) {

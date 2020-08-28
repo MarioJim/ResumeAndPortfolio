@@ -15,18 +15,20 @@ const StyledSide = styled.div`
 
 const Title = styled.h1`
   margin-top: 20px;
+  margin-bottom: 4px;
   font-size: 2em;
+  font-weight: ${fonts.bold};
 `;
 
 const Description = styled.h3`
-  font-size: 1.3em;
-  font-weight: ${fonts.light};
+  font-size: 1.2em;
   text-align: center;
 `;
 
 const SocialIconsWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 `;
 

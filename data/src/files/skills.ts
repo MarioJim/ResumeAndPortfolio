@@ -11,10 +11,10 @@ export const skills: Skill[] = [
   },
   {
     title: 'Frameworks',
-    points: 'React, D3.js, Express, Flutter, JavaFX',
+    points: 'React, D3.js, Flutter, Express, JavaFX',
   },
   {
     title: 'Tools',
-    points: 'Git, SQL (MySQL/MariaDB), Chrome DevTools',
+    points: 'Git, SQL (MySQL/MariaDB), Docker, Chrome DevTools',
   },
 ];

@@ -3,7 +3,8 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/MarioJim/ResumeAndPortfolio)
 ![GitHub language count](https://img.shields.io/github/languages/count/MarioJim/ResumeAndPortfolio)
 ![GitHub last commit](https://img.shields.io/github/last-commit/MarioJim/ResumeAndPortfolio)
-![GitHub deployments](https://img.shields.io/github/deployments/MarioJim/mariojim.github.io/github-pages)
+![GitHub deployment](https://img.shields.io/github/workflow/status/MarioJim/ResumeAndPortfolio/Continuous%20Deployment)
+![GitHub pages](https://img.shields.io/github/deployments/MarioJim/mariojim.github.io/github-pages)
 
 Repository to version control my resume and portfolio.
 

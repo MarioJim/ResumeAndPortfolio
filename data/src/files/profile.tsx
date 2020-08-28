@@ -22,7 +22,7 @@ const github = 'MarioJim';
 
 export const myProfile: Profile = {
   name: 'Mario Jiménez',
-  description: 'Computer Science Student',
+  description: "Hi! I'm currently studying Software Engineering in Mexico City",
   phone: '(+52) 961 2096280',
   mail,
   github,
@@ -39,7 +39,7 @@ export const myProfile: Profile = {
     },
     {
       title: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/mariojim/',
+      link: 'https://linkedin.com/in/mariojim/',
       icon: props => <FaLinkedin {...props} />,
     },
   ],
