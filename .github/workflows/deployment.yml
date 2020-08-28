@@ -28,19 +28,23 @@ jobs:
           path: 'website'
           token: ${{ secrets.API_KEY_GITHUB_REPO }}
 
-      - name: Build website
+      - name: Diagnostics
         run: |
-          mv ./website/.git .
-          rm -rf ./website/*
-          mv ./.git ./website/
-          git restore LICENSE README.md
-          ./source/build.sh
-          mv ./source/portfolio/public/* ./website
-
-      - name: Push website repo
-        run: |
-          cd website
-          git config user.name MarioJim
-          git config user.mail mario.emilio.j@gmail.com
-          git commit -m "[CD] $COMMIT_NAME"
-          git push
+          ls
+          pwd
+          echo "GITHUB_WORKSPACE = " $GITHUB_WORKSPACE
+      # - name: Build website
+      #   run: |
+      #     mv ./website/.git .
+      #     rm -rf ./website/*
+      #     mv ./.git ./website/
+      #     git restore LICENSE README.md
+      #     ./source/build.sh
+      #     mv ./source/portfolio/public/* ./website
+      # - name: Push website repo
+      #   run: |
+      #     cd website
+      #     git config user.name MarioJim
+      #     git config user.mail mario.emilio.j@gmail.com
+      #     git commit -m "[CD] $COMMIT_NAME"
+      #     git push
