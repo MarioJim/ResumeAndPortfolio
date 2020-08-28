@@ -30,7 +30,9 @@ jobs:
 
       - name: Build website
         run: |
+          mv ./website/.git .
           rm -rf ./website/*
+          mv ./.git ./website/
           git restore LICENSE README.md
           ./source/build.sh
           mv ./source/portfolio/public/* ./website
