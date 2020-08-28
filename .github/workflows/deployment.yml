@@ -22,11 +22,11 @@ jobs:
           path: 'source'
 
       - name: Clone website repo
-          uses: actions/checkout@v2
-          with:
-            repository: MarioJim/mariojim.github.io
-            path: 'website'
-            token: ${{ secrets.API_KEY_GITHUB_REPO }}
+        uses: actions/checkout@v2
+        with:
+          repository: MarioJim/mariojim.github.io
+          path: 'website'
+          token: ${{ secrets.API_KEY_GITHUB_REPO }}
 
       - name: Build website
         run: |
