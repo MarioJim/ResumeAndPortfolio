@@ -43,5 +43,5 @@ jobs:
           cd website
           git config --global user.name "MarioJim"
           git config --global user.email "mario.emilio.j@gmail.com"
-          git commit -m "[CD] $COMMIT_NAME"
+          git commit -m "[CD] $(git log -1 --pretty=%B)"
           git push
