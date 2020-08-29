@@ -1,6 +1,5 @@
 import React from 'react';
 import 'minireset.css';
-import 'animate.css';
 
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/Layout';

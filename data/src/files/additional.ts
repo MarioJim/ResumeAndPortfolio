@@ -20,7 +20,8 @@ export const additional: AdditionalProject[] = [
     date: 'August 2019',
     location: 'Monterrey, Mexico',
     points: [
-      'Made an Android app prototype that accurately blocks phishing links and ads',
+      'Developed an Android app prototype that accurately blocks phishing links and ads',
+      "Competed against about 200 teams in Mexico's largest student hackathon",
     ],
   },
 ];
