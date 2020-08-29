@@ -65,6 +65,6 @@ export const Points = styled.ul`
 
 export const Point = styled.li`
   font-weight: ${fonts.light};
-  font-size: 17px;
+  font-size: 1.05em;
   margin-bottom: 4px;
 `;

@@ -5,6 +5,7 @@ import * as fonts from '../styles/fonts';
 export const Root = styled.div`
   min-height: calc(100vh - 60px);
   font-family: ${fonts.name}, sans-serif;
+  font-weight: ${fonts.regular};
   background-color: ${colors.background};
   color: ${colors.font};
 `;

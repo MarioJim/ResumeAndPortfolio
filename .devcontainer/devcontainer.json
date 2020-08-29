@@ -7,5 +7,6 @@
   "postCreateCommand": "yarn install",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
-  }
+  },
+  "runArgs": ["--cpus=0.000"]
 }

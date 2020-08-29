@@ -26,7 +26,7 @@ const SocialIcon: React.FC<Props> = ({ socialLink }) => {
     ? link.split('//')[1]
     : link.split(':')[1];
   return (
-    <StyledLink target="_blank" href={link} title={title}>
+    <StyledLink target="_blank" href={link} title={title} rel="noopener">
       <Icon size="2.3em" />
       <p>{cleanTitle}</p>
     </StyledLink>

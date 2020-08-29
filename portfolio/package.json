@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf public .cache",
     "build": "GATSBY_TELEMETRY_DISABLED=1 && yarn clean && gatsby build",
-    "develop": "gatsby develop"
+    "start": "GATSBY_TELEMETRY_DISABLED=1 gatsby develop"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
