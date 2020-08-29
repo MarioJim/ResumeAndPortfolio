@@ -32,6 +32,7 @@ jobs:
         run: |
           cd source
           ./build.sh
+          echo "::set-env name=LAST_COMMIT_MESSAGE::$(git log -1 --pretty=%B)"
           cd ../website
           git rm -r .
           git restore --staged LICENSE README.md
@@ -43,5 +44,5 @@ jobs:
           cd website
           git config --global user.name "MarioJim"
           git config --global user.email "mario.emilio.j@gmail.com"
-          git commit -m "[CD] $(git log -1 --pretty=%B)"
+          git commit -m "[CD] $LAST_COMMIT_MESSAGE"
           git push
