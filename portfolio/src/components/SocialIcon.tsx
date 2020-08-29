@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialLink } from 'data';
+import { IconType } from 'react-icons/lib/cjs';
 import styled from '@emotion/styled';
 
 const StyledLink = styled.a`
@@ -17,20 +17,27 @@ const StyledLink = styled.a`
 `;
 
 interface Props {
-  socialLink: SocialLink;
+  title: string;
+  link_base: string;
+  link_protocol: string;
+  icon: IconType;
 }
 
-const SocialIcon: React.FC<Props> = ({ socialLink }) => {
-  const { link, title, icon: Icon } = socialLink;
-  const cleanTitle = link.startsWith('http')
-    ? link.split('//')[1]
-    : link.split(':')[1];
-  return (
-    <StyledLink target="_blank" href={link} title={title} rel="noopener">
-      <Icon size="2.3em" />
-      <p>{cleanTitle}</p>
-    </StyledLink>
-  );
-};
+const SocialIcon: React.FC<Props> = ({
+  title,
+  link_base,
+  link_protocol,
+  icon: Icon,
+}) => (
+  <StyledLink
+    target="_blank"
+    href={link_protocol + link_base}
+    title={title}
+    rel="noopener"
+  >
+    <Icon size="2.3em" />
+    <p>{link_base}</p>
+  </StyledLink>
+);
 
 export default SocialIcon;

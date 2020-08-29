@@ -8,6 +8,7 @@ const StyledLink = styled(Link)<{ activeClassName: string }>`
   cursor: pointer;
   text-decoration: none;
   font-size: 1.2em;
+  font-weight: ${fonts.light};
 
   &.${props => props.activeClassName} {
     font-weight: ${fonts.bold};

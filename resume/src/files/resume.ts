@@ -13,11 +13,11 @@ const filecontent = (files: FileToWrite[]) =>
 \\makeatother
 
 \\name{${myProfile.name.split(' ')[0]}}{${myProfile.name.split(' ')[1]}}
-\\position{${myProfile.description}}
-\\mobile{${myProfile.phone}}
+\\position{${myProfile.position}}
 \\email{${myProfile.mail}}
 \\homepage{mariojim.github.io}
-\\github{${myProfile.github}}
+\\github{github.com/${myProfile.github}}
+\\linkedin{linkedin.com/in/${myProfile.linkedin}}
 
 \\begin{document}
   \\makecvheader[C]

@@ -79,31 +79,36 @@ interface Props {
   tags: string[];
 }
 
-const ProjectItem: React.FC<Props> = props => {
-  const { image, title, owner, description, url, onlineDemo, tags } = props;
-  return (
-    <div style={{ position: 'relative' }}>
-      <ItemWrapper href={url} target="_blank" rel="noopener">
-        <Image src={image} />
-        <Title>
-          {owner && `${owner} / `}
-          <b>{title}</b>
-        </Title>
-        <Info>{description}</Info>
-        <Tags>
-          {tags.map((tag, i) => (
-            <Tag key={`${title}-${i}`}>{tag}</Tag>
-          ))}
-        </Tags>
-      </ItemWrapper>
-      {onlineDemo && (
-        <OnlineDemoBtn href={onlineDemo} target="_blank" rel="noopener">
-          Check it out
-          <br /> online!
-        </OnlineDemoBtn>
-      )}
-    </div>
-  );
-};
+const ProjectItem: React.FC<Props> = ({
+  image,
+  title,
+  owner,
+  description,
+  url,
+  onlineDemo,
+  tags,
+}) => (
+  <div style={{ position: 'relative' }}>
+    <ItemWrapper href={url} target="_blank" rel="noopener">
+      <Image src={image} />
+      <Title>
+        {owner && `${owner} / `}
+        {title}
+      </Title>
+      <Info>{description}</Info>
+      <Tags>
+        {tags.map((tag, i) => (
+          <Tag key={`${title}-${i}`}>{tag}</Tag>
+        ))}
+      </Tags>
+    </ItemWrapper>
+    {onlineDemo && (
+      <OnlineDemoBtn href={onlineDemo} target="_blank" rel="noopener">
+        Check it out
+        <br /> online!
+      </OnlineDemoBtn>
+    )}
+  </div>
+);
 
 export default ProjectItem;

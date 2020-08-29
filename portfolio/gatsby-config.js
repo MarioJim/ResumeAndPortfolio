@@ -29,7 +29,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-emotion',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
@@ -37,7 +36,6 @@ module.exports = {
         display: 'swap',
       },
     },
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -50,5 +48,6 @@ module.exports = {
         icon: 'src/images/favicon.png',
       },
     },
+    'gatsby-plugin-no-javascript',
   ],
 };

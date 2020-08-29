@@ -1,6 +1,6 @@
 import React from 'react';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import { myProfile } from 'data';
 import SocialIcon from './SocialIcon';
@@ -11,6 +11,12 @@ const StyledSide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+`;
+
+const ProfilePhoto = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 `;
 
 const Title = styled.h1`
@@ -33,32 +39,44 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const SideInfo: React.FC = () => {
-  const { placeholderImage } = useStaticQuery(
+  const query = useStaticQuery(
     graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "profilepic.jpeg" }) {
-          childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+        github {
+          viewer {
+            avatarUrl
+            bio
           }
         }
       }
     `,
   );
-  const { name, description, socialLinks } = myProfile;
+  const { avatarUrl, bio } = query.github.viewer;
+  const { name, mail, github, linkedin } = myProfile;
   return (
     <StyledSide>
-      <Img
-        style={{ width: '200px', height: '200px', borderRadius: '50%' }}
-        fluid={placeholderImage.childImageSharp.fluid}
-      />
+      <ProfilePhoto src={avatarUrl} />
       <Title>{name}</Title>
-      <Description>{description}</Description>
+      <Description>{bio}</Description>
       <SocialIconsWrapper>
-        {socialLinks.map((link, key) => (
-          <SocialIcon socialLink={link} key={key} />
-        ))}
+        <SocialIcon
+          title="Email"
+          link_protocol="mailto:"
+          link_base={mail}
+          icon={FaEnvelope}
+        />
+        <SocialIcon
+          title="GitHub"
+          link_protocol="https://"
+          link_base={`github.com/${github}/`}
+          icon={FaGithub}
+        />
+        <SocialIcon
+          title="LinkedIn"
+          link_protocol="https://"
+          link_base={`linkedin.com/in/${linkedin}`}
+          icon={FaLinkedin}
+        />
       </SocialIconsWrapper>
     </StyledSide>
   );
