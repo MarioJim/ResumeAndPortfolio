@@ -7,12 +7,12 @@
   "scripts": {
     "clean": "rm -rf public .cache",
     "build": "yarn clean && GATSBY_TELEMETRY_DISABLED=1 gatsby build",
+    "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
     "start": "GATSBY_TELEMETRY_DISABLED=1 gatsby develop"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@types/p5": "^0.9.0",
     "@types/react-helmet": "^5.0.15",
     "animate.css": "^3.7.2",
     "data": "^1.1.0",
@@ -27,7 +27,6 @@
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-source-graphql": "^2.5.2",
     "minireset.css": "^0.0.6",
-    "p5": "^0.10.2",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",

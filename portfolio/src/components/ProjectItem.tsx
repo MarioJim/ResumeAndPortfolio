@@ -75,7 +75,7 @@ interface Props {
   owner: string;
   description: string;
   url: string;
-  onlineDemo?: string;
+  website?: string;
   tags: string[];
 }
 
@@ -85,12 +85,12 @@ const ProjectItem: React.FC<Props> = ({
   owner,
   description,
   url,
-  onlineDemo,
+  website,
   tags,
 }) => (
   <div style={{ position: 'relative' }}>
     <ItemWrapper href={url} target="_blank" rel="noopener">
-      <Image src={image} />
+      <Image src={image} alt={`${title} repo image`} />
       <Title>
         {owner && `${owner} / `}
         {title}
@@ -102,8 +102,8 @@ const ProjectItem: React.FC<Props> = ({
         ))}
       </Tags>
     </ItemWrapper>
-    {onlineDemo && (
-      <OnlineDemoBtn href={onlineDemo} target="_blank" rel="noopener">
+    {website && (
+      <OnlineDemoBtn href={website} target="_blank" rel="noopener">
         Check it out
         <br /> online!
       </OnlineDemoBtn>

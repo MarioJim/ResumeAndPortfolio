@@ -44,7 +44,7 @@ const SideInfo: React.FC = () => {
       query {
         github {
           viewer {
-            avatarUrl
+            avatarUrl(size: 400)
             bio
           }
         }
@@ -55,7 +55,7 @@ const SideInfo: React.FC = () => {
   const { name, mail, github, linkedin } = myProfile;
   return (
     <StyledSide>
-      <ProfilePhoto src={avatarUrl} />
+      <ProfilePhoto src={avatarUrl} alt="Profile photo" />
       <Title>{name}</Title>
       <Description>{bio}</Description>
       <SocialIconsWrapper>
