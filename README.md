@@ -25,3 +25,7 @@ My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Writ
 ## Resume
 
 Compiles from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
+
+## Languages widget
+
+Using a virtual DOM, creates a SVG element of a graph with my most used languages with data pulled from the GitHub GraphQL API. Inspired in [anuraghazra's similar card](https://github.com/anuraghazra/github-readme-stats#top-languages-card)

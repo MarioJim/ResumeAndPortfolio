@@ -19,6 +19,7 @@ export const renderSVG = (languages: Language[]): string => {
 };
 
 const setupSvg = (svg: HTMLElement) => {
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svg.setAttribute('width', `${width}`);
   svg.setAttribute('height', `${height}`);
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);

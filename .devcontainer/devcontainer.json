@@ -2,7 +2,11 @@
 {
   "name": "ResumeAndPortfolio",
   "image": "mariojim/resume-portfolio:latest",
-  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "tomoki1207.pdf"
+  ],
   "forwardPorts": [8000],
   "postCreateCommand": "yarn install",
   "settings": {
