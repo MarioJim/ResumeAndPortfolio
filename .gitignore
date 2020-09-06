@@ -9,6 +9,9 @@ yarn-error.log*
 # Compiled data module
 /data/lib
 
+# Compiled languages-widget
+languages-widget/widget.svg
+
 # Compiled portfolio
 /portfolio/.cache
 /portfolio/public
@@ -17,6 +20,6 @@ yarn-error.log*
 # Compiled resume
 /resume/build
 
-# Portfolio secrets
-portfolio/.env
+# Secrets
+.env
 

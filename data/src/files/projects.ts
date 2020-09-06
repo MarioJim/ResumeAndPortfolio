@@ -42,7 +42,6 @@ export const allowedRepos: number[] = [
   196892751, // knocki-app
   201521942, // CaveDungeon
   220822569, // PatasTeam/GraphicAVLTree
-  218893835, // dotfiles
   167217902, // CompetitiveProgramming
   252565333, // finite-automata-graph
   259530650, // grammar-parsing-tree

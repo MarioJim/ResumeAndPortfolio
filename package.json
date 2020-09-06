@@ -4,6 +4,7 @@
   "workspaces": {
     "packages": [
       "data",
+      "languages-widget",
       "resume",
       "portfolio"
     ]
