@@ -8,19 +8,19 @@ interface LanguagesMap {
 }
 
 export const transformRepos = (repos: RepositoryInfo[]): Language[] => {
-  const langNodes = repos
+  const languages = repos
     .flatMap(repo => repo.languages.edges)
-    .filter(lang => lang.node.color !== null);
-  const languages = langNodes.reduce<LanguagesMap>(
-    (languagesMap, { size, node: { name, color } }) => ({
-      ...languagesMap,
-      [name]: {
-        size: size + (languagesMap[name] ? languagesMap[name].size : 0),
-        color,
-      },
-    }),
-    {},
-  );
+    .filter(lang => lang.node.color !== null)
+    .reduce<LanguagesMap>(
+      (languagesMap, { size, node: { name, color } }) => ({
+        ...languagesMap,
+        [name]: {
+          size: languagesMap[name] ? languagesMap[name].size + size : size,
+          color,
+        },
+      }),
+      {},
+    );
   const top10Langs = Object.entries(languages)
     .map(([name, { size, color }]) => ({ name, size, color }))
     .sort((a, b) => b.size - a.size)

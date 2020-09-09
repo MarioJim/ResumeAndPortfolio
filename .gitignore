@@ -10,7 +10,7 @@ yarn-error.log*
 /data/lib
 
 # Compiled languages-widget
-languages-widget/widget.svg
+languages-widget/lang_widget.svg
 
 # Compiled portfolio
 /portfolio/.cache
