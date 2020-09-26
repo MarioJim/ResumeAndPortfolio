@@ -49,4 +49,5 @@ export const allowedRepos: number[] = [
   245031161, // KevinTMtz/GunnedDown
   282499927, // memory_admin_simulator
   255437430, // finite-automata-tui
+  296929253, // fuzzy-pdf
 ];
