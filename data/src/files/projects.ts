@@ -50,4 +50,5 @@ export const allowedRepos: number[] = [
   282499927, // memory_admin_simulator
   255437430, // finite-automata-tui
   296929253, // fuzzy-pdf
+  299703320, // critical_path_calc
 ];
