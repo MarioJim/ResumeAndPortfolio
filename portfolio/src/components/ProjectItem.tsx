@@ -30,6 +30,7 @@ const Image = styled.img`
 
 const Title = styled.h3`
   text-align: center;
+  font-weight: ${fonts.regular};
   font-size: 1.3em;
 `;
 

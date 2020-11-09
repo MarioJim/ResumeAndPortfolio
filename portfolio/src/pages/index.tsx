@@ -1,5 +1,4 @@
 import React from 'react';
-import 'minireset.css';
 import 'animate.css';
 
 import About from '../components/About';

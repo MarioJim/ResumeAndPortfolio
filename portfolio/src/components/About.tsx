@@ -54,33 +54,35 @@ const SectionTitle = styled.h2`
   }
 `;
 
+const animationClasses = 'animate__animated animate__fadeInUp';
+
 const About: React.FC = () => (
   <StyledWrapper>
-    <Section className="animated fadeInUp">
+    <Section className={animationClasses}>
       <SectionTitle>Experience</SectionTitle>
       {experiences.map((exp, key) => (
         <ExperienceListing exp={exp} key={key} />
       ))}
     </Section>
-    <Section className="animated fadeInUp">
+    <Section className={animationClasses}>
       <SectionTitle>Education</SectionTitle>
       {schools.map((school, key) => (
         <EducationListing school={school} key={key} />
       ))}
     </Section>
-    <Section className="animated fadeInUp">
+    <Section className={animationClasses}>
       <SectionTitle>Software Projects</SectionTitle>
       {projects.map((project, key) => (
         <ProjectListing project={project} key={key} />
       ))}
     </Section>
-    <Section className="animated fadeInUp">
+    <Section className={animationClasses}>
       <SectionTitle>Skills</SectionTitle>
       {skills.map((skill, key) => (
         <SkillListing skill={skill} key={key} />
       ))}
     </Section>
-    <Section className="animated fadeInUp">
+    <Section className={animationClasses}>
       <SectionTitle>Additional Experience and Awards</SectionTitle>
       {additional.map((add, key) => (
         <AdditionalListing additional={add} key={key} />
