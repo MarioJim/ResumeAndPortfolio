@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: 'Alvap Store prototype',
     subtitle:
       'A store prototype with a React frontend and a Express and SQLite backend',
-    date: 'Fourth semester',
+    date: 'May - June 2020',
     points: [
       'Frontend developed using Create React App with TypeScript, styled components and react-router',
       'Backend based on Express routes, and using a SQLite database to make it portable and self-contained',
@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     title: 'Resume and portfolio',
     subtitle: 'LaTeX pdf and React App compiled from the same database',
-    date: 'Since third semester',
+    date: 'Since September 2019',
     points: [
       'Wrote TypeScript packages for compiling the data to a static React website and to .tex files',
       'Encapsulated my development environment within a Docker container so that it can be easily replicated and used with Visual Studio Code and the Remote - Containers extension',

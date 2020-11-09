@@ -1,4 +1,3 @@
-%% Start of file `awesome-cv.cls'.
 % Awesome CV Class File
 %
 % This class has been downloaded from:
@@ -8,15 +7,9 @@
 % Claud D. Park <posquit0.bj@gmail.com>
 % http://www.posquit0.com
 %
-% Notes:
-% 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
-% 2) It has been written in such a way that under most circumstances you
-% should not need to edit it.
-%
 % Class license:
 % LPPL v1.3c (http://www.latex-project.org/lppl)
 %
-
 
 %-------------------------------------------------------------------------------
 %                Identification
@@ -27,10 +20,6 @@
 
 %-------------------------------------------------------------------------------
 %                Class options
-%
-% (need to be done before the external package loading, for example because
-% we need \paperwidth, \paperheight and \@ptsize to be defined before loading
-% geometry and fancyhdr)
 %-------------------------------------------------------------------------------
 % Options for draft or final
 \DeclareOption{draft}{\setlength\overfullrule{5pt}}
@@ -75,8 +64,6 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage[default,opentype]{sourcesanspro}
-% Needed for the photo ID
-\RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
@@ -101,17 +88,12 @@
 %                Configuration for layout
 %-------------------------------------------------------------------------------
 %% Page Layout
-% Configure page margins with geometry
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
 
 %% Header & Footer
-% Set offset to each header and footer
 \fancyhfoffset{0em}
-% Remove head rule
 \renewcommand{\headrulewidth}{0pt}
-% Clear all header & footer fields
 \fancyhf{}
-% Enable if you want to make header or footer using fancyhdr
 \pagestyle{fancy}
 
 
@@ -121,9 +103,6 @@
 % Gray-scale colors
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{5D5D5D}
-\definecolor{lightgray}{HTML}{999999}
 % Basic colors
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
@@ -132,19 +111,11 @@
 \definecolor{blue}{HTML}{2F718E}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
-\colorlet{text}{darkgray}
-\colorlet{graytext}{gray}
-\colorlet{lighttext}{lightgray}
-% Awesome colors
-\definecolor{awesome-emerald}{HTML}{00A388}
-\definecolor{awesome-skyblue}{HTML}{0395DE}
-\definecolor{awesome-red}{HTML}{DC3522}
-\definecolor{awesome-pink}{HTML}{EF4089}
-\definecolor{awesome-orange}{HTML}{FF6138}
-\definecolor{awesome-nephritis}{HTML}{27AE60}
-\definecolor{awesome-concrete}{HTML}{95A5A6}
-\definecolor{awesome-darknight}{HTML}{131A28}
-\colorlet{awesome}{awesome-red}
+\definecolor{text}{HTML}{333333}
+\definecolor{graytext}{HTML}{5D5D5D}
+\definecolor{lighttext}{HTML}{999999}
+% Awesome color
+\colorlet{awesome}{blue}
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
@@ -188,7 +159,6 @@
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{awesome} #1}}
-\newcommand*{\headeraddressstyle}[1]{{\fontsize{9pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{9pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
@@ -224,23 +194,6 @@
 %-------------------------------------------------------------------------------
 %                Commands for personal information
 %-------------------------------------------------------------------------------
-% Define photo ID
-% Usage: \photo[circle|rectangle,edge|noedge,left|right]{<path-to-image>}
-\newcommand{\photo}[2][circle,edge,left]{%
-  \def\@photo{#2}
-  \@for\tmp:=#1\do{%
-    \ifthenelse{\equal{\tmp}{circle} \or \equal{\tmp}{rectangle}}%
-      {\let\@photoshape\tmp}{}%
-    \ifthenelse{\equal{\tmp}{edge} \or \equal{\tmp}{noedge}}%
-      {\let\@photoedge\tmp}{}%
-    \ifthenelse{\equal{\tmp}{left} \or \equal{\tmp}{right}}%
-      {\let\@photoalign\tmp}{}%
-  }%
-}
-\def\@photoshape{circle}
-\def\@photoedge{edge}
-\def\@photoalign{left}
-
 % Define writer's name
 % Usage: \name{<firstname>}{<lastname>}
 % Usage: \firstname{<firstname>}
@@ -251,10 +204,6 @@
 \newcommand*{\lastname}[1]{\def\@lastname{#1}}
 \newcommand*{\familyname}[1]{\def\@lastname{#1}}
 \def\@familyname{\@lastname}
-
-% Define writer's address
-% Usage: \address{<address>}
-\newcommand*{\address}[1]{\def\@address{#1}}
 
 % Define writer's position
 % Usage: \position{<position>}
@@ -276,54 +225,10 @@
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
 
-% Defines writer's gitlab (optional)
-% Usage: \gitlab{<gitlab-nick>}
-\newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
-
-% Defines writer's stackoverflow profile (optional)
-% Usage: \stackoverflow{<so userid>}{<so username>}
-%   e.g.https://stackoverflow.com/users/123456/sam-smith
-%       would be \stackoverflow{123456}{sam-smith}
-\newcommand*{\stackoverflow}[2]{\def\@stackoverflowid{#1}\def\@stackoverflowname{#2}}
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
-
-% Defines writer's twitter (optional)
-% Usage: \twitter{<twitter handle>}
-\newcommand*{\twitter}[1]{\def\@twitter{#1}}
-
-% Defines writer's skype (optional)
-% Usage: \skype{<skype account>}
-\newcommand*{\skype}[1]{\def\@skype{#1}}
-
-% Defines writer's reddit (optional)
-% Usage: \reddit{<reddit account>}
-\newcommand*{\reddit}[1]{\def\@reddit{#1}}
-
-% Defines writer's xing (optional)
-% Usage: \xing{<xing name>}
-\newcommand*{\xing}[1]{\def\@xing{#1}}
-
-% Defines writer's medium profile (optional)
-% Usage: \medium{<medium account>}
-\newcommand*{\medium}[1]{\def\@medium{#1}}
-
-% Defines writer's google scholar profile (optional)
-% Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
-% e.g.https://scholar.google.co.uk/citations?user=wpZDx1cAAAAJ
-% would be \googlescholar{wpZDx1cAAAAJ}{Name-to-display-next-icon}
-% If 'googlescholar-name' is not provided than it defaults to
-% '\firstname \lastname'
-\newcommand*{\googlescholar}[2]{%
-  \def\@googlescholarid{#1}%
-  \ifthenelse{\equal{#2}{}}{%
-    \def\@googlescholarname{\@firstname~\@lastname}%
-  }{%
-    \def\@googlescholarname{#2}%
-  }%
-}
 
 % Defines writer's extra informations (optional)
 % Usage: \extrainfo{<extra informations>}
@@ -332,39 +237,6 @@
 % Defines writer's quote (optional)
 % Usage: \quote{<quote>}
 \renewcommand*{\quote}[1]{\def\@quote{#1}}
-
-% Defines recipient's information (cover letter only)
-% Usage: \recipient{<recipient name>}{<recipient address>}
-% Usage: \recipientname{<recipient name>}
-% Usage: \recipientaddress{<recipient address>}
-\newcommand*{\recipient}[2]{\def\@recipientname{#1}\def\@recipientaddress{#2}}
-\newcommand*{\recipientname}[1]{\def\@recipientname{#1}}
-\newcommand*{\recipientaddress}[1]{\def\@recipientaddress{#1}}
-
-% Defines the title for letter (cover letter only, optional)
-% Usage: \lettertitle{<title>}
-\newcommand*{\lettertitle}[1]{\def\@lettertitle{#1}}
-
-% Defines the date for letter (cover letter only)
-% Usage: \letterdate{<date>}
-\newcommand*{\letterdate}[1]{\def\@letterdate{#1}}
-
-% Defines a message of opening for letter (cover letter only)
-% Usage: \letteropening{<message>}
-\newcommand*{\letteropening}[1]{\def\@letteropening{#1}}
-
-% Defines a message of closing for letter (cover letter only)
-% Usage: \letterclosing{<message>}
-\newcommand*{\letterclosing}[1]{\def\@letterclosing{#1}}
-
-% Defines an enclosure for letter (cover letter only, optional)
-% Usage: \letterenclosure[<enclosure name>]{<enclosure>}
-\newcommand*{\letterenclname}[1][Enclosure]{\def\@letterenclname{#1}}
-\newcommand*{\letterenclosure}[2][]{%
-  % if an optional argument is provided, use it to redefine \enclname
-  \ifthenelse{\equal{#1}{}}{}{\def\@letterenclname{#1}}
-  \def\@letterenclosure{#2}
-}
 
 
 %-------------------------------------------------------------------------------
@@ -375,7 +247,6 @@
 \newcommand{\acvHeaderNameDelim}{\space}
 \newcommand{\acvHeaderAfterNameSkip}{.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
-\newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
@@ -407,20 +278,6 @@
 % Define a header for CV
 % Usage: \makecvheader
 \newcommand*{\makecvheader}[1][C]{%
-  \newcommand*{\drawphoto}{%
-    \ifthenelse{\isundefined{\@photo}}{}{%
-      \newlength{\photodim}
-      \ifthenelse{\equal{\@photoshape}{circle}}%
-        {\setlength{\photodim}{1.3cm}}%
-        {\setlength{\photodim}{1.8cm}}%
-      \ifthenelse{\equal{\@photoedge}{edge}}%
-        {\def\@photoborder{darkgray}}%
-        {\def\@photoborder{none}}%
-      \begin{tikzpicture}%
-        \node[\@photoshape, draw=\@photoborder, line width=0.3mm, inner sep=\photodim, fill overzoom image=\@photo] () {};
-      \end{tikzpicture}
-    }%
-  }
   \newlength{\headertextwidth}
   \newlength{\headerphotowidth}
   \ifthenelse{\isundefined{\@photo}}{
@@ -431,14 +288,12 @@
     \setlength{\headerphotowidth}{0.24\textwidth}
   }%
   \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
   \end{minipage}
   \begin{minipage}[c]{\headertextwidth}
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
-    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
@@ -464,61 +319,13 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithub\acvHeaderIconSep\@github}%
-        }%
-      \ifthenelse{\isundefined{\@gitlab}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
-        }%
-      \ifthenelse{\isundefined{\@stackoverflowid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+          \href{https:/\@github}{\faGithub\acvHeaderIconSep\@github}%
         }%
       \ifthenelse{\isundefined{\@linkedin}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
-        }%
-      \ifthenelse{\isundefined{\@twitter}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
-        }%
-      \ifthenelse{\isundefined{\@skype}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \faSkype\acvHeaderIconSep\@skype%
-        }%
-      \ifthenelse{\isundefined{\@reddit}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
-        }%
-      \ifthenelse{\isundefined{\@xing}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
-        }%
-      \ifthenelse{\isundefined{\@medium}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
-        }%
-      \ifthenelse{\isundefined{\@googlescholarid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+          \href{https://\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
@@ -532,7 +339,6 @@
       {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
   \end{minipage}%
   \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
   \end{minipage}
 }
 

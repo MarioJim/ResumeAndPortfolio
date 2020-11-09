@@ -3,10 +3,7 @@ import { FileToWrite } from '../types';
 
 const filecontent = (files: FileToWrite[]) =>
   `\\documentclass[11pt, a4paper]{awesome-cv}
-\\geometry{left=1.5cm, top=1.2cm, right=1.5cm, bottom=1.8cm, footskip=.5cm}
-\\fontdir[fonts/]
-\\colorlet{awesome}{blue}
-\\setbool{acvSectionColorHighlight}{true}
+\\geometry{left=1.5cm, top=1.2cm, right=1.5cm, bottom=1.5cm, footskip=0.5cm}
 \\renewcommand{\\acvHeaderSocialSep}{\\quad\\textbar\\quad}
 \\makeatletter
 \\patchcmd{\\@sectioncolor}{\\color}{\\mdseries\\color}{}{}
