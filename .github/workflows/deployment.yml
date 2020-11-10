@@ -34,7 +34,7 @@ jobs:
         run: |
           cd source
           ./build.sh
-          echo "::set-env name=LAST_COMMIT_MESSAGE::$(git log -1 --pretty=%B)"
+          echo "LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
           cd ../website
           git rm -r .
           git restore --staged LICENSE README.md

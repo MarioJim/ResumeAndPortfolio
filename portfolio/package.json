@@ -24,6 +24,7 @@
     "gatsby-plugin-typescript": "^2.5.0",
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-source-graphql": "^2.7.7",
+    "minireset.css": "^0.0.6",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-helmet": "^6.1.0",
