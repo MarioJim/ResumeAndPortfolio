@@ -4,14 +4,14 @@ import 'minireset.css';
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/layout';
 import SEO from '../components/SEO';
-import EmbeddedPDF from '../components/EmbeddedPDF';
+import ResumeIFrame from '../components/ResumeIFrame';
 
 const ResumePage: React.FC = () => (
   <Root>
     <SEO />
     <Header />
     <Wrapper>
-      <EmbeddedPDF src="/resume.pdf" />
+      <ResumeIFrame />
     </Wrapper>
   </Root>
 );

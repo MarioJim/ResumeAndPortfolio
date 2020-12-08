@@ -44,15 +44,14 @@ const Info = styled.p`
 const Tags = styled.ul`
   display: inline-flex;
   align-items: center;
-  height: 30px;
   margin: 4px;
 `;
 
 const Tag = styled.li`
   display: inline-block;
   padding: 0.3em 0.9em;
-  margin: 0.5em;
-  background-color: #f1f8ff;
+  margin: 0.2em 0.5em;
+  background-color: #e8f1fa;
   border-radius: 3px;
   font-size: 0.8em;
   font-weight: ${fonts.light};

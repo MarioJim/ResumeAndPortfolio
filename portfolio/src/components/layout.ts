@@ -17,7 +17,7 @@ const BasicWrapper = styled.div`
   width: 100%;
 
   @media (max-width: 500px) {
-    padding: 4vw 8vw;
+    padding: 20px 8vw;
   }
 `;
 
