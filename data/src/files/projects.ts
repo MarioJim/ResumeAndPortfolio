@@ -4,23 +4,20 @@ export interface Project {
   date: string;
   points: string[];
   link: string;
-  includeInCV: boolean;
 }
 
 export const projects: Project[] = [
   {
-    title: 'Alvap Store prototype',
-    subtitle:
-      'A store prototype with a React frontend and a Express and SQLite backend',
-    date: 'May - June 2020',
+    title: 'Web application for Dauverre A.C.',
+    subtitle: 'A web app with serverless architecture using Firebase',
+    date: 'Sept - Dec 2020',
     points: [
-      'Frontend developed using Create React App with TypeScript, styled components and react-router',
-      'Backend based on Express routes, and using a SQLite database to make it portable and self-contained',
-      'Written in TypeScript to improve readability through type checking',
-      'Deployed and hosted on a Heroku server',
+      'My team and I developed an application with the objective of creating a platform where the relatives of the residents could consult reports on how the elderly were doing, in addition to publicizing the nursing home',
+      'Frontend written in React with TypeScript, using Material-UI components and react-router-dom',
+      "Executed concurrency and security-sensitive actions using Cloud Functions (Firebase's serverless framework)",
+      "Took advantage of GitHub Actions to verify every pull request and also continuously deploy to Firebase's Hosting",
     ],
-    link: 'https://github.com/MarioJim/alvap-store',
-    includeInCV: true,
+    link: 'https://github.com/KevinTMtz/DauverreWeb',
   },
   {
     title: 'Resume and portfolio',
@@ -32,23 +29,18 @@ export const projects: Project[] = [
       'Website automatically deployed and hosted on GitHub Pages (mariojim.github.io)',
     ],
     link: 'https://github.com/MarioJim/ResumeAndPortfolio',
-    includeInCV: true,
   },
 ];
 
 export const allowedRepos: number[] = [
-  206996709, // ResumeAndPortfolio
-  267439763, // alvap-store
-  196892751, // knocki-app
-  201521942, // CaveDungeon
+  167217902, // MarioJim/CompetitiveProgramming
+  201521942, // MarioJim/CaveDungeon
+  206996709, // MarioJim/ResumeAndPortfolio
   220822569, // PatasTeam/GraphicAVLTree
-  167217902, // CompetitiveProgramming
-  252565333, // finite-automata-graph
-  259530650, // grammar-parsing-tree
-  172366859, // mTouch
   245031161, // KevinTMtz/GunnedDown
-  282499927, // memory_admin_simulator
-  255437430, // finite-automata-tui
-  296929253, // fuzzy-pdf
-  299703320, // critical_path_calc
+  252565333, // MarioJim/finite-automata-graph
+  267439763, // MarioJim/alvap-store
+  282499927, // MarioJim/memory_admin_simulator
+  296929253, // MarioJim/fuzzy-pdf
+  297854675, // KevinTMtz/DauverreWeb
 ];

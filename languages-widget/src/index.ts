@@ -1,7 +1,7 @@
-import { fetchFromGitHub } from './query';
-import { transformRepos } from './transform';
-import { renderSVG } from './render';
 import { promises as fs } from 'fs';
+import { fetchFromGitHub } from './query';
+import { renderSVG } from './render';
+import { transformRepos } from './transform';
 
 (async () => {
   const repos = await fetchFromGitHub();

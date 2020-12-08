@@ -4,9 +4,8 @@
   "description": "A SVG graph to include in my GitHub user readme",
   "main": "src/index.ts",
   "scripts": {
-    "clean": "rm -f lang_widget.svg",
-    "build": "yarn clean && ts-node src/index.ts",
-    "move": "mv lang_widget.svg ../portfolio/public && yarn clean"
+    "build": "ts-node src/index.ts",
+    "move": "mv lang_widget.svg ../portfolio/public"
   },
   "author": "Mario Jiménez",
   "license": "MIT",

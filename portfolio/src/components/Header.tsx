@@ -11,6 +11,10 @@ const Wrapper = styled.header`
   width: 100%;
   z-index: 5;
   background-color: ${colors.header};
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 const Center = styled.div`
@@ -25,16 +29,22 @@ const Separator = styled.div`
   margin: 0 30px;
   font-size: 1.2em;
   font-weight: ${fonts.bold};
+
+  @media (max-width: 500px) {
+    margin: 0 6vw;
+  }
 `;
 
 const Header: React.FC = () => (
   <Wrapper>
     <Center>
-      <HeaderLink to="/" title="about me" partiallyActive={false} />
+      <HeaderLink to="/" partiallyActive={false}>
+        about me
+      </HeaderLink>
       <Separator>/</Separator>
-      <HeaderLink to="/resume" title="resume" />
+      <HeaderLink to="/resume">resume</HeaderLink>
       <Separator>/</Separator>
-      <HeaderLink to="/projects" title="projects" />
+      <HeaderLink to="/projects">projects</HeaderLink>
     </Center>
   </Wrapper>
 );

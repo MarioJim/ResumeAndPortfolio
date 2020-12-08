@@ -16,7 +16,7 @@ export const additional: AdditionalProject[] = [
     ],
   },
   {
-    title: "First place on Banorte's Challenge at HackMTY 2019",
+    title: "First place in Banorte's Challenge at HackMTY 2019",
     date: 'August 2019',
     location: 'Monterrey, Mexico',
     points: [

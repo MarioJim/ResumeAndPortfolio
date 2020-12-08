@@ -22,6 +22,7 @@ const Image = styled.img`
   height: 25vw;
   max-height: 240px;
   border-radius: 4px;
+
   @media (max-width: 820px) {
     height: auto;
     max-height: 33vw;
@@ -55,12 +56,19 @@ const Tag = styled.li`
   border-radius: 3px;
   font-size: 0.8em;
   font-weight: ${fonts.light};
+  text-align: center;
+
+  @media (max-width: 420px) {
+    &:nth-of-type(4) {
+      display: none;
+    }
+  }
 `;
 
 const OnlineDemoBtn = styled.a`
   position: absolute;
   top: -10px;
-  right: 20px;
+  right: calc(5% - 20px);
   padding: 14px 20px;
   background: #2f9366;
   border-radius: 6px;
@@ -68,6 +76,10 @@ const OnlineDemoBtn = styled.a`
   text-align: center;
   color: white;
   font-size: 1.2em;
+
+  @media (max-width: 700px) {
+    padding: 2vw 3vw;
+  }
 `;
 
 interface Props {
@@ -90,7 +102,7 @@ const ProjectItem: React.FC<Props> = ({
   tags,
 }) => (
   <div style={{ position: 'relative' }}>
-    <ItemWrapper href={url} target="_blank" rel="noopener">
+    <ItemWrapper href={url}>
       <Image src={image} alt={`${title} repo image`} />
       <Title>
         {owner && `${owner} / `}
@@ -104,7 +116,7 @@ const ProjectItem: React.FC<Props> = ({
       </Tags>
     </ItemWrapper>
     {website && (
-      <OnlineDemoBtn href={website} target="_blank" rel="noopener">
+      <OnlineDemoBtn href={website}>
         Check it out
         <br /> online!
       </OnlineDemoBtn>

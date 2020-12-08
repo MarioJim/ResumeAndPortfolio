@@ -17,21 +17,21 @@ const StyledLink = styled(Link)<{ activeClassName: string }>`
 
 interface HeaderLinkProps {
   to: string;
-  title: string;
   partiallyActive?: boolean;
 }
 
 const HeaderLink: React.FC<HeaderLinkProps> = ({
-  to,
-  title,
+  children,
   partiallyActive = true,
+  to,
 }) => (
   <StyledLink
     to={to}
     activeClassName="active"
     partiallyActive={partiallyActive}
   >
-    {title}
+    {children}
   </StyledLink>
 );
+
 export default HeaderLink;

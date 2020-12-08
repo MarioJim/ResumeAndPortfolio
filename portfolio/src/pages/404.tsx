@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import 'minireset.css';
 
 import Header from '../components/Header';
-import { Root, Wrapper } from '../components/Layout';
+import { Root, Wrapper } from '../components/layout';
 import SEO from '../components/SEO';
 import SideInfo from '../components/SideInfo';
 import * as fonts from '../styles/fonts';

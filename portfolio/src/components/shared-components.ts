@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   font-size: 1.4em;
+  font-weight: ${fonts.regular};
   margin: 6px 0;
   display: inline-block;
 
@@ -33,6 +34,7 @@ export const Title = styled.h2`
 
 export const Subtitle = styled.h3`
   font-size: 1.1em;
+  font-weight: ${fonts.regular};
   margin-bottom: 8px;
 `;
 
@@ -45,7 +47,7 @@ export const Link = styled.a`
 
 export const Date = styled.p`
   float: right;
-  font-weight: ${fonts.light};
+  margin-left: 10px;
 
   @media (max-width: 820px) {
     float: unset;
@@ -53,7 +55,6 @@ export const Date = styled.p`
 `;
 
 export const Location = styled.p`
-  font-weight: ${fonts.light};
   margin-bottom: 6px;
 `;
 
@@ -67,4 +68,5 @@ export const Point = styled.li`
   font-weight: ${fonts.light};
   font-size: 1.05em;
   margin-bottom: 4px;
+  line-height: 1.4;
 `;

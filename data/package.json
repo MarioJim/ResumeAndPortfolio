@@ -7,7 +7,6 @@
     "lib/**/*"
   ],
   "scripts": {
-    "clean": "if [ -d \"lib\" ]; then rm -r lib; fi",
     "build": "tsc --noImplicitUseStrict",
     "prepare": "yarn build"
   },

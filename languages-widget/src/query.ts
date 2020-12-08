@@ -21,7 +21,7 @@ export const fetchFromGitHub = async (): Promise<RepositoryInfo[]> => {
 
 const query = `{
   viewer {
-    repositories(isFork: false, first: 50) {
+    repositories(isFork: false, first: 100) {
       nodes {
         nameWithOwner
         databaseId
@@ -40,17 +40,13 @@ const query = `{
 }`;
 
 const excludedRepos: number[] = [
-  157425689,
-  168739956,
-  183526378,
-  256051757,
-  257080212,
-  246458178,
-  207170678,
-  245031161,
-  291279859,
-  145342458,
-  172366859,
+  145342458, // MarioJim/I**-T**
+  172366859, // MarioJim/mTouch
+  183526378, // DiegoMont/AminotecWeb
+  207170678, // MarioJim/mariojim.github.io
+  243273100, // MarioJim/c********-d********
+  245031161, // KevinTMtz/GunnedDown
+  291279859, // KevinTMtz/HackMTY2020
 ];
 
 const displayFilteredRepos = (filteredRepos: RepositoryInfo[]) => {

@@ -15,13 +15,22 @@ const BasicWrapper = styled.div`
   padding: 20px 40px;
   max-width: 1000px;
   width: 100%;
+
+  @media (max-width: 500px) {
+    padding: 4vw 8vw;
+  }
 `;
 
 export const Wrapper = styled(BasicWrapper)`
   display: grid;
   grid-template-columns: 30% 70%;
-  @media (max-width: 820px) {
+
+  @media (max-width: 840px) {
     display: block;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
   }
 `;
 
