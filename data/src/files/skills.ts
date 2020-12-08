@@ -14,7 +14,7 @@ export const skills: Skill[] = [
     points: 'React, Express, D3.js, Flutter, JavaFX',
   },
   {
-    title: 'Tools \\& Platforms',
+    title: 'Tools & Platforms',
     points:
       'Git, Docker, GitHub Actions (CI/CD), Firebase, Node.js, Heroku, Chrome DevTools',
   },

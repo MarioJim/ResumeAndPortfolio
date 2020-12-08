@@ -2,17 +2,10 @@
   "name": "resume",
   "version": "1.0.0",
   "description": "My resume",
-  "main": "src/index.ts",
+  "main": "src/main.ts",
   "scripts": {
-    "clean": "rm -rf build",
-    "mkdirs": "mkdir -p build/sections",
-    "prepare": "yarn clean && yarn mkdirs",
-    "compile2tex": "ts-node src/index.ts",
-    "copyStatic": "cp -r static/* build",
-    "compile2pdf": "cd build && xelatex resume.tex",
-    "compile": "yarn compile2tex && yarn copyStatic && yarn compile2pdf",
-    "build": "yarn prepare && yarn compile",
-    "move": "mv build/resume.pdf ../portfolio/public && yarn clean"
+    "build": "ts-node src/main.ts && cd build && xelatex resume.tex",
+    "move": "mv build/resume.pdf ../portfolio/public"
   },
   "author": "MarioJim",
   "license": "MIT",
