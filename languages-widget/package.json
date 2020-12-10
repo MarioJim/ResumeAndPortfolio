@@ -2,17 +2,15 @@
   "name": "languages-widget",
   "version": "1.0.0",
   "description": "A SVG graph to include in my GitHub user readme",
-  "main": "src/index.ts",
+  "main": "src/main.ts",
   "scripts": {
-    "build": "ts-node src/index.ts",
-    "move": "mv lang_widget.svg ../portfolio/public"
+    "build": "ts-node src/main.ts"
   },
   "author": "Mario Jiménez",
   "license": "MIT",
   "dependencies": {
     "@types/jsdom": "^16.2.4",
     "@types/node": "^12",
-    "data": "^1.1.0",
     "dotenv": "^8.2.0",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",

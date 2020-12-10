@@ -1,20 +1,15 @@
-name: Continuous Deployment
+name: Scheduled updates
 
 on:
   schedule:
     - cron: '0 11 */16 * *'
-  push:
-    branches:
-      - master
 
 jobs:
   deploy:
-    name: Continuous Deployment to mariojim.github.io
     runs-on: ubuntu-latest
     container:
       image: mariojim/resume-portfolio:latest
       env:
-        REASON: ${{ github.event_name }}
         GRAPHQL_GITHUB_KEY: ${{ secrets.GRAPHQL_GITHUB_KEY }}
         API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
 
@@ -24,6 +19,11 @@ jobs:
         with:
           path: 'source'
 
+      - name: Build only required targets
+        run: |
+          cd source
+          make languages-widget
+
       - name: Clone website repo
         uses: actions/checkout@v2
         with:
@@ -31,25 +31,16 @@ jobs:
           path: 'website'
           token: ${{ secrets.API_KEY_GITHUB_REPO }}
 
-      - name: Build website
+      - name: Add files
         run: |
-          cd source
-          ./build.sh
-          if [ "$REASON" == "schedule" ]; then
-            echo "COMMIT_MSG=Scheduled for $(date "+%B %-d, %Y")" >> $GITHUB_ENV
-          else
-            echo "COMMIT_MSG=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
-          fi
-          cd ../website
-          git rm -r .
-          git restore --staged LICENSE README.md
-          mv ../source/portfolio/public/* .
-          git add *
+          cd website
+          mv ../source/build/* .
+          git add .
 
       - name: Push website repo
         run: |
           cd website
           git config --global user.name "MarioJim"
           git config --global user.email "mario.emilio.j@gmail.com"
-          git commit -m "[CD] $COMMIT_MSG"
+          git commit -m "[CD] Scheduled for $(date "+%B %-d, %Y")"
           git push

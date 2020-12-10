@@ -6,18 +6,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Compiled data module
+# Compiled products
+/build
 /data/lib
-
-# Compiled languages-widget
-languages-widget/lang_widget.svg
-
-# Compiled portfolio
+/languages-widget/lang_widget.svg
 /portfolio/.cache
 /portfolio/public
 /portfolio/static
-
-# Compiled resume
 /resume/build
 
 # Secrets

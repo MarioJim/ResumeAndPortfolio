@@ -1,0 +1,50 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: mariojim/resume-portfolio:latest
+      env:
+        COMMIT_MSG: ${{ github.event.head_commit.message }}
+        GRAPHQL_GITHUB_KEY: ${{ secrets.GRAPHQL_GITHUB_KEY }}
+        API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
+
+    steps:
+      - name: Clone source
+        uses: actions/checkout@v2
+        with:
+          path: 'source'
+
+      - name: Build website
+        run: |
+          cd source
+          make
+
+      - name: Clone website repo
+        uses: actions/checkout@v2
+        with:
+          repository: MarioJim/mariojim.github.io
+          path: 'website'
+          token: ${{ secrets.API_KEY_GITHUB_REPO }}
+
+      - name: Add files
+        run: |
+          cd website
+          git rm -r *
+          git restore --staged LICENSE README.md
+          mv ../source/build/* .
+          git add *
+
+      - name: Push website repo
+        run: |
+          cd website
+          git config --global user.name "MarioJim"
+          git config --global user.email "mario.emilio.j@gmail.com"
+          git commit -m "[CD] $COMMIT_MSG"
+          git push

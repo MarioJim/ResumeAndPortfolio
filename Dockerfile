@@ -1,18 +1,18 @@
 FROM debian:testing-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
 
-ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 
-# Install texlive with xetex and fonts, node with yarn, and some utils
+# Install texlive with xetex, node with yarn, and some utils
 RUN apt-get update -q \
     && apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
         git \
         gnupg \
+        make \
         nodejs \
         texlive \
-        texlive-fonts-extra \
         texlive-xetex \
         wget \
         xz-utils \
@@ -24,13 +24,20 @@ RUN apt-get update -q \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Install tex extensions with tlmgr
-RUN tlmgr init-usertree && \
-    tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet && \
-    tlmgr install \
+# Install tex extensions and fonts with tlmgr
+RUN tlmgr init-usertree \
+    && tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet \
+    && tlmgr install \
+        fontawesome5 \
+        sourcesanspro \
+    ; tlmgr install \
         enumitem \
         environ \
+        fontawesome5 \
         ifmtarg \ 
+        sourcesanspro \
         tcolorbox \
         trimspaces \
         xifthen
+
+ENV GATSBY_TELEMETRY_DISABLED 1

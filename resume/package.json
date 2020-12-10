@@ -4,8 +4,7 @@
   "description": "My resume",
   "main": "src/main.ts",
   "scripts": {
-    "build": "ts-node src/main.ts && cd build && xelatex resume.tex",
-    "move": "mv build/resume.pdf ../portfolio/public"
+    "build": "ts-node src/main.ts"
   },
   "author": "MarioJim",
   "license": "MIT",

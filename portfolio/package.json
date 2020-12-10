@@ -6,9 +6,9 @@
   "author": "Mario Jiménez",
   "scripts": {
     "clean": "rm -rf public .cache",
-    "build": "yarn clean && GATSBY_TELEMETRY_DISABLED=1 gatsby build",
-    "serve": "GATSBY_TELEMETRY_DISABLED=1 gatsby serve",
-    "start": "GATSBY_TELEMETRY_DISABLED=1 gatsby develop"
+    "build": "yarn clean && gatsby build",
+    "serve": "gatsby serve",
+    "start": "gatsby develop"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",

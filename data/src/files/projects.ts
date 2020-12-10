@@ -24,7 +24,7 @@ export const projects: Project[] = [
     subtitle: 'LaTeX pdf and React App compiled from the same database',
     date: 'Since September 2019',
     points: [
-      'Wrote TypeScript packages for compiling the data to a static React website and to .tex files',
+      'Wrote TypeScript packages for compiling the data to a static React website and to a PDF document',
       'Encapsulated my development environment within a Docker container so that it can be easily replicated and used with Visual Studio Code and the Remote - Containers extension',
       'Website automatically deployed and hosted on GitHub Pages (mariojim.github.io)',
     ],
