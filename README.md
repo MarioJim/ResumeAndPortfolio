@@ -28,4 +28,4 @@ Compiles from template strings in TypeScript to LaTeX and finally to pdf. Hosted
 
 ## Languages widget
 
-Using a virtual DOM, creates a SVG element of a graph with my most used languages with data pulled from the GitHub GraphQL API. Inspired in [anuraghazra's similar card](https://github.com/anuraghazra/github-readme-stats#top-languages-card)
+Creates a graph of my most used languages with data pulled from the GitHub GraphQL API and renders it into a SVG using React and ReactDOMServer. Inspired in [anuraghazra's similar card](https://github.com/anuraghazra/github-readme-stats#top-languages-card)

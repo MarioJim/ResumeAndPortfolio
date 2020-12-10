@@ -9,11 +9,12 @@
   "author": "Mario Jiménez",
   "license": "MIT",
   "dependencies": {
-    "@types/jsdom": "^16.2.4",
     "@types/node": "^12",
+    "@types/react-dom": "^17.0.0",
     "dotenv": "^8.2.0",
-    "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "ts-node": "^9.0.0",
     "typescript": "^4"
   }

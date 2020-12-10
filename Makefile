@@ -30,11 +30,12 @@ resume: prepare data
 	mv resume/build/resume.pdf build/
 
 portfolio: prepare data
+	-rm -r portfolio/public portfolio/.cache
 	yarn workspace portfolio build
 	mv portfolio/public/* build/
 
 dev-portfolio: prepare data
-	yarn workspace portfolio serve
+	yarn workspace portfolio start
 
 docker-image:
 	docker build . -t mariojim/resume-portfolio:latest
