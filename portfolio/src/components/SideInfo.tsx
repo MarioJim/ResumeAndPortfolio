@@ -13,9 +13,7 @@ const StyledSide = styled.div`
   padding: 20px 0;
 `;
 
-const ProfilePhoto = styled.img`
-  width: 200px;
-  height: 200px;
+const ProfilePicture = styled.img`
   border-radius: 50%;
 `;
 
@@ -26,9 +24,10 @@ const Title = styled.h1`
   font-weight: ${fonts.bold};
 `;
 
-const Description = styled.h3`
+const Description = styled.p`
   font-size: 1.2em;
   text-align: center;
+  font-weight: ${fonts.light};
 `;
 
 const SocialIconsWrapper = styled.div`
@@ -55,28 +54,24 @@ const SideInfo: React.FC = () => {
   const { name, mail, github, linkedin } = myProfile;
   return (
     <StyledSide>
-      <ProfilePhoto src={avatarUrl} alt="Profile photo" />
+      <ProfilePicture
+        src={avatarUrl}
+        alt="Profile picture"
+        width="200px"
+        height="200px"
+      />
       <Title>{name}</Title>
       <Description>{bio}</Description>
       <SocialIconsWrapper>
-        <SocialIcon
-          title="Email"
-          link_protocol="mailto:"
-          link_base={mail}
-          icon={FaEnvelope}
-        />
-        <SocialIcon
-          title="GitHub"
-          link_protocol="https://"
-          link_base={`github.com/${github}/`}
-          icon={FaGithub}
-        />
-        <SocialIcon
-          title="LinkedIn"
-          link_protocol="https://"
-          link_base={`linkedin.com/in/${linkedin}`}
-          icon={FaLinkedin}
-        />
+        <SocialIcon title="Email" protocol="mailto:" link={mail}>
+          <FaEnvelope size="2.3em" />
+        </SocialIcon>
+        <SocialIcon title="GitHub" protocol="https://" link={github}>
+          <FaGithub size="2.3em" />
+        </SocialIcon>
+        <SocialIcon title="LinkedIn" protocol="https://" link={linkedin}>
+          <FaLinkedin size="2.3em" />
+        </SocialIcon>
       </SocialIconsWrapper>
     </StyledSide>
   );

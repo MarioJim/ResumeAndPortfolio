@@ -30,8 +30,8 @@ export const cvskillTemplate = (
   title: string,
   skills: string,
 ): string => `  \\cvskill
-{${title}}
-{${skills}}`;
+    {${title}}
+    {${skills}}`;
 
 export const cvskillSectionTemplate = (skills: string[]): string => `
 \\cvsection{Skills}

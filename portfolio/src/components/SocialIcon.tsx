@@ -1,5 +1,4 @@
 import React from 'react';
-import { IconType } from 'react-icons/lib/cjs';
 import styled from '@emotion/styled';
 
 const StyledLink = styled.a`
@@ -18,25 +17,19 @@ const StyledLink = styled.a`
 
 interface Props {
   title: string;
-  link_base: string;
-  link_protocol: string;
-  icon: IconType;
+  link: string;
+  protocol: string;
 }
 
-const SocialIcon: React.FC<Props> = ({
-  title,
-  link_base,
-  link_protocol,
-  icon: Icon,
-}) => (
+const SocialIcon: React.FC<Props> = ({ title, link, protocol, children }) => (
   <StyledLink
     target="_blank"
-    href={link_protocol + link_base}
-    title={title}
     rel="noopener"
+    href={protocol + link}
+    title={title}
   >
-    <Icon size="2.3em" />
-    <p>{link_base}</p>
+    {children}
+    <p>{link}</p>
   </StyledLink>
 );
 

@@ -12,6 +12,8 @@ import {
   skillsSection,
 } from './sections';
 
+const [firstName, lastName] = myProfile.name.split(' ');
+
 const resumeFile = `
 \\documentclass[11pt, a4paper]{awesome-cv}
 \\geometry{left=1.5cm, top=1.2cm, right=1.5cm, bottom=1.5cm, footskip=0.5cm}
@@ -20,15 +22,15 @@ const resumeFile = `
 \\patchcmd{\\@sectioncolor}{\\color}{\\mdseries\\color}{}{}
 \\makeatother
 
-\\name{${myProfile.name.split(' ')[0]}}{${myProfile.name.split(' ')[1]}}
+\\name{${firstName}}{${lastName}}
 \\position{${myProfile.position}}
 \\email{${myProfile.mail}}
 \\homepage{mariojim.github.io}
-\\github{github.com/${myProfile.github}}
-\\linkedin{linkedin.com/in/${myProfile.linkedin}}
+\\github{${myProfile.github}}
+\\linkedin{${myProfile.linkedin}}
 
 \\begin{document}
-  \\makecvheader[C]
+\\makecvheader
 ${experienceSection}
 ${educationSection}
 ${projectsSection}

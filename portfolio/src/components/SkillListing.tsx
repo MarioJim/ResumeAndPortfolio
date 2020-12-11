@@ -22,7 +22,9 @@ const SkillListing: React.FC<Props> = ({ skill }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <Point style={{ listStyleType: 'none' }}>{points}</Point>
+      <ul>
+        <Point style={{ listStyleType: 'none' }}>{points}</Point>
+      </ul>
     </Wrapper>
   );
 };

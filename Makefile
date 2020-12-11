@@ -7,9 +7,6 @@
 # make docker-image   # create and push docker image
 # make clean          # clean compiled files
 
-.PHONY = all prepare data languages-widget resume \
-         portfolio dev-portfolio docker-image clean
-
 all: languages-widget resume portfolio
 
 prepare:
@@ -28,6 +25,7 @@ resume: prepare data
 	yarn workspace resume build
 	cd resume/build && HOME=/root xelatex resume.tex
 	mv resume/build/resume.pdf build/
+	rm -r resume/build
 
 portfolio: prepare data
 	-rm -r portfolio/public portfolio/.cache
@@ -49,3 +47,6 @@ clean:
 		portfolio/public \
 		portfolio/.cache \
 		resume/build
+
+.PHONY = all prepare data languages-widget resume \
+         portfolio dev-portfolio docker-image clean
