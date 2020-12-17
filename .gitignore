@@ -13,7 +13,6 @@ yarn-error.log*
 /portfolio/.cache
 /portfolio/public
 /portfolio/static
-/resume/build
 
 # Secrets
 .env

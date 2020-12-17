@@ -1,43 +1,36 @@
-FROM debian:testing-slim
+FROM rust:latest as builder
+
+# Install tectonic dependencies
+RUN apt-get update \
+    && apt-get install -y \
+        libfontconfig1-dev \
+        libgraphite2-dev \
+        libharfbuzz-dev \
+        libicu-dev \
+        zlib1g-dev
+
+# Build tectonic binary
+RUN cargo install tectonic
+
+FROM node:lts-buster-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
 
-ARG DEBIAN_FRONTEND=noninteractive
-
-# Install texlive with xetex, node with yarn, and some utils
-RUN apt-get update -q \
+# Install dependencies
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates \
-        curl \
         git \
-        gnupg \
+        libfontconfig1 \
+        libgraphite2-3 \
+        libharfbuzz0b \
+        libharfbuzz-icu0 \
+        libicu63 \
+        libssl1.1 \
         make \
-        nodejs \
-        texlive \
-        texlive-xetex \
-        wget \
-        xz-utils \
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && apt-get update -q \
-    && apt-get install -y yarn \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
+        zlib1g \
     && rm -rf /var/lib/apt/lists/*
 
-# Install tex extensions and fonts with tlmgr
-RUN tlmgr init-usertree \
-    && tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet \
-    && tlmgr install \
-        fontawesome5 \
-        sourcesanspro \
-    ; tlmgr install \
-        enumitem \
-        environ \
-        fontawesome5 \
-        ifmtarg \ 
-        sourcesanspro \
-        tcolorbox \
-        trimspaces \
-        xifthen
+# Copy tectonic binary to new image
+COPY --from=builder /usr/local/cargo/bin/tectonic /usr/bin/
 
 ENV GATSBY_TELEMETRY_DISABLED 1

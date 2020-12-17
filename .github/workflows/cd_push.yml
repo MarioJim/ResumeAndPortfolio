@@ -37,7 +37,7 @@ jobs:
         run: |
           cd website
           git rm -r *
-          git restore --staged LICENSE README.md
+          git reset HEAD LICENSE README.md
           mv ../source/build/* .
           git add *
 

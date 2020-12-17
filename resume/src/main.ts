@@ -1,8 +1,6 @@
-import child_process from 'child_process';
 import { myProfile } from 'data';
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import path from 'path';
-import util from 'util';
 
 import {
   additionalSection,
@@ -39,16 +37,5 @@ ${additionalSection}
 \\end{document}
 `;
 
-const exec = util.promisify(child_process.exec);
-
-(async () => {
-  console.log('Cleaning...');
-  await exec('rm -rf build');
-  await exec('mkdir -p build/sections');
-
-  console.log('Writing resume.tex...');
-  await fs.writeFile(path.join('build', 'resume.tex'), resumeFile);
-
-  console.log('Copying static files...');
-  await exec('cp -r static/* build');
-})();
+const filepath = path.join('build', 'resume.tex');
+fs.writeFileSync(filepath, resumeFile);

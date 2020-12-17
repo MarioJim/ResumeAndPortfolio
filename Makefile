@@ -23,9 +23,9 @@ languages-widget: prepare
 
 resume: prepare data
 	yarn workspace resume build
-	cd resume/build && HOME=/root xelatex resume.tex
+	tectonic resume/build/resume.tex
 	mv resume/build/resume.pdf build/
-	rm -r resume/build
+	rm resume/build/resume.tex
 
 portfolio: prepare data
 	-rm -r portfolio/public portfolio/.cache
@@ -46,7 +46,8 @@ clean:
 		languages-widget/lang_widget.svg \
 		portfolio/public \
 		portfolio/.cache \
-		resume/build
+		resume/build/resume.pdf \
+		resume/build/resume.tex
 
 .PHONY = all prepare data languages-widget resume \
          portfolio dev-portfolio docker-image clean
