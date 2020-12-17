@@ -19,6 +19,7 @@
     "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-no-javascript": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-remove-fingerprints": "^0.0.2",
     "gatsby-plugin-typescript": "^2.5.0",
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-source-graphql": "^2.7.7",

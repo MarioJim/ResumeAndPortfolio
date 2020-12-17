@@ -48,6 +48,7 @@ module.exports = {
         icon: 'src/images/favicon.png',
       },
     },
+    'gatsby-plugin-remove-fingerprints',
     'gatsby-plugin-no-javascript',
   ],
 };
