@@ -13,7 +13,7 @@ export const fetchFromGitHub = async (): Promise<RepositoryInfo[]> => {
   });
   const json: GHResponse = await response.json();
   const filteredRepos = json.data.viewer.repositories.nodes.filter(
-    repo => !excludedRepos.includes(repo.databaseId),
+    (repo) => !excludedRepos.includes(repo.databaseId),
   );
   // displayFilteredRepos(filteredRepos);
   return filteredRepos;

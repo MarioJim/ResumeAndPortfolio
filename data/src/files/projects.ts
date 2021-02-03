@@ -43,4 +43,5 @@ export const allowedRepos: number[] = [
   282499927, // MarioJim/memory_admin_simulator
   296929253, // MarioJim/fuzzy-pdf
   297854675, // KevinTMtz/DauverreWeb
+  328806789, // MarioJim/HNReader
 ];
