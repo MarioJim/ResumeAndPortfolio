@@ -13,10 +13,10 @@ export const schools: School[] = [
     date: 'Aug 2018 - Exp. Jul 2022',
     location: 'Mexico City, Mexico',
     points: [
-      'Currently in my fifth semester',
+      'Currently in my sixth semester',
       'Major GPA: 96/100',
       'Participated as a teaching assistant on our Competitive Programming Club for a year',
-      'Relevant coursework: Object-Oriented Programming, Data Structures, Databases, Operating Systems, Analysis and Design of Algorithms, Programming Languages, Advanced Database Systems',
+      'Relevant coursework: Object-Oriented Programming, Data Structures, Operating Systems, Analysis and Design of Algorithms, Programming Languages, Advanced Database Systems, Web Applications Development, Android Development, Software Quality and Testing, Computer and Information Security',
     ],
   },
 ];

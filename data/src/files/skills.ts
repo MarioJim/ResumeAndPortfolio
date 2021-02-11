@@ -7,7 +7,7 @@ export const skills: Skill[] = [
   {
     title: 'Languages',
     points:
-      'JavaScript/TypeScript (proficient), Python (fluent), Java, C++, SQL (MySQL/MariaDB), Rust, Dart',
+      'JavaScript/TypeScript (proficient), Python (fluent), Java, C++, SQL (MySQL/MariaDB), Rust, Go',
   },
   {
     title: 'Frameworks',
