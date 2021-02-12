@@ -1,4 +1,4 @@
-FROM rust:1.49 as builder
+FROM rust:1.50 as builder
 
 # Install tectonic dependencies
 RUN apt-get update \
@@ -10,7 +10,7 @@ RUN apt-get update \
         zlib1g-dev
 
 # Build tectonic binary
-RUN cargo install tectonic --version 0.4.0
+RUN cargo install tectonic --version 0.4.1
 
 FROM node:14-buster-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
