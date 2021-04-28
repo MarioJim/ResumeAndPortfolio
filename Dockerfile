@@ -1,4 +1,4 @@
-FROM rust:1.50 as builder
+FROM rust:1.51 as builder
 
 # Install tectonic dependencies
 RUN apt-get update \
