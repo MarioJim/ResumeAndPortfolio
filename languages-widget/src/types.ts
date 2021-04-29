@@ -13,11 +13,9 @@ export interface RepositoryInfo {
 }
 
 export interface GHResponse {
-  data: {
-    viewer: {
-      repositories: {
-        nodes: RepositoryInfo[];
-      };
+  viewer: {
+    repositories: {
+      nodes: RepositoryInfo[];
     };
   };
 }

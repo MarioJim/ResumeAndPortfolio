@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import { fetchFromGitHub } from './query';
 import { renderSVG } from './render';
 import { transformRepos } from './transform';
+require('dotenv').config();
 
 (async () => {
   const repos = await fetchFromGitHub();

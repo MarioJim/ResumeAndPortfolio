@@ -1,43 +1,41 @@
-import fetch from 'node-fetch';
+import { gql, GraphQLClient } from 'graphql-request';
 import { GHResponse, RepositoryInfo } from './types';
-require('dotenv').config();
 
 export const fetchFromGitHub = async (): Promise<RepositoryInfo[]> => {
-  const response = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
+  const githubGQLClient = new GraphQLClient('https://api.github.com/graphql', {
     headers: {
-      'Content-Type': 'application/json',
       authorization: `Bearer ${process.env.GRAPHQL_GITHUB_KEY}`,
     },
-    body: JSON.stringify({ query }),
   });
-  const json: GHResponse = await response.json();
-  const filteredRepos = json.data.viewer.repositories.nodes.filter(
+  const data = await githubGQLClient.request<GHResponse>(query);
+  const filteredRepos = data.viewer.repositories.nodes.filter(
     (repo) => !excludedRepos.includes(repo.databaseId),
   );
   // displayFilteredRepos(filteredRepos);
   return filteredRepos;
 };
 
-const query = `{
-  viewer {
-    repositories(isFork: false, first: 100) {
-      nodes {
-        nameWithOwner
-        databaseId
-        languages(first: 10) {
-          edges {
-            size
-            node {
-              color
-              name
+const query = gql`
+  {
+    viewer {
+      repositories(isFork: false, first: 100) {
+        nodes {
+          nameWithOwner
+          databaseId
+          languages(first: 10) {
+            edges {
+              size
+              node {
+                color
+                name
+              }
             }
           }
         }
       }
     }
   }
-}`;
+`;
 
 const excludedRepos: number[] = [
   145342458, // MarioJim/I**-T**
@@ -48,6 +46,7 @@ const excludedRepos: number[] = [
   245031161, // KevinTMtz/GunnedDown
   291279859, // KevinTMtz/HackMTY2020
   339570034, // MarioJim/google-sps-portfolio
+  315178962, // SebasRod23/ClojureDecisionTree
 ];
 
 const displayFilteredRepos = (filteredRepos: RepositoryInfo[]) => {
