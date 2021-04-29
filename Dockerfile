@@ -33,4 +33,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 # Copy tectonic binary to new image
 COPY --from=builder /usr/local/cargo/bin/tectonic /usr/bin/
 
-ENV GATSBY_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1

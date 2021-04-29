@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import * as fonts from '../styles/fonts';
+import theme from '../styles/theme';
 
 const ItemWrapper = styled.a`
   display: flex;
@@ -31,13 +31,13 @@ const Image = styled.img`
 
 const Title = styled.h3`
   text-align: center;
-  font-weight: ${fonts.regular};
+  font-weight: ${theme.fonts.regular};
   font-size: 1.3em;
 `;
 
 const Info = styled.p`
   text-align: center;
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
   padding: 0 22px;
 `;
 
@@ -54,7 +54,7 @@ const Tag = styled.li`
   background-color: #e8f1fa;
   border-radius: 3px;
   font-size: 0.8em;
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
   text-align: center;
 
   @media (max-width: 420px) {

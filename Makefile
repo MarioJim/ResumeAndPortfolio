@@ -28,9 +28,9 @@ resume: prepare data
 	rm resume/build/resume.tex
 
 portfolio: prepare data
-	-rm -r portfolio/public portfolio/.cache
+	-rm -r portfolio/out
 	yarn workspace portfolio build
-	mv portfolio/public/* build/
+	mv portfolio/out/* build/
 
 dev-portfolio: prepare data
 	yarn workspace portfolio start
@@ -44,8 +44,7 @@ clean:
 		build \
 		data/lib \
 		languages-widget/lang_widget.svg \
-		portfolio/public \
-		portfolio/.cache \
+		portfolio/out \
 		resume/build/resume.pdf \
 		resume/build/resume.tex
 

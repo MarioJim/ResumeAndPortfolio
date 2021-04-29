@@ -6,8 +6,7 @@ import EducationListing from './EducationListing';
 import ExperienceListing from './ExperienceListing';
 import ProjectListing from './ProjectListing';
 import SkillListing from './SkillListing';
-import * as colors from '../styles/colors';
-import * as fonts from '../styles/fonts';
+import theme from '../styles/theme';
 
 const StyledWrapper = styled.div`
   margin-left: 30px;
@@ -33,7 +32,7 @@ const Section = styled.section`
 const SectionTitle = styled.h2`
   margin: 0;
   font-size: 1.8em;
-  font-weight: ${fonts.bold};
+  font-weight: ${theme.fonts.bold};
 
   &:before {
     content: '';
@@ -45,7 +44,7 @@ const SectionTitle = styled.h2`
     position: absolute;
     left: -59px;
     top: 8px;
-    border: 7px solid ${colors.background};
+    border: 7px solid ${theme.colors.background};
     box-sizing: border-box;
 
     @media (max-width: 820px) {

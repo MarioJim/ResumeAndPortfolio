@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
 import { myProfile } from 'data';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import styled from '@emotion/styled';
 import SocialIcon from './SocialIcon';
-import * as fonts from '../styles/fonts';
+import { SideInfoRequest } from '../lib/sideinfo-request';
+import theme from '../styles/theme';
 
 const StyledSide = styled.div`
   display: flex;
@@ -21,13 +21,13 @@ const Title = styled.h1`
   margin-top: 20px;
   margin-bottom: 4px;
   font-size: 2em;
-  font-weight: ${fonts.bold};
+  font-weight: ${theme.fonts.bold};
 `;
 
 const Description = styled.p`
   font-size: 1.2em;
   text-align: center;
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
 `;
 
 const SocialIconsWrapper = styled.div`
@@ -37,31 +37,22 @@ const SocialIconsWrapper = styled.div`
   justify-content: center;
 `;
 
-const SideInfo: React.FC = () => {
-  const query = useStaticQuery(
-    graphql`
-      query {
-        github {
-          viewer {
-            avatarUrl(size: 400)
-            bio
-          }
-        }
-      }
-    `,
-  );
-  const { avatarUrl, bio } = query.github.viewer;
+interface SideInfoProps {
+  req: SideInfoRequest;
+}
+
+const SideInfo: React.FC<SideInfoProps> = ({ req }) => {
   const { name, mail, github, linkedin } = myProfile;
   return (
     <StyledSide>
       <ProfilePicture
-        src={avatarUrl}
+        src={req.avatarUrl}
         alt="Profile picture"
         width="200px"
         height="200px"
       />
       <Title>{name}</Title>
-      <Description>{bio}</Description>
+      <Description>{req.bio}</Description>
       <SocialIconsWrapper>
         <SocialIcon title="Email" protocol="mailto:" link={mail}>
           <FaEnvelope size="2.3em" />

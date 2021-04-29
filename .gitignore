@@ -10,10 +10,9 @@ yarn-error.log*
 /build
 /data/lib
 /languages-widget/lang_widget.svg
-/portfolio/.cache
-/portfolio/public
-/portfolio/static
+/portfolio/.next
 
 # Secrets
 .env
+.env.local
 

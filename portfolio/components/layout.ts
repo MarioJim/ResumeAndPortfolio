@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import * as colors from '../styles/colors';
-import * as fonts from '../styles/fonts';
+import theme from '../styles/theme';
 
 export const Root = styled.div`
   min-height: calc(100vh - 60px);
-  font-family: ${fonts.name}, sans-serif;
-  font-weight: ${fonts.regular};
-  background-color: ${colors.background};
-  color: ${colors.font};
+  font-family: ${theme.fonts.name}, sans-serif;
+  font-weight: ${theme.fonts.regular};
+  background-color: ${theme.colors.background};
+  color: ${theme.colors.font};
 `;
 
 const BasicWrapper = styled.div`

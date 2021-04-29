@@ -1,43 +1,13 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { allowedRepos } from 'data';
 import ProjectItem from './ProjectItem';
+import { ProjectsRequest } from '../lib/projects-request';
 
-const Projects: React.FC = () => {
-  const { github } = useStaticQuery(
-    graphql`
-      query {
-        github {
-          viewer {
-            topRepositories(
-              first: 50
-              orderBy: { field: PUSHED_AT, direction: DESC }
-            ) {
-              nodes {
-                databaseId
-                name
-                owner {
-                  login
-                }
-                url
-                openGraphImageUrl
-                description
-                pushedAt
-                homepageUrl
-                repositoryTopics(first: 4) {
-                  nodes {
-                    topic {
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
+interface ProjectsProps {
+  req: ProjectsRequest;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ req }) => {
   // Used to see the repo's id in GitHub's database
   // console.log(
   //   github.viewer.topRepositories.nodes
@@ -46,7 +16,7 @@ const Projects: React.FC = () => {
   // );
   return (
     <div>
-      {github.viewer.topRepositories.nodes
+      {req.nodes
         .filter((repo) => allowedRepos.includes(repo.databaseId))
         .map((repo) => (
           <ProjectItem
