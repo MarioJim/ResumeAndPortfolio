@@ -33,4 +33,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 # Copy tectonic binary to new image
 COPY --from=builder /usr/local/cargo/bin/tectonic /usr/bin/
 
+# Run tectonic once and delete the files to cache fonts and packages
+RUN cd /root \
+    && git clone https://github.com/MarioJim/ResumeAndPortfolio.git \
+    && make resume -C ResumeAndPortfolio \
+    && rm -r ResumeAndPortfolio
+
 ENV NEXT_TELEMETRY_DISABLED 1
