@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import * as colors from '../styles/colors';
-import * as fonts from '../styles/fonts';
+import theme from '../styles/theme';
 
 export const Wrapper = styled.div`
   margin-bottom: 22px;
@@ -9,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   font-size: 1.4em;
-  font-weight: ${fonts.regular};
+  font-weight: ${theme.fonts.regular};
   margin: 6px 0;
   display: inline-block;
 
@@ -23,7 +22,7 @@ export const Title = styled.h2`
     position: absolute;
     left: -54px;
     top: 14px;
-    border: 5px solid ${colors.background};
+    border: 5px solid ${theme.colors.background};
     box-sizing: border-box;
 
     @media (max-width: 820px) {
@@ -34,7 +33,7 @@ export const Title = styled.h2`
 
 export const Subtitle = styled.h3`
   font-size: 1.1em;
-  font-weight: ${fonts.regular};
+  font-weight: ${theme.fonts.regular};
   margin-bottom: 8px;
 `;
 
@@ -65,7 +64,7 @@ export const Points = styled.ul`
 `;
 
 export const Point = styled.li`
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
   font-size: 1.05em;
   margin-bottom: 4px;
   line-height: 1.4;

@@ -1,21 +1,18 @@
 import React from 'react';
-import 'minireset.css';
 
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/layout';
-import Projects from '../components/Projects';
 import SEO from '../components/SEO';
-import SideInfo from '../components/SideInfo';
+import ResumeIFrame from '../components/ResumeIFrame';
 
-const ProjectsPage: React.FC = () => (
+const ResumePage: React.FC = () => (
   <Root>
     <SEO />
     <Header />
     <Wrapper>
-      <SideInfo />
-      <Projects />
+      <ResumeIFrame />
     </Wrapper>
   </Root>
 );
 
-export default ProjectsPage;
+export default ResumePage;

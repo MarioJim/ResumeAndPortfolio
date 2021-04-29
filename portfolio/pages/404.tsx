@@ -1,12 +1,13 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import styled from '@emotion/styled';
-import 'minireset.css';
 
 import Header from '../components/Header';
 import { Root, Wrapper } from '../components/layout';
 import SEO from '../components/SEO';
 import SideInfo from '../components/SideInfo';
-import * as fonts from '../styles/fonts';
+import { fetchSideInfoRequest, SideInfoRequest } from '../lib/sideinfo-request';
+import theme from '../styles/theme';
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -17,25 +18,35 @@ const InnerWrapper = styled.div`
 
 const Title1 = styled.h3`
   font-size: 3em;
-  font-weight: ${fonts.bold};
+  font-weight: ${theme.fonts.bold};
 `;
 
 const Title2 = styled.h3`
   font-size: 2.2em;
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
 `;
 
 const Description = styled.p`
   font-size: 1.6em;
-  font-weight: ${fonts.light};
+  font-weight: ${theme.fonts.light};
 `;
 
-const NotFoundPage: React.FC = () => (
+interface NotFoundPageProps {
+  sideInfoReq: SideInfoRequest;
+}
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    sideInfoReq: await fetchSideInfoRequest(),
+  },
+});
+
+const NotFoundPage: React.FC<NotFoundPageProps> = ({ sideInfoReq }) => (
   <Root>
     <SEO title="404: Not found" />
     <Header />
     <Wrapper>
-      <SideInfo />
+      <SideInfo req={sideInfoReq} />
       <InnerWrapper>
         <Title1>404</Title1>
         <Title2>Not found</Title2>

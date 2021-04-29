@@ -1,37 +1,31 @@
 {
   "name": "portfolio",
+  "version": "2.0.0",
   "private": true,
-  "description": "My portfolio",
-  "version": "1.0.0",
-  "author": "Mario Jiménez",
   "scripts": {
-    "build": "gatsby build",
-    "start": "gatsby develop"
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "animate.css": "^4.1.1",
     "data": "^1.1.0",
-    "gatsby": "^2.25.3",
-    "gatsby-plugin-emotion": "^5.0.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.5.2",
-    "gatsby-plugin-no-javascript": "^2.0.5",
-    "gatsby-plugin-react-helmet": "^3.3.14",
-    "gatsby-plugin-remove-fingerprints": "^0.0.2",
-    "gatsby-plugin-typescript": "^2.5.0",
-    "gatsby-source-filesystem": "^2.4.2",
-    "gatsby-source-graphql": "^2.7.7",
-    "minireset.css": "^0.0.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.1.0"
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "minireset.css": "^0.0.7",
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.0",
-    "prettier": "^2.2.1"
-  },
-  "license": "MIT"
+    "@emotion/babel-plugin": "^11.3.0",
+    "@types/node": "^15.0.1",
+    "@types/react": "^17.0.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  }
 }
