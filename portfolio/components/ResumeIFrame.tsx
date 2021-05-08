@@ -11,7 +11,7 @@ const StyledIFrame = styled.iframe`
   width: 100%;
 `;
 
-const pdfURL = 'https://mariojim.github.io/resume.pdf';
+const pdfURL = 'https://mariojim.github.io/mario_jimenez_resume.pdf';
 
 const ResumeIFrame: React.FC = () => (
   <Wrapper>

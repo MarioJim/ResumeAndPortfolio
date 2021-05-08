@@ -24,7 +24,7 @@ languages-widget: prepare
 resume: prepare data
 	yarn workspace resume build
 	tectonic resume/build/resume.tex
-	mv resume/build/resume.pdf build/
+	mv resume/build/resume.pdf build/mario_jimenez_resume.pdf
 	rm resume/build/resume.tex
 
 portfolio: prepare data
