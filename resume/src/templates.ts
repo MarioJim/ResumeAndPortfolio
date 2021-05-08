@@ -11,11 +11,16 @@ export const cventryTemplate = (
     {${b}}
     {${c}}
     {${d}}
-    {
+    ${
+      items.length > 0
+        ? `{
       \\begin{cvitems}
 ${items.map(itemTemplate).join('\n')}
       \\end{cvitems}
-    }`;
+    }`
+        : `{}`
+    }
+    `;
 
 export const cvsectionTemplate = (
   title: string,

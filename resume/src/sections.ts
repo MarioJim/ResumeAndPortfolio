@@ -23,7 +23,7 @@ export const educationSection: string = cvsectionTemplate(
 );
 
 export const experienceSection: string = cvsectionTemplate(
-  'Work Experience',
+  'Experience',
   experiences.map(({ date, location, points, title, workPlace }) =>
     cventryTemplate(workPlace, title, date, location, points),
   ),
