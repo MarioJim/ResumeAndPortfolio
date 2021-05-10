@@ -34,14 +34,11 @@ export const projects: Project[] = [
 
 export const allowedRepos: number[] = [
   167217902, // MarioJim/CompetitiveProgramming
-  201521942, // MarioJim/CaveDungeon
   206996709, // MarioJim/ResumeAndPortfolio
-  220822569, // PatasTeam/GraphicAVLTree
-  245031161, // KevinTMtz/GunnedDown
   252565333, // MarioJim/finite-automata-graph
   267439763, // MarioJim/alvap-store
-  282499927, // MarioJim/memory_admin_simulator
   296929253, // MarioJim/fuzzy-pdf
   297854675, // KevinTMtz/DauverreWeb
+  328483336, // MarioJim/touchegg-music-client
   328806789, // MarioJim/HNReader
 ];
