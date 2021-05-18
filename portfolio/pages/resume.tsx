@@ -7,7 +7,7 @@ import ResumeIFrame from '../components/ResumeIFrame';
 
 const ResumePage: React.FC = () => (
   <Root>
-    <SEO />
+    <SEO title="Mario Jiménez' resume" />
     <Header />
     <Wrapper>
       <ResumeIFrame />

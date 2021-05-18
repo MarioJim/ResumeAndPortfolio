@@ -8,7 +8,7 @@ interface Props {
 const SEO: React.FC<Props> = ({ title }) => (
   <Head>
     <title>{title || 'Mario Jiménez'}</title>
-    <meta property="og.title" content={title || 'Mario Jiménez'} />
+    <meta property="og:title" content={title || 'Mario Jiménez'} />
   </Head>
 );
 

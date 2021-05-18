@@ -1,7 +1,27 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
 
-class MyDocument extends Document {
+import { fetchOpenGraphImageRequest } from '../lib/opengraph-image-request';
+
+interface MyDocumentProps {
+  ogImage: string;
+}
+
+class MyDocument extends Document<MyDocumentProps> {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+      ogImage: await fetchOpenGraphImageRequest(),
+    };
+  }
+
   render() {
     return (
       <Html lang="en">
@@ -11,6 +31,7 @@ class MyDocument extends Document {
           <meta property="og:description" content="Mario Jiménez' portfolio" />
           <meta property="og:url" content="https://mariojim.github.io/" />
           <meta property="og:type" content="website" />
+          <meta property="og:image" content={this.props.ogImage} />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap"

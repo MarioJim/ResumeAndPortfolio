@@ -2,6 +2,7 @@ import React from 'react';
 import { myProfile } from 'data';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import styled from '@emotion/styled';
+
 import SocialIcon from './SocialIcon';
 import { SideInfoRequest } from '../lib/sideinfo-request';
 import theme from '../styles/theme';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { additional, experiences, projects, schools, skills } from 'data';
 import styled from '@emotion/styled';
+
 import AdditionalListing from './AdditionalListing';
 import EducationListing from './EducationListing';
 import ExperienceListing from './ExperienceListing';

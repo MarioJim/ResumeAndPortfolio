@@ -33,7 +33,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({
   projectsReq,
 }) => (
   <Root>
-    <SEO />
+    <SEO title="Mario Jiménez' projects" />
     <Header />
     <Wrapper>
       <SideInfo req={sideInfoReq} />

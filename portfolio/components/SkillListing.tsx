@@ -1,6 +1,7 @@
 import React from 'react';
 import { Skill } from 'data';
 import styled from '@emotion/styled';
+
 import { Point, Subtitle as Title } from './shared-components';
 
 const Wrapper = styled.div`
