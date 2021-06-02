@@ -1,3 +1,4 @@
+import { allowedRepos } from 'data';
 import { gql } from 'graphql-request';
 import GithubGQLClient from './github-graphql-client';
 
@@ -50,9 +51,10 @@ export interface GitHubRepository {
   };
 }
 
-export interface ProjectsRequest {
-  nodes: GitHubRepository[];
-}
+export type ProjectsRequest = GitHubRepository[];
 
-export const fetchProjectsRequest = async (): Promise<ProjectsRequest> =>
-  GithubGQLClient.request(query).then((data) => data.viewer.topRepositories);
+export const fetchProjectsRequest = async (): Promise<ProjectsRequest> => {
+  const req = await GithubGQLClient.request(query);
+  const { nodes } = req.viewer.topRepositories;
+  return nodes.filter((repo) => allowedRepos.includes(repo.databaseId));
+};

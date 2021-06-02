@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
   {
     workPlace: 'Facebook',
     title: 'Incoming Software Engineering Intern',
-    date: 'Fall 2021',
+    date: 'Winter 2022',
     location: 'Remote',
     points: [],
   },

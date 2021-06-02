@@ -1,5 +1,4 @@
 import React from 'react';
-import { allowedRepos } from 'data';
 
 import ProjectItem from './ProjectItem';
 import { ProjectsRequest } from '../lib/projects-request';
@@ -17,23 +16,21 @@ const Projects: React.FC<ProjectsProps> = ({ req }) => {
   // );
   return (
     <div>
-      {req.nodes
-        .filter((repo) => allowedRepos.includes(repo.databaseId))
-        .map((repo) => (
-          <ProjectItem
-            key={repo.databaseId}
-            image={repo.openGraphImageUrl}
-            title={repo.name}
-            description={repo.description}
-            owner={repo.owner.login}
-            url={repo.url}
-            website={
-              repo.homepageUrl !== 'https://mariojim.github.io/' &&
-              repo.homepageUrl
-            }
-            tags={repo.repositoryTopics.nodes.map((node) => node.topic.name)}
-          />
-        ))}
+      {req.map((repo) => (
+        <ProjectItem
+          key={repo.databaseId}
+          image={repo.openGraphImageUrl}
+          title={repo.name}
+          description={repo.description}
+          owner={repo.owner.login}
+          url={repo.url}
+          website={
+            repo.homepageUrl !== 'https://mariojim.github.io/' &&
+            repo.homepageUrl
+          }
+          tags={repo.repositoryTopics.nodes.map((node) => node.topic.name)}
+        />
+      ))}
     </div>
   );
 };
