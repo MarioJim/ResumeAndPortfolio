@@ -11,6 +11,7 @@ yarn-error.log*
 /data/lib
 /languages-widget/lang_widget.svg
 /portfolio/.next
+/portfolio/out
 
 # Secrets
 .env

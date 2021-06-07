@@ -33,7 +33,7 @@ portfolio: prepare data
 	mv portfolio/out/* build/
 
 dev-portfolio: prepare data
-	yarn workspace portfolio start
+	yarn workspace portfolio dev
 
 docker-image:
 	docker build . -t mariojim/resume-portfolio:latest

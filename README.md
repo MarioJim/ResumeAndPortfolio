@@ -24,8 +24,8 @@ My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Writ
 
 ## Resume
 
-Compiles from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
+Compiled using [tectonic](https://tectonic-typesetting.github.io/) from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
 
 ## Languages widget
 
-Creates a graph of my most used languages with data pulled from the GitHub GraphQL API and renders it into a SVG using React and ReactDOMServer. Inspired in [anuraghazra's similar card](https://github.com/anuraghazra/github-readme-stats#top-languages-card)
+Creates a graph of my most used languages with data pulled from the GitHub GraphQL API and renders it into a SVG using React and ReactDOMServer. Inspired by [anuraghazra's similar card](https://github.com/anuraghazra/github-readme-stats#top-languages-card)

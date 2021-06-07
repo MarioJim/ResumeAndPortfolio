@@ -16,15 +16,17 @@ export const experiences: Experience[] = [
   },
   {
     workPlace: 'Microsoft',
-    title: 'Incoming Software Engineering Intern',
-    date: 'Summer 2021',
+    title: 'Software Engineering Intern',
+    date: 'June - August 2021',
     location: 'Remote',
-    points: [],
+    points: [
+      'Working with the Dynamics 365 Field Service team from Business Applications group',
+    ],
   },
   {
     workPlace: 'Grupo Financiero Banorte',
     title: 'Cybersecurity Intern',
-    date: 'Jan 2020 - Jul 2020',
+    date: 'January - July 2020',
     location: 'Mexico City, Mexico',
     points: [
       'Built and deployed a dashboard to help assess cybersecurity risks that affect the institution in a day-to-day basis',

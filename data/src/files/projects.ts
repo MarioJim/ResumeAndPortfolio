@@ -10,7 +10,7 @@ export const projects: Project[] = [
   {
     title: 'Web application for Dauverre A.C.',
     subtitle: 'A web app with serverless architecture using Firebase',
-    date: 'Sept - Dec 2020',
+    date: 'September - December 2020',
     points: [
       'My team and I developed an application with the objective of creating a platform where the relatives of the residents could consult reports on how the elderly were doing, in addition to publicizing the nursing home',
       'Frontend written in React with TypeScript, using Material-UI components and react-router-dom',
