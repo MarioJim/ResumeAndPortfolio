@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
   {
     workPlace: 'Facebook',
     title: 'Incoming Software Engineering Intern',
-    date: 'Winter 2022',
+    date: 'Winter 2021',
     location: 'Remote',
     points: [],
   },
@@ -20,7 +20,8 @@ export const experiences: Experience[] = [
     date: 'June - August 2021',
     location: 'Remote',
     points: [
-      'Working with the Dynamics 365 Field Service team from Business Applications group',
+      'Working with the Field Service team from Customer Care Applications (DTP)',
+      'Developing and modifying TypeScript modules used in React Native applications or in a web context',
     ],
   },
   {

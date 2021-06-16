@@ -11,7 +11,7 @@ RUN apt-get update \
         zlib1g-dev
 
 # Build tectonic binary
-RUN cargo install tectonic --version 0.5.0 --features external-harfbuzz
+RUN cargo install tectonic --version 0.6.1 --features external-harfbuzz
 
 FROM node:14-buster-slim
 LABEL maintainer="mario.emilio.j@gmail.com"

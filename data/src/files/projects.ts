@@ -15,7 +15,7 @@ export const projects: Project[] = [
       'My team and I developed an application with the objective of creating a platform where the relatives of the residents could consult reports on how the elderly were doing, in addition to publicizing the nursing home',
       'Frontend written in React with TypeScript, using Material-UI components and react-router-dom',
       "Executed concurrency and security-sensitive actions using Cloud Functions (Firebase's serverless framework)",
-      "Took advantage of GitHub Actions to verify every pull request and also continuously deploy to Firebase's Hosting",
+      "Took advantage of GitHub Actions to verify every pull request and continuously deploy to Firebase's Hosting",
     ],
     link: 'https://github.com/KevinTMtz/DauverreWeb',
   },
