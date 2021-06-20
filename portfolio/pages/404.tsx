@@ -50,7 +50,7 @@ const NotFoundPage: React.FC<NotFoundPageProps> = ({ sideInfoReq }) => (
       <InnerWrapper>
         <Title1>404</Title1>
         <Title2>Not found</Title2>
-        <Description>You just hit a route that doesn't exist...</Description>
+        <Description>You just hit a route that doesn&apos;t exist...</Description>
       </InnerWrapper>
     </Wrapper>
   </Root>

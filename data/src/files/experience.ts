@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
     date: 'June - August 2021',
     location: 'Remote',
     points: [
-      'Working with the Field Service team from Customer Care Applications (DTP)',
+      'Working with the Field Service team from the Dynamics 365 division',
       'Developing and modifying TypeScript modules used in React Native applications or in a web context',
     ],
   },

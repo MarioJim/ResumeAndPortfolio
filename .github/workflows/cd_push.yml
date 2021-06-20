@@ -21,6 +21,9 @@ jobs:
         with:
           path: 'source'
 
+      - name: Run linter
+        run: make -C source lint
+
       - name: Build website
         run: make -C source
 
