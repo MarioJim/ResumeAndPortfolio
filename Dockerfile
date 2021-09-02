@@ -1,4 +1,4 @@
-FROM rust:1.53 as builder
+FROM rust:1.54 as builder
 
 # Install tectonic dependencies
 RUN apt-get update \
@@ -11,9 +11,9 @@ RUN apt-get update \
         zlib1g-dev
 
 # Build tectonic binary
-RUN cargo install tectonic --version 0.7.0 --features external-harfbuzz
+RUN cargo install tectonic --version 0.7.1 --features external-harfbuzz
 
-FROM node:14-buster-slim
+FROM node:16-buster-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
 
 # Install dependencies

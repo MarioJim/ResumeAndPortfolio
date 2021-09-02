@@ -1,4 +1,3 @@
-import { allowedRepos } from 'data';
 import { gql } from 'graphql-request';
 import GithubGQLClient from './github-graphql-client';
 
@@ -31,6 +30,17 @@ const query = gql`
     }
   }
 `;
+
+const allowedRepos: number[] = [
+  167217902, // MarioJim/CompetitiveProgramming
+  206996709, // MarioJim/ResumeAndPortfolio
+  252565333, // MarioJim/finite-automata-graph
+  267439763, // MarioJim/alvap-store
+  296929253, // MarioJim/fuzzy-pdf
+  297854675, // KevinTMtz/DauverreWeb
+  328483336, // MarioJim/touchegg-music-client
+  328806789, // MarioJim/HNReader
+];
 
 export interface GitHubRepository {
   databaseId: number;

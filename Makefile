@@ -36,7 +36,7 @@ dev-portfolio: prepare data
 	yarn workspace portfolio dev
 
 lint: prepare
-	yarn workspace portfolio next lint
+	yarn workspace portfolio lint
 
 docker-image:
 	docker build . -t mariojim/resume-portfolio:latest

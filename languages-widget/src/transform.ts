@@ -7,10 +7,13 @@ interface LanguagesMap {
   };
 }
 
+const excludedLanguages = ['CSS', 'HTML', 'TeX'];
+
 export const transformRepos = (repos: RepositoryInfo[]): Language[] => {
   const languages = repos
     .flatMap((repo) => repo.languages.edges)
     .filter((lang) => lang.node.color !== null)
+    .filter((lang) => !excludedLanguages.includes(lang.node.name))
     .reduce<LanguagesMap>(
       (languagesMap, { size, node: { name, color } }) => ({
         ...languagesMap,

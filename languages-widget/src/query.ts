@@ -46,7 +46,7 @@ const excludedRepos: number[] = [
   245031161, // KevinTMtz/GunnedDown
   291279859, // KevinTMtz/HackMTY2020
   339570034, // MarioJim/google-sps-portfolio
-  315178962, // SebasRod23/ClojureDecisionTree
+  394398597, // MarioJim/A01173359_g*******_202109
 ];
 
 const displayFilteredRepos = (filteredRepos: RepositoryInfo[]) => {
