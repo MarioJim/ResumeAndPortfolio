@@ -24,7 +24,7 @@ My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Writ
 
 ## Resume
 
-Compiled using [tectonic](https://tectonic-typesetting.github.io/) from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
+Compiled using [tectonic](https://tectonic-typesetting.github.io/) from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/mario_jimenez_resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
 
 ## Languages widget
 

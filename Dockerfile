@@ -1,43 +1,28 @@
-FROM rust:1.54 as builder
+FROM node:16-bullseye-slim as tectonic-dl
 
-# Install tectonic dependencies
-RUN apt-get update \
-    && apt-get install -y \
-        libfontconfig1-dev \
-        libgraphite2-dev \
-        libharfbuzz-dev \
-        libicu-dev \
-        libssl-dev \
-        zlib1g-dev
+# Download and extract tectonic
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get install -y ca-certificates curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && curl -Lo tectonic.tar.gz https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.7.1/tectonic-0.7.1-x86_64-unknown-linux-gnu.tar.gz \
+    && tar -xf tectonic.tar.gz
 
-# Build tectonic binary
-RUN cargo install tectonic --version 0.7.1 --features external-harfbuzz
-
-FROM node:16-buster-slim
+FROM node:16-bullseye-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
+
+# Copy tectonic binary to new image
+COPY --from=tectonic-dl /tectonic /usr/bin/
 
 # Install dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-    && apt-get install -y --no-install-recommends \
-        ca-certificates \
-        git \
-        libfontconfig1 \
-        libgraphite2-3 \
-        libharfbuzz0b \
-        libharfbuzz-icu0 \
-        libicu63 \
-        libssl1.1 \
-        make \
-        zlib1g \
+    && apt-get install -y ca-certificates git libgraphite2-3 make --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
-
-# Copy tectonic binary to new image
-COPY --from=builder /usr/local/cargo/bin/tectonic /usr/bin/
 
 # Run tectonic once and delete the files to cache fonts and packages
 RUN cd /root \
     && git clone https://github.com/MarioJim/ResumeAndPortfolio.git \
     && make resume -C ResumeAndPortfolio \
-    && rm -r ResumeAndPortfolio
+    && rm -r ResumeAndPortfolio \
+    && yarn cache clean
 
 ENV NEXT_TELEMETRY_DISABLED 1
