@@ -10,7 +10,7 @@
   "forwardPorts": [8000],
   "postCreateCommand": "yarn install",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
   "runArgs": ["--cpus=0.000"]
 }

@@ -41,7 +41,6 @@ const excludedRepos: number[] = [
   145342458, // MarioJim/I**-T**
   172366859, // MarioJim/mTouch
   183526378, // DiegoMont/AminotecWeb
-  207170678, // MarioJim/mariojim.github.io
   243273100, // MarioJim/c********-d********
   245031161, // KevinTMtz/GunnedDown
   291279859, // KevinTMtz/HackMTY2020
