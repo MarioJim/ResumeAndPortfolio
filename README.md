@@ -3,8 +3,9 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/MarioJim/ResumeAndPortfolio)
 ![Lines of code](https://tokei.rs/b1/github/MarioJim/ResumeAndPortfolio?category=code)
 ![GitHub last commit](https://img.shields.io/github/last-commit/MarioJim/ResumeAndPortfolio)
-![GitHub deployment](https://img.shields.io/github/workflow/status/MarioJim/ResumeAndPortfolio/Continuous%20Deployment)
 ![GitHub pages](https://img.shields.io/github/deployments/MarioJim/mariojim.github.io/github-pages)
+![Continuous Deployment](https://github.com/MarioJim/ResumeAndPortfolio/workflows/Continuous%20Deployment/badge.svg)
+![Scheduled updates](https://github.com/MarioJim/ResumeAndPortfolio/workflows/Scheduled%20updates/badge.svg)
 
 Repository to version control my resume and portfolio.
 

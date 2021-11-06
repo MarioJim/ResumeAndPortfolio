@@ -45,7 +45,8 @@ jobs:
       - name: Push website repo
         run: |
           cd website
-          git config --global user.name "MarioJim"
-          git config --global user.email "mario.emilio.j@gmail.com"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git config --global user.name "github-actions-bot"
+          git config --global user.email "support+actions@github.com"
           git commit -m "[CD] $COMMIT_MSG"
           git push

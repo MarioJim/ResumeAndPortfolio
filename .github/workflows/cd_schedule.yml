@@ -39,7 +39,8 @@ jobs:
         continue-on-error: true
         run: |
           cd website
-          git config --global user.name "MarioJim"
-          git config --global user.email "mario.emilio.j@gmail.com"
-          git commit -m "[CD] Scheduled for $(date "+%B %-d, %Y")"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git config --global user.name "github-actions-bot"
+          git config --global user.email "support+actions@github.com"
+          git commit -m "[CD] Scheduled update for $(date "+%B %-d, %Y")"
           git push
