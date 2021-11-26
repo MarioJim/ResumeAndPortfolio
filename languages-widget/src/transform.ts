@@ -7,7 +7,7 @@ interface LanguagesMap {
   };
 }
 
-const excludedLanguages = ['CSS', 'HTML', 'TeX'];
+const excludedLanguages = ['CSS', 'HTML', 'TeX', 'Jupyter Notebook'];
 
 export const transformRepos = (repos: RepositoryInfo[]): Language[] => {
   const languages = repos

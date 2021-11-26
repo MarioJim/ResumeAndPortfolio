@@ -39,6 +39,7 @@ const query = gql`
 
 const excludedRepos: number[] = [
   145342458, // MarioJim/I**-T**
+  158993292, // MarioJim/SmallProjects
   172366859, // MarioJim/mTouch
   183526378, // DiegoMont/AminotecWeb
   243273100, // MarioJim/c********-d********
@@ -47,6 +48,7 @@ const excludedRepos: number[] = [
   339570034, // MarioJim/google-sps-portfolio
   394398597, // MarioJim/A01173359_g*******_202109
   402961873, // MarioJim/L****A
+  406536192, // karenrios2208/ProyectoAplicacionesWeb
   411078787, // J***J****C***/k******-b*******
 ];
 
@@ -58,6 +60,16 @@ const displayFilteredRepos = (filteredRepos: RepositoryInfo[]) => {
         nameWithOwner,
         lines: languages.edges.reduce((acc, val) => acc + val.size, 0),
       }))
-      .sort((r1, r2) => r2.lines - r1.lines),
+      .sort((r1, r2) => r1.lines - r2.lines),
   );
+  const topRepoForLangs: { [key: string]: { sz: number; name: string } } = {};
+  filteredRepos.forEach((r) => {
+    r.languages.edges.forEach((l) => {
+      const lastSz = topRepoForLangs[l.node.name]?.sz || 0;
+      if (lastSz < l.size) {
+        topRepoForLangs[l.node.name] = { sz: l.size, name: r.nameWithOwner };
+      }
+    });
+  });
+  console.log(topRepoForLangs);
 };

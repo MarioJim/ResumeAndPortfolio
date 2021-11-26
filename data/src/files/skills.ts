@@ -6,16 +6,14 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     title: 'Languages',
-    points:
-      'JavaScript/TypeScript (proficient), Python (fluent), Java, C++, C, Rust, SQL (MySQL/MariaDB)',
+    points: 'TypeScript (proficient), Python (fluent), Java, Rust, C++',
   },
   {
     title: 'Frameworks',
-    points:
-      'React, Express, Flutter, React Native, PowerApps Component Framework',
+    points: 'React, Express, SpringBoot, THREE.js, Flutter, React Native',
   },
   {
     title: 'Tools & Platforms',
-    points: 'Git, GitHub Actions (CI/CD), Docker, Firebase, Node.js',
+    points: 'Git, Docker, GitHub Actions (CI/CD pipelines), Firebase, Node.js',
   },
 ];
