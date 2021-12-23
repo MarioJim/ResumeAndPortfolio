@@ -8,11 +8,11 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    workPlace: 'Facebook',
-    title: 'Incoming Software Engineering Intern',
+    workPlace: 'Meta',
+    title: 'Software Engineering Intern',
     date: 'January - March 2022',
     location: 'Remote',
-    points: [],
+    points: ['Working in the Web Speed team'],
   },
   {
     workPlace: 'Microsoft',
@@ -21,6 +21,7 @@ export const experiences: Experience[] = [
     location: 'Remote',
     points: [
       'Worked with the Field Service Mobile team from the Dynamics 365 division',
+      'Participated in the creation of a simple feature of the FS app, from its conception, design, documentation, implementation and testing',
       'Developed and modified TypeScript modules used in React Native applications or in a web context',
       'Built an audio recording pipeline from recording an audio stream and encoding it using the Android NDK (C++)',
     ],
