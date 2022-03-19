@@ -3,7 +3,7 @@
     "target": "es2021",
     "module": "commonjs",
     "jsx": "react",
-    "composite": true,
+    "declaration": true,
     "outDir": "lib",
     "strict": true,
     "esModuleInterop": true
