@@ -7,7 +7,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc --noImplicitUseStrict"
+    "build": "tsc"
   },
   "author": "MarioJim",
   "license": "MIT",

@@ -6,7 +6,6 @@ import {
   additionalSection,
   educationSection,
   experienceSection,
-  projectsSection,
   skillsSection,
 } from './sections';
 
@@ -31,11 +30,10 @@ const resumeFile = `
 \\makecvheader
 ${experienceSection}
 ${educationSection}
-${projectsSection}
 ${skillsSection}
 ${additionalSection}
 \\end{document}
-`;
+`.replaceAll('~', '\\~{}');
 
 const filepath = path.join('build', 'resume.tex');
 fs.writeFileSync(filepath, resumeFile);

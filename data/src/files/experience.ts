@@ -8,11 +8,24 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    workPlace: 'Google',
+    title: 'Incoming Software Engineering Intern',
+    date: 'May - August 2022',
+    location: 'Mountain View, CA',
+    points: [
+      'Working with the Flutter team in their efforts of porting plugins to their new desktop backend',
+    ],
+  },
+  {
     workPlace: 'Meta',
     title: 'Software Engineering Intern',
     date: 'January - March 2022',
     location: 'Remote',
-    points: ['Working in the Web Speed team'],
+    points: [
+      'Working in the Unigraph team, part of the Infra pillar',
+      "Rewrote an essential part of my team's product in Rust, reducing its execution time from ~18s to ~750ms",
+      'Refactored a 950-line file into a readable and well-documented module composed of 10 files',
+    ],
   },
   {
     workPlace: 'Microsoft',

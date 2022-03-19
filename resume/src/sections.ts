@@ -1,4 +1,4 @@
-import { additional, experiences, projects, schools, skills } from 'data';
+import { additional, experiences, schools, skills } from 'data';
 
 import {
   cventryTemplate,
@@ -26,19 +26,6 @@ export const experienceSection: string = cvsectionTemplate(
   'Experience',
   experiences.map(({ date, location, points, title, workPlace }) =>
     cventryTemplate(workPlace, title, date, location, points),
-  ),
-);
-
-export const projectsSection: string = cvsectionTemplate(
-  'Software Projects',
-  projects.map(({ date, link, points, subtitle, title }) =>
-    cventryTemplate(
-      subtitle,
-      title,
-      date,
-      link.replace('https://github.com', '\\faGithub'),
-      points,
-    ),
   ),
 );
 

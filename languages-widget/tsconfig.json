@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
+    "target": "es2021",
     "jsx": "react",
-    "target": "es5",
     "lib": ["ES2019", "DOM"],
     "module": "commonjs",
     "strict": true,
