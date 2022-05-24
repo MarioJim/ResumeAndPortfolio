@@ -14,15 +14,12 @@ const StyledLink = styled.a<{ isActive: boolean }>`
 `;
 
 interface HeaderLinkProps {
+  children: React.ReactNode;
   currentUrl: string;
   href: string;
 }
 
-const HeaderLink: React.FC<HeaderLinkProps> = ({
-  children,
-  currentUrl,
-  href,
-}) => (
+const HeaderLink = ({ children, currentUrl, href }: HeaderLinkProps) => (
   <Link href={href} passHref>
     <StyledLink isActive={currentUrl === href}>{children}</StyledLink>
   </Link>

@@ -10,10 +10,10 @@ export const skills: Skill[] = [
   },
   {
     title: 'Frameworks',
-    points: 'React, Express, SpringBoot, THREE.js, Flutter, React Native',
+    points: 'React, Express, Flutter, SpringBoot, React Native',
   },
   {
     title: 'Tools & Platforms',
-    points: 'Git, Docker, GitHub Actions (CI/CD pipelines), Firebase, Node.js',
+    points: 'Git, Docker, GitHub Actions (CI/CD pipelines), Firebase, Ansible',
   },
 ];

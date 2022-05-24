@@ -42,7 +42,7 @@ interface SideInfoProps {
   req: SideInfoRequest;
 }
 
-const SideInfo: React.FC<SideInfoProps> = ({ req }) => {
+const SideInfo = ({ req }: SideInfoProps) => {
   const { name, mail, github, linkedin } = myProfile;
   return (
     <StyledSide>

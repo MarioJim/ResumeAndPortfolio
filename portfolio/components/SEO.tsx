@@ -5,7 +5,7 @@ interface Props {
   title?: string;
 }
 
-const SEO: React.FC<Props> = ({ title }) => (
+const SEO = ({ title }: Props) => (
   <Head>
     <title>{title || 'Mario Jiménez'}</title>
     <meta property="og:title" content={title || 'Mario Jiménez'} />

@@ -7,7 +7,7 @@ interface Props {
   additional: AdditionalProject;
 }
 
-const AdditionalListing: React.FC<Props> = ({ additional }) => {
+const AdditionalListing = ({ additional }: Props) => {
   const { title, date, points } = additional;
   return (
     <Wrapper>

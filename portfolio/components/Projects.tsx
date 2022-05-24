@@ -7,7 +7,7 @@ interface ProjectsProps {
   req: ProjectsRequest;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ req }) => {
+const Projects = ({ req }: ProjectsProps) => {
   // Used to see the repo's id in GitHub's database
   // console.log(
   //   github.viewer.topRepositories.nodes

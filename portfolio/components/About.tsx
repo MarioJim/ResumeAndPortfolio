@@ -56,7 +56,7 @@ const SectionTitle = styled.h2`
 
 const animationClasses = 'animate__animated animate__fadeInUp';
 
-const About: React.FC = () => (
+const About = () => (
   <StyledWrapper>
     <Section className={animationClasses}>
       <SectionTitle>Experience</SectionTitle>

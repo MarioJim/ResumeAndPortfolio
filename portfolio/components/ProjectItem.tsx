@@ -92,7 +92,7 @@ interface Props {
   tags: string[];
 }
 
-const ProjectItem: React.FC<Props> = ({
+const ProjectItem = ({
   image,
   title,
   owner,
@@ -100,7 +100,7 @@ const ProjectItem: React.FC<Props> = ({
   url,
   website,
   tags,
-}) => (
+}: Props) => (
   <div style={{ position: 'relative' }}>
     <ItemWrapper href={url}>
       <Image src={image} alt={`${title} repo image`} />

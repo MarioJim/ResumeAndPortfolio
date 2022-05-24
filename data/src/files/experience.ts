@@ -9,11 +9,11 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     workPlace: 'Google',
-    title: 'Incoming Software Engineering Intern',
+    title: 'Software Engineering Intern',
     date: 'May - August 2022',
     location: 'Mountain View, CA',
     points: [
-      'Working with the Flutter team in their efforts of porting plugins to their new desktop backend',
+      'Working with the Flutter team in their efforts of adapting the framework to a new desktop backend',
     ],
   },
   {
@@ -22,8 +22,8 @@ export const experiences: Experience[] = [
     date: 'January - March 2022',
     location: 'Remote',
     points: [
-      'Working in the Unigraph team, part of the Infra pillar',
-      "Rewrote an essential part of my team's product in Rust, reducing its execution time from ~18s to ~750ms",
+      "Worked with the Unigraph team (Infra pillar), responsible for managing the code size around Meta's products",
+      'Rewrote an algorithm in charge of traversing and topologically sorting a 100,000-node graph using Rust, reducing its execution time from ~18s to ~750ms',
       'Refactored a 950-line file into a readable and well-documented module composed of 10 files',
     ],
   },
@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
     date: 'June - August 2021',
     location: 'Remote',
     points: [
-      'Worked with the Field Service Mobile team from the Dynamics 365 division',
+      'Worked on the Field Service Mobile team from the Dynamics 365 division',
       'Participated in the creation of a simple feature of the FS app, from its conception, design, documentation, implementation and testing',
       'Developed and modified TypeScript modules used in React Native applications or in a web context',
       'Built an audio recording pipeline from recording an audio stream and encoding it using the Android NDK (C++)',

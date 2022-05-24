@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => ({
   },
 });
 
-const IndexPage: React.FC<IndexPageProps> = ({ sideInfoReq }) => (
+const IndexPage = ({ sideInfoReq }: IndexPageProps) => (
   <Root>
     <SEO />
     <Header />

@@ -15,7 +15,7 @@ interface Props {
   exp: Experience;
 }
 
-const ExperienceListing: React.FC<Props> = ({ exp }) => {
+const ExperienceListing = ({ exp }: Props) => {
   const { title, workPlace, date, location, points } = exp;
   return (
     <Wrapper>

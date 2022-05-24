@@ -28,10 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const ProjectsPage: React.FC<ProjectsPageProps> = ({
-  sideInfoReq,
-  projectsReq,
-}) => (
+const ProjectsPage = ({ sideInfoReq, projectsReq }: ProjectsPageProps) => (
   <Root>
     <SEO title="Mario Jiménez' projects" />
     <Header />

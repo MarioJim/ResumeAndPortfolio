@@ -14,7 +14,7 @@ interface Props {
   project: Project;
 }
 
-const ProjectListing: React.FC<Props> = ({ project }) => {
+const ProjectListing = ({ project }: Props) => {
   const { link, title, subtitle, points } = project;
   return (
     <Wrapper>

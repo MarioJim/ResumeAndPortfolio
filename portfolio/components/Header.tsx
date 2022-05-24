@@ -36,7 +36,7 @@ const Separator = styled.div`
   }
 `;
 
-const Header: React.FC = () => {
+const Header = () => {
   const { asPath } = useRouter();
   return (
     <Wrapper>

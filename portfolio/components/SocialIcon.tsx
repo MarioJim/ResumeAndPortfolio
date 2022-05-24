@@ -19,9 +19,10 @@ interface Props {
   title: string;
   link: string;
   protocol: string;
+  children: React.ReactNode;
 }
 
-const SocialIcon: React.FC<Props> = ({ title, link, protocol, children }) => (
+const SocialIcon = ({ title, link, protocol, children }: Props) => (
   <StyledLink
     target="_blank"
     rel="noopener"

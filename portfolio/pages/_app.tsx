@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import 'minireset.css';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
+const MyApp = ({ Component, pageProps }: AppProps) => (
   <Component {...pageProps} />
 );
 

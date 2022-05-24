@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async () => ({
   },
 });
 
-const NotFoundPage: React.FC<NotFoundPageProps> = ({ sideInfoReq }) => (
+const NotFoundPage = ({ sideInfoReq }: NotFoundPageProps) => (
   <Root>
     <SEO title="404: Not found" />
     <Header />
@@ -50,7 +50,9 @@ const NotFoundPage: React.FC<NotFoundPageProps> = ({ sideInfoReq }) => (
       <InnerWrapper>
         <Title1>404</Title1>
         <Title2>Not found</Title2>
-        <Description>You just hit a route that doesn&apos;t exist...</Description>
+        <Description>
+          You just hit a route that doesn&apos;t exist...
+        </Description>
       </InnerWrapper>
     </Wrapper>
   </Root>

@@ -15,7 +15,7 @@ interface Props {
   school: School;
 }
 
-const EducationListing: React.FC<Props> = ({ school }) => {
+const EducationListing = ({ school }: Props) => {
   const { title, schoolName, date, location, points } = school;
   return (
     <Wrapper>

@@ -5,7 +5,7 @@ import { Root, Wrapper } from '../components/layout';
 import SEO from '../components/SEO';
 import ResumeIFrame from '../components/ResumeIFrame';
 
-const ResumePage: React.FC = () => (
+const ResumePage = () => (
   <Root>
     <SEO title="Mario Jiménez' resume" />
     <Header />

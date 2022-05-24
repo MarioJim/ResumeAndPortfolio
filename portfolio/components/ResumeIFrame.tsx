@@ -13,7 +13,7 @@ const StyledIFrame = styled.iframe`
 
 const pdfURL = 'https://mariojim.github.io/mario_jimenez_resume.pdf';
 
-const ResumeIFrame: React.FC = () => (
+const ResumeIFrame = () => (
   <Wrapper>
     <StyledIFrame
       src={`https://docs.google.com/viewer?url=${pdfURL}&embedded=true`}

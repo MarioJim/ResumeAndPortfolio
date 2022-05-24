@@ -18,7 +18,7 @@ interface Props {
   skill: Skill;
 }
 
-const SkillListing: React.FC<Props> = ({ skill }) => {
+const SkillListing = ({ skill }: Props) => {
   const { title, points } = skill;
   return (
     <Wrapper>
