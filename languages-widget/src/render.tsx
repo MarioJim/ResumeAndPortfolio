@@ -9,18 +9,27 @@ const marginSides = 25;
 export const renderSVG = (languages: Language[]): string =>
   ReactDOMServer.renderToString(<Widget langs={languages} />);
 
-const Widget: React.FC<{ langs: Language[] }> = ({ langs }) => (
+const styles = `
+  text { font-family: 'Segoe UI', Ubuntu, Sans-Serif; }
+  .lang { fill: #333333; font-size: 12px; font-weight: 400; }
+  .title { fill: #3d7e9a; font-size: 18px; font-weight: 600; }
+  .bg { fill: #ffffff; stroke: #e4e2e2; }
+
+  @media (prefers-color-scheme: dark) {
+    .lang { fill: #c9d1d9; }
+    .title { fill: #58a6ff; }
+    .bg { fill: #0d1117; stroke: grey; }
+  }
+`;
+
+const Widget = ({ langs }: { langs: Language[] }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
     viewBox={`0 0 ${width} ${height}`}
   >
-    <style>
-      {
-        "text { font-family: 'Segoe UI', Ubuntu, Sans-Serif; fill: #333333; font-size: 12px; font-weight: 400; }"
-      }
-    </style>
+    <style>{styles}</style>
     <Background />
     <Title title="Top 10 Most Used Languages" />
     <BarGraph langs={langs} />
@@ -30,29 +39,24 @@ const Widget: React.FC<{ langs: Language[] }> = ({ langs }) => (
   </svg>
 );
 
-const Background: React.FC = () => (
+const Background = () => (
   <rect
+    className="bg"
     width={width - 2}
     height={height - 2}
     x={1}
     y={1}
     rx={10}
-    fill="#ffffff"
-    stroke="#e4e2e2"
   />
 );
 
-const Title: React.FC<{ title: string }> = ({ title }) => (
-  <text
-    x={marginSides}
-    y={35}
-    style={{ fill: '#3d7e9a', fontSize: '18px', fontWeight: 600 }}
-  >
+const Title = ({ title }: { title: string }) => (
+  <text x={marginSides} y={35} className="title">
     {title}
   </text>
 );
 
-const BarGraph: React.FC<{ langs: Language[] }> = ({ langs }) => {
+const BarGraph = ({ langs }: { langs: Language[] }) => {
   const graphWidth = width - 2 * marginSides;
   let cumSize = 0;
   const langRectangles = langs.map<LanguageRectangle>(({ color, size }) => {
@@ -60,6 +64,7 @@ const BarGraph: React.FC<{ langs: Language[] }> = ({ langs }) => {
     cumSize += size;
     return langRect;
   });
+
   return (
     <g transform={`translate(${marginSides}, 50) scale(${graphWidth}, 8)`}>
       {langRectangles.map((lang, idx) => (
@@ -75,17 +80,15 @@ const BarGraph: React.FC<{ langs: Language[] }> = ({ langs }) => {
   );
 };
 
-const LanguageItem: React.FC<{ lang: Language; idx: number }> = ({
-  lang,
-  idx,
-}) => {
+const LanguageItem = ({ lang, idx }: { lang: Language; idx: number }) => {
   const x = idx % 2 === 0 ? marginSides : width / 2;
   const y = 75 + 28 * Math.floor(idx / 2);
   const radius = 6;
+
   return (
     <g transform={`translate(${x}, ${y})`}>
-      <circle cx={2 + radius} cy={radius} r={radius} fill={lang.color} />
-      <text x={2 * radius + 12} y={radius + 5}>
+      <circle cx={radius + 2} cy={radius} r={radius} fill={lang.color} />
+      <text x={2 * radius + 12} y={radius + 5} className="lang">
         {`${lang.name} ${(100 * lang.size).toFixed(2)}%`}
       </text>
     </g>
