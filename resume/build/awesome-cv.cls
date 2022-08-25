@@ -81,7 +81,7 @@
 %                Configuration for layout
 %-------------------------------------------------------------------------------
 %% Page Layout
-\geometry{left=2.0cm, top=2.0cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+\geometry{left=2.0cm, top=1.7cm, right=2.0cm, bottom=1.7cm, footskip=.5cm}
 
 %% Header & Footer
 \fancyhfoffset{0em}
@@ -224,7 +224,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
+\newcommand{\acvSectionTopSkip}{2mm}
 \newcommand{\acvSectionContentTopSkip}{2mm}
 
 
@@ -328,7 +328,7 @@
 
 % Define an environment for cventry
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
+  \vspace{1mm}
   \begin{center}
 }{%
   \end{center}

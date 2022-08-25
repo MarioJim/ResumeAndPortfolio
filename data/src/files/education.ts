@@ -13,8 +13,8 @@ export const schools: School[] = [
     date: 'Aug 2018 - Exp. Dec 2022',
     location: 'Mexico',
     points: [
-      'Currently taking a semester off to participate in internships, 97/100 GPA',
-      'Relevant coursework: Data Structures, Operating Systems, Analysis and Design of Algorithms, Programming Languages, Advanced Database Systems, Web Applications Development, Software Quality and Testing, Software Design and Architecture, Compiler Design',
+      'Currently studying my 9th and last semester, 97/100 GPA',
+      'Relevant coursework: Analysis and Design of Algorithms, Mobile Application Development, Advanced Database Systems, Web Applications Development, Software Design and Architecture, Compiler Design',
     ],
   },
 ];

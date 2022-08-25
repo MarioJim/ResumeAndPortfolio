@@ -18,7 +18,7 @@ const styles = `
   @media (prefers-color-scheme: dark) {
     .lang { fill: #c9d1d9; }
     .title { fill: #58a6ff; }
-    .bg { fill: #0d1117; stroke: grey; }
+    .bg { fill: #0d1117; stroke: #30363d; }
   }
 `;
 
@@ -58,23 +58,17 @@ const Title = ({ title }: { title: string }) => (
 
 const BarGraph = ({ langs }: { langs: Language[] }) => {
   const graphWidth = width - 2 * marginSides;
-  let cumSize = 0;
+  let nextStart = 0;
   const langRectangles = langs.map<LanguageRectangle>(({ color, size }) => {
-    const langRect = { start: cumSize, size, color };
-    cumSize += size;
+    const langRect = { start: nextStart, size, color };
+    nextStart += size;
     return langRect;
   });
 
   return (
     <g transform={`translate(${marginSides}, 50) scale(${graphWidth}, 8)`}>
-      {langRectangles.map((lang, idx) => (
-        <rect
-          key={`bar${idx}`}
-          fill={lang.color}
-          x={lang.start}
-          width={lang.size}
-          height={1}
-        />
+      {langRectangles.map(({ color, start, size }, idx) => (
+        <rect key={`b${idx}`} fill={color} x={start} width={size} height={1} />
       ))}
     </g>
   );
