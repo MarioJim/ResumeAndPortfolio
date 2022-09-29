@@ -14,8 +14,8 @@ export const experiences: Experience[] = [
     location: 'Mountain View, CA',
     points: [
       'Worked with the Flutter team in their efforts of supporting internal services on new desktop applications',
-      'Implemented a Flutter plugin for storing and uploading logs in first-party desktop Google apps using bidirectional communication through method channels between Dart and Objective-C/C++',
-      "Introduced a large scale change (~100 files) in BUILD rules across Google's monorepo affecting Flutter plugins in order to improve the dependency check used to verify Flutter applications correctly import plugins",
+      'Implemented a Flutter plugin for storing and uploading logs in first-party desktop Google apps using bidirectional communication through method channels between the plugin API (Dart) and its implementation (Objective-C for MacOS and C++ for Windows)',
+      "Introduced a large scale change (~100 files) in BUILD rules across Google's monorepo in order to improve the dependency check used to verify that Flutter applications correctly import plugins",
     ],
   },
   {

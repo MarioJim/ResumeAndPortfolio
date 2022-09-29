@@ -6,7 +6,7 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     title: 'Languages',
-    points: 'TypeScript (proficient), Python (fluent), Java, Rust, C++, Dart',
+    points: 'TypeScript (proficient), Rust, C++, Dart, Java, Python',
   },
   {
     title: 'Frameworks',
@@ -14,7 +14,6 @@ export const skills: Skill[] = [
   },
   {
     title: 'Tools & Platforms',
-    points:
-      'Mercurial, Git, Docker, GitHub Actions (CI/CD pipelines), Firebase, Ansible',
+    points: 'Mercurial, Git, Docker, GitHub Actions (CI/CD pipelines)',
   },
 ];

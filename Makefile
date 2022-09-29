@@ -10,7 +10,7 @@
 all: languages-widget resume portfolio
 
 prepare:
-	yarn install
+	yarn
 	-rm -r build
 	mkdir build
 
@@ -35,7 +35,8 @@ portfolio: prepare data
 dev-portfolio: prepare data
 	yarn workspace portfolio dev
 
-lint: prepare
+lint:
+	yarn
 	yarn workspace portfolio lint
 
 docker-image:
