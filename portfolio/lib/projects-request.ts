@@ -31,15 +31,17 @@ const query = gql`
   }
 `;
 
-const allowedRepos: number[] = [
+const projectRepoIds: number[] = [
   167217902, // MarioJim/CompetitiveProgramming
   206996709, // MarioJim/ResumeAndPortfolio
-  252565333, // MarioJim/finite-automata-graph
-  267439763, // MarioJim/alvap-store
+  218893835, // MarioJim/dotfiles
   296929253, // MarioJim/fuzzy-pdf
   297854675, // KevinTMtz/DauverreWeb
   328483336, // MarioJim/touchegg-music-client
   328806789, // MarioJim/HNReader
+  346187383, // MarioJim/tec-transcript-translater
+  401459712, // MarioJim/SpotifyHallOfFame
+  407247561, // MarioJim/miniclj
 ];
 
 export interface GitHubRepository {
@@ -66,5 +68,5 @@ export type ProjectsRequest = GitHubRepository[];
 export const fetchProjectsRequest = async (): Promise<ProjectsRequest> => {
   const req = await GithubGQLClient.request(query);
   const { nodes } = req.viewer.topRepositories;
-  return nodes.filter((repo) => allowedRepos.includes(repo.databaseId));
+  return nodes.filter((repo) => projectRepoIds.includes(repo.databaseId));
 };

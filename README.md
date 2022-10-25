@@ -21,11 +21,11 @@ TypeScript module to keep the same database for building my resume and my portfo
 
 ## Portfolio
 
-My personal webpage, hosted on [GitHub Pages](https://mariojim.github.io/). Written in React and TypeScript and compiled with [Next.js](https://nextjs.org/).
+My personal webpage, hosted on [GitHub Pages](https://marioj.dev/). Written in React and TypeScript and compiled with [Next.js](https://nextjs.org/).
 
 ## Resume
 
-Compiled using [tectonic](https://tectonic-typesetting.github.io/) from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://mariojim.github.io/mario_jimenez_resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
+Compiled using [tectonic](https://tectonic-typesetting.github.io/) from template strings in TypeScript to LaTeX and finally to pdf. Hosted on [GitHub Pages](https://marioj.dev/mario_jimenez_resume.pdf) and forked from [Awesome-CV](https://github.com/posquit0/Awesome-CV/).
 
 ## Languages widget
 

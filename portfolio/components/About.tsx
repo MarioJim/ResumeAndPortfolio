@@ -1,11 +1,10 @@
 import React from 'react';
-import { additional, experiences, projects, schools, skills } from 'data';
+import { additional, experiences, schools, skills } from 'data';
 import styled from '@emotion/styled';
 
 import AdditionalListing from './AdditionalListing';
 import EducationListing from './EducationListing';
 import ExperienceListing from './ExperienceListing';
-import ProjectListing from './ProjectListing';
 import SkillListing from './SkillListing';
 import theme from '../styles/theme';
 
@@ -68,12 +67,6 @@ const About = () => (
       <SectionTitle>Education</SectionTitle>
       {schools.map((school, key) => (
         <EducationListing school={school} key={key} />
-      ))}
-    </Section>
-    <Section className={animationClasses}>
-      <SectionTitle>Software Projects</SectionTitle>
-      {projects.map((project, key) => (
-        <ProjectListing project={project} key={key} />
       ))}
     </Section>
     <Section className={animationClasses}>

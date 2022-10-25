@@ -25,8 +25,7 @@ const Projects = ({ req }: ProjectsProps) => {
           owner={repo.owner.login}
           url={repo.url}
           website={
-            repo.homepageUrl !== 'https://mariojim.github.io/' &&
-            repo.homepageUrl
+            repo.homepageUrl !== 'https://marioj.dev' && repo.homepageUrl
           }
           tags={repo.repositoryTopics.nodes.map((node) => node.topic.name)}
         />

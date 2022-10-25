@@ -22,7 +22,7 @@ const resumeFile = `
 \\name{${firstName}}{${lastName}}
 \\position{${myProfile.position}}
 \\email{${myProfile.mail}}
-\\homepage{mariojim.github.io}
+\\homepage{marioj.dev}
 \\github{${myProfile.github}}
 \\linkedin{${myProfile.linkedin}}
 

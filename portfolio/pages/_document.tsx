@@ -29,7 +29,7 @@ class MyDocument extends Document<MyDocumentProps> {
           <link rel="icon" href="/favicon.png" />
           <meta name="description" content="Mario Jiménez' portfolio" />
           <meta property="og:description" content="Mario Jiménez' portfolio" />
-          <meta property="og:url" content="https://mariojim.github.io/" />
+          <meta property="og:url" content="https://marioj.dev/" />
           <meta property="og:type" content="website" />
           <meta property="og:image" content={this.props.ogImage} />
           <link
