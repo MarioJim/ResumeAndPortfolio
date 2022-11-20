@@ -31,6 +31,7 @@ const query = gql`
   }
 `;
 
+const thisRepoId = 206996709;
 const projectRepoIds: number[] = [
   167217902, // MarioJim/CompetitiveProgramming
   206996709, // MarioJim/ResumeAndPortfolio
@@ -44,7 +45,7 @@ const projectRepoIds: number[] = [
   407247561, // MarioJim/miniclj
 ];
 
-export interface GitHubRepository {
+interface GitHubRepository {
   databaseId: number;
   name: string;
   owner: {
@@ -63,10 +64,34 @@ export interface GitHubRepository {
   };
 }
 
-export type ProjectsRequest = GitHubRepository[];
+export interface ProjectData {
+  databaseId: number;
+  image: string;
+  title: string;
+  owner: string;
+  description: string;
+  url: string;
+  website?: string;
+  tags: string[];
+}
 
-export const fetchProjectsRequest = async (): Promise<ProjectsRequest> => {
+export const fetchProjects = async (): Promise<ProjectData[]> => {
   const req = await GithubGQLClient.request(query);
-  const { nodes } = req.viewer.topRepositories;
-  return nodes.filter((repo) => projectRepoIds.includes(repo.databaseId));
+  return req.viewer.topRepositories.nodes
+    .map((repo: GitHubRepository) =>
+      repo.databaseId === thisRepoId ? { ...repo, homepageUrl: null } : repo,
+    )
+    .filter((repo: GitHubRepository) =>
+      projectRepoIds.includes(repo.databaseId),
+    )
+    .map(({ databaseId, description, url, ...repo }: GitHubRepository) => ({
+      databaseId,
+      description,
+      url,
+      image: repo.openGraphImageUrl,
+      title: repo.name,
+      owner: repo.owner.login,
+      website: repo.homepageUrl,
+      tags: repo.repositoryTopics.nodes.map((node) => node.topic.name),
+    }));
 };

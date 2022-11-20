@@ -1,11 +1,10 @@
-import React from 'react';
 import Head from 'next/head';
 
-interface Props {
+interface SEOProps {
   title?: string;
 }
 
-const SEO = ({ title }: Props) => (
+const SEO = ({ title }: SEOProps) => (
   <Head>
     <title>{title || 'Mario Jiménez'}</title>
     <meta property="og:title" content={title || 'Mario Jiménez'} />

@@ -1,60 +1,44 @@
-import React from 'react';
+import type { SideInfoRequest } from '../lib/fetch-sideinfo';
 import { myProfile } from 'data';
+import Image from 'next/image';
+import Link from 'next/link';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import styled from '@emotion/styled';
+import styles from '../styles/side_info.module.scss';
 
-import SocialIcon from './SocialIcon';
-import { SideInfoRequest } from '../lib/sideinfo-request';
-import theme from '../styles/theme';
-
-const StyledSide = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-`;
-
-const ProfilePicture = styled.img`
-  border-radius: 50%;
-`;
-
-const Title = styled.h1`
-  margin-top: 20px;
-  margin-bottom: 4px;
-  font-size: 2em;
-  font-weight: ${theme.fonts.bold};
-`;
-
-const Description = styled.p`
-  font-size: 1.2em;
-  text-align: center;
-  font-weight: ${theme.fonts.light};
-`;
-
-const SocialIconsWrapper = styled.div`
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-interface SideInfoProps {
-  req: SideInfoRequest;
+interface SocialIconProps {
+  title: string;
+  link: string;
+  protocol: string;
+  children: React.ReactNode;
 }
 
-const SideInfo = ({ req }: SideInfoProps) => {
+const SocialIcon = ({ title, link, protocol, children }: SocialIconProps) => (
+  <Link
+    target="_blank"
+    rel="noreferrer"
+    href={protocol + link}
+    title={title}
+    className={styles.socialIcon}
+  >
+    {children}
+    <p>{link}</p>
+  </Link>
+);
+
+const SideInfo = ({ avatarUrl, bio }: SideInfoRequest) => {
   const { name, mail, github, linkedin } = myProfile;
   return (
-    <StyledSide>
-      <ProfilePicture
-        src={req.avatarUrl}
+    <div className={styles.sideInfo}>
+      <Image
+        src={avatarUrl}
         alt="Profile picture"
-        width="200px"
-        height="200px"
+        width="200"
+        height="200"
+        priority
       />
-      <Title>{name}</Title>
-      <Description>{req.bio}</Description>
-      <SocialIconsWrapper>
+      <h1>{name}</h1>
+      <p>{bio}</p>
+      <div>
         <SocialIcon title="Email" protocol="mailto:" link={mail}>
           <FaEnvelope size="2.3em" />
         </SocialIcon>
@@ -64,8 +48,8 @@ const SideInfo = ({ req }: SideInfoProps) => {
         <SocialIcon title="LinkedIn" protocol="https://" link={linkedin}>
           <FaLinkedin size="2.3em" />
         </SocialIcon>
-      </SocialIconsWrapper>
-    </StyledSide>
+      </div>
+    </div>
   );
 };
 

@@ -1,0 +1,62 @@
+@use 'theme';
+
+.root {
+  height: 100vh;
+  overflow-y: hidden;
+  font-weight: theme.$regular-weight;
+  background-color: theme.$background-color;
+  color: theme.$font-color;
+
+  & > div {
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+  }
+}
+
+.twoColumnsWrapper {
+  margin: 0 auto;
+  padding: 20px 40px;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  @media (max-width: 840px) {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 20px 8vw;
+  }
+}
+
+.projectsWrapper {
+  padding: 0 5%;
+
+  @media (max-width: 840px) {
+    padding: 0;
+  }
+}
+
+.resumeWrapper {
+  margin: 0 auto;
+  padding: 20px 40px;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  & > div {
+    position: relative;
+    grid-column: 1 / span 2;
+    height: calc(100vh - 100px);
+
+    & > iframe {
+      width: 100%;
+    }
+  }
+}

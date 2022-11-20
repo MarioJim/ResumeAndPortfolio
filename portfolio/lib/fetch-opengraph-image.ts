@@ -11,7 +11,7 @@ const query = gql`
   }
 `;
 
-export const fetchOpenGraphImageRequest = async (): Promise<string> =>
+export const fetchOpenGraphImage = async (): Promise<string> =>
   GithubGQLClient.request(query).then(
     (data) => data.viewer.repository.openGraphImageUrl,
   );

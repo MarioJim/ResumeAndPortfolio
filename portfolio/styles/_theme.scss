@@ -1,0 +1,28 @@
+$bold-weight: 600;
+$regular-weight: 500;
+$light-weight: 400;
+
+$header-color: #152238;
+$background-color: #1c2e4a;
+$font-color: #ffffffe6;
+
+@mixin wrapper {
+  margin: 60px auto 0 auto;
+  padding: 20px 40px;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  @media (max-width: 840px) {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 20px 8vw;
+  }
+}

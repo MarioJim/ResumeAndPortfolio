@@ -1,0 +1,41 @@
+@use 'theme';
+
+.headerRoot {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: theme.$header-color;
+  display: grid;
+  grid-template-columns: 100px 50px 100px 50px 100px;
+  place-items: center;
+  justify-content: center;
+
+  @media (max-width: 520px) {
+    grid-template-columns: 100px 1fr 100px 1fr 100px;
+    padding: 0 11.5vw;
+  }
+}
+
+.headerSeparator {
+  flex-grow: 0;
+  font-size: 1.2em;
+  font-weight: theme.$bold-weight;
+  text-align: center;
+}
+
+.headerLink {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: theme.$light-weight;
+  text-align: center;
+  max-width: 100px;
+}
+
+.headerActiveLink {
+  @extend .headerLink;
+  font-weight: theme.$bold-weight;
+}

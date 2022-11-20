@@ -7,7 +7,7 @@
 # make docker-image   # create and push docker image
 # make clean          # clean compiled files
 
-all: languages-widget resume portfolio
+all: languages-widget resume
 
 prepare:
 	yarn
@@ -27,11 +27,6 @@ resume: prepare data
 	mv resume/build/resume.pdf build/mario_jimenez_resume.pdf
 	rm resume/build/resume.tex
 
-portfolio: prepare data
-	-rm -r portfolio/out
-	yarn workspace portfolio build
-	mv portfolio/out/* build/
-
 dev-portfolio: prepare data
 	yarn workspace portfolio dev
 
@@ -48,9 +43,8 @@ clean:
 		build \
 		data/lib \
 		languages-widget/lang_widget.svg \
-		portfolio/out \
 		resume/build/resume.pdf \
 		resume/build/resume.tex
 
 .PHONY = all prepare data languages-widget resume \
-         portfolio dev-portfolio docker-image clean
+         dev-portfolio docker-image clean

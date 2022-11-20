@@ -1,87 +1,41 @@
-import React from 'react';
 import { additional, experiences, schools, skills } from 'data';
-import styled from '@emotion/styled';
-
-import AdditionalListing from './AdditionalListing';
-import EducationListing from './EducationListing';
-import ExperienceListing from './ExperienceListing';
-import SkillListing from './SkillListing';
-import theme from '../styles/theme';
-
-const StyledWrapper = styled.div`
-  margin-left: 30px;
-  border-left: 6px solid white;
-  padding-left: 41px;
-
-  @media (max-width: 820px) {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: 0;
-  }
-`;
-
-const Section = styled.section`
-  position: relative;
-  margin-bottom: 48px;
-
-  @media (max-width: 820px) {
-    margin-bottom: 32px;
-  }
-`;
-
-const SectionTitle = styled.h2`
-  margin: 0;
-  font-size: 1.8em;
-  font-weight: ${theme.fonts.bold};
-
-  &:before {
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    color: white;
-    background-color: white;
-    position: absolute;
-    left: -59px;
-    top: 8px;
-    border: 7px solid ${theme.colors.background};
-    box-sizing: border-box;
-
-    @media (max-width: 820px) {
-      content: none;
-    }
-  }
-`;
+import {
+  AdditionalListing,
+  EducationListing,
+  ExperienceListing,
+  SkillListing,
+} from './Listings';
+import styles from '../styles/about.module.scss';
 
 const animationClasses = 'animate__animated animate__fadeInUp';
 
 const About = () => (
-  <StyledWrapper>
-    <Section className={animationClasses}>
-      <SectionTitle>Experience</SectionTitle>
+  <div className={styles.about}>
+    <section className={animationClasses}>
+      <h2>Experience</h2>
       {experiences.map((exp, key) => (
-        <ExperienceListing exp={exp} key={key} />
+        <ExperienceListing {...exp} key={key} />
       ))}
-    </Section>
-    <Section className={animationClasses}>
-      <SectionTitle>Education</SectionTitle>
+    </section>
+    <section className={animationClasses}>
+      <h2>Education</h2>
       {schools.map((school, key) => (
-        <EducationListing school={school} key={key} />
+        <EducationListing {...school} key={key} />
       ))}
-    </Section>
-    <Section className={animationClasses}>
-      <SectionTitle>Skills</SectionTitle>
+    </section>
+    <section className={animationClasses}>
+      <h2>Skills</h2>
       {skills.map((skill, key) => (
-        <SkillListing skill={skill} key={key} />
+        <SkillListing {...skill} key={key} />
       ))}
-    </Section>
-    <Section className={animationClasses}>
-      <SectionTitle>Additional Experience and Awards</SectionTitle>
+    </section>
+    <section className={animationClasses}>
+      <h2>Additional Experience and Awards</h2>
       {additional.map((add, key) => (
-        <AdditionalListing additional={add} key={key} />
+        <AdditionalListing {...add} key={key} />
       ))}
-    </Section>
-  </StyledWrapper>
+    </section>
+  </div>
 );
 
 export default About;
