@@ -9,7 +9,7 @@ const IndexPage = async () => {
   const sideInfo = await fetchSideInfo();
   return (
     <>
-      <SEO />
+      <SEO title="Mario Jiménez" />
       <div className={layout.twoColumnsWrapper}>
         <SideInfo {...sideInfo} />
         <About />

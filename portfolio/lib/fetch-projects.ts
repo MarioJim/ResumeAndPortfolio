@@ -71,7 +71,7 @@ export interface ProjectData {
   owner: string;
   description: string;
   url: string;
-  website?: string;
+  website: string | null;
   tags: string[];
 }
 

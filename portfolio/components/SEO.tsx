@@ -1,14 +1,12 @@
-import Head from 'next/head';
-
 interface SEOProps {
-  title?: string;
+  title: string;
 }
 
 const SEO = ({ title }: SEOProps) => (
-  <Head>
-    <title>{title || 'Mario Jiménez'}</title>
-    <meta property="og:title" content={title || 'Mario Jiménez'} />
-  </Head>
+  <>
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+  </>
 );
 
 export default SEO;

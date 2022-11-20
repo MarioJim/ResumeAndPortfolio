@@ -279,7 +279,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https:/\@github}{\faGithub\acvHeaderIconSep\@github}%
+          \href{https://\@github}{\faGithub\acvHeaderIconSep\@github}%
         }%
       \ifthenelse{\isundefined{\@linkedin}}%
         {}%
