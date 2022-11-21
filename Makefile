@@ -7,7 +7,7 @@
 # make docker-image   # create and push docker image
 # make clean          # clean compiled files
 
-all: languages-widget resume
+all: resume
 
 prepare:
 	yarn
@@ -16,10 +16,6 @@ prepare:
 
 data: prepare
 	yarn workspace data build
-
-languages-widget: prepare
-	yarn workspace languages-widget build
-	mv languages-widget/lang_widget.svg build/
 
 resume: prepare data
 	yarn workspace resume build
@@ -42,9 +38,7 @@ clean:
 	-rm -r \
 		build \
 		data/lib \
-		languages-widget/lang_widget.svg \
 		resume/build/resume.pdf \
 		resume/build/resume.tex
 
-.PHONY = all prepare data languages-widget resume \
-         dev-portfolio docker-image clean
+.PHONY = all prepare data resume dev-portfolio docker-image clean

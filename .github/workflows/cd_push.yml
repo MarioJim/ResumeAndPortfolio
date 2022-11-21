@@ -8,14 +8,18 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    container:
-      image: mariojim/resume-portfolio:latest
-      env:
-        COMMIT_MSG: ${{ github.event.head_commit.message }}
-        GRAPHQL_GITHUB_KEY: ${{ secrets.GRAPHQL_GITHUB_KEY }}
-        API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
+
+    env:
+      COMMIT_MSG: ${{ github.event.head_commit.message }}
+      GRAPHQL_GITHUB_KEY: ${{ secrets.GRAPHQL_GITHUB_KEY }}
+      API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
 
     steps:
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Clone source
         uses: actions/checkout@v3
         with:
@@ -24,10 +28,10 @@ jobs:
       - name: Run linter
         run: make -C source lint
 
-      - name: Build website
+      - name: Build files
         run: make -C source
 
-      - name: Clone website repo
+      - name: Clone GH pages repo
         uses: actions/checkout@v3
         with:
           repository: MarioJim/mariojim.github.io
