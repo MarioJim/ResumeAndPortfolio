@@ -2,7 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/MarioJim/ResumeAndPortfolio)
 ![Lines of code](https://tokei.rs/b1/github/MarioJim/ResumeAndPortfolio?category=code)
-![GitHub Actions Workflow](https://img.shields.io/github/workflow/status/MarioJim/ResumeAndPortfolio/Continuous%20Deployment?label=GitHub%20Actions%20Workflow&logo=github)
+![GitHub Actions Workflow](https://img.shields.io/github/actions/workflow/status/MarioJim/ResumeAndPortfolio/cd_push.yml?branch=main&label=GitHub%20Actions%20Workflow&logo=github)
 ![Vercel Deployment](https://img.shields.io/github/deployments/MarioJim/ResumeAndPortfolio/Production?label=Vercel%20Deployment&logo=vercel)
 
 Repository to version control my resume and portfolio.

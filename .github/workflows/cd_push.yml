@@ -32,6 +32,7 @@ jobs:
 
       - name: Build resume
         run: |
+          cd source
           yarn
           yarn workspace data build
           yarn workspace resume build
