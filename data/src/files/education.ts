@@ -13,7 +13,7 @@ export const schools: School[] = [
     date: 'Aug 2018 - Exp. Dec 2022',
     location: 'Mexico',
     points: [
-      'Currently studying my 9th and last semester, 97/100 GPA',
+      "Graduated Magna Cum Laude, with a 97/100 GPA and an award by CENEVAL's national exam",
       'Relevant coursework: Analysis and Design of Algorithms, Mobile Application Development, Advanced Database Systems, Web Applications Development, Software Design and Architecture, Compiler Design',
     ],
   },

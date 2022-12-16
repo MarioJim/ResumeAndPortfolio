@@ -4,7 +4,9 @@
   "description": "My resume",
   "main": "src/main.ts",
   "scripts": {
-    "build": "ts-node src/main.ts"
+    "generate": "ts-node src/main.ts",
+    "compile": "tectonic build/mario_jimenez_resume.tex",
+    "build": "yarn generate && yarn compile"
   },
   "author": "MarioJim",
   "license": "MIT",

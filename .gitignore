@@ -9,13 +9,13 @@ yarn-error.log*
 # Compiled products
 /build
 /data/lib
-/languages-widget/lang_widget.svg
 /portfolio/.next
 /portfolio/out
+/resume/build/mario_jimenez_resume.*
 
 # Secrets
 .env
 .env.local
 
 # Other
-portfolio/.vscode
+/portfolio/.vscode

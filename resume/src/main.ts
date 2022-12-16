@@ -35,5 +35,5 @@ ${additionalSection}
 \\end{document}
 `.replaceAll('~', '\\~{}');
 
-const filepath = path.join('build', 'resume.tex');
+const filepath = path.join('build', 'mario_jimenez_resume.tex');
 fs.writeFileSync(filepath, resumeFile);
