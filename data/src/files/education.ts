@@ -10,7 +10,7 @@ export const schools: School[] = [
   {
     schoolName: 'Tecnológico de Monterrey',
     title: 'B.S. Computer Science and Technology',
-    date: 'Aug 2018 - Exp. Dec 2022',
+    date: 'August 2018 - December 2022',
     location: 'Mexico',
     points: [
       "Graduated Magna Cum Laude, with a 97/100 GPA and an award by CENEVAL's national exam",

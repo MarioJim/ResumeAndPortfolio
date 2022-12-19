@@ -6,7 +6,8 @@
   "scripts": {
     "generate": "ts-node src/main.ts",
     "compile": "tectonic build/mario_jimenez_resume.tex",
-    "build": "yarn generate && yarn compile"
+    "build": "yarn generate && yarn compile",
+    "rebuild": "pushd ../data && yarn build && popd && yarn build"
   },
   "author": "MarioJim",
   "license": "MIT",

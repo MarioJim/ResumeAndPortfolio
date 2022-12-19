@@ -24,7 +24,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       </head>
       <body className={styles.root}>
         <Header />
-        {children}
+        <div>{children}</div>
       </body>
     </html>
   );
