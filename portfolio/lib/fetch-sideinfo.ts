@@ -16,4 +16,4 @@ export interface SideInfoRequest {
 }
 
 export const fetchSideInfo = async (): Promise<SideInfoRequest> =>
-  GithubGQLClient.request(query).then((data) => data.viewer);
+  GithubGQLClient.request(query).then((data: any) => data.viewer);
