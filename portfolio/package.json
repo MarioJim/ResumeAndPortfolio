@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.0.0",
     "animate.css": "^4",
     "data": "*",
     "encoding": "^0.1.13",

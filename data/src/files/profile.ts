@@ -8,7 +8,7 @@ interface Profile {
 
 export const myProfile: Profile = {
   name: 'Mario Jiménez',
-  position: 'Software Engineering Student',
+  position: 'Software Engineer',
   mail: 'mario.emilio.j@gmail.com',
   github: 'github.com/MarioJim',
   linkedin: 'linkedin.com/in/mariojim',

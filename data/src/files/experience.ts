@@ -9,12 +9,29 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     workPlace: 'Google',
+    title: 'Incoming Software Engineer',
+    date: 'April 2023',
+    location: 'New York City, NY',
+    points: ['Joining the DevSite Publishing Backend team'],
+  },
+  {
+    workPlace: 'Scoville Co., Ltd.',
+    title: 'Software Engineering Intern',
+    date: 'January 2023',
+    location: 'Tokyo, Japan',
+    points: [
+      'Collaborated in a team of 5 interns to research and develop author obfuscation techniques, which involved combining multiple NLP-based methods to conceal the stylometric identity of authors',
+      'Developed a production-ready application using Flask and PostgreSQL to implement the backend, and utilized React and TypeScript to create a performant and scalable interface for calling these AI models',
+    ],
+  },
+  {
+    workPlace: 'Google',
     title: 'Software Engineering Intern',
     date: 'June - August 2022',
     location: 'Mountain View, CA',
     points: [
       'Worked with the Flutter team in their efforts of supporting internal services on new desktop applications',
-      'Implemented a Flutter plugin for storing and uploading logs in first-party desktop Google apps using bidirectional communication through method channels between the plugin API (Dart) and its implementation (Objective-C for MacOS and C++ for Windows)',
+      "Implemented a Flutter plugin for storing and uploading logs in first-party desktop apps using bidirectional communication through method channels between the plugin's API (Dart) and its implementation (Objective-C/C++)",
       "Introduced a large scale change (~100 files) in BUILD rules across Google's monorepo in order to improve the dependency check used to verify that Flutter applications correctly import plugins",
     ],
   },
@@ -35,8 +52,7 @@ export const experiences: Experience[] = [
     location: 'Remote',
     points: [
       'Worked on the Field Service Mobile team from the Dynamics 365 division',
-      'Participated in the creation of a simple feature of the FS app, from its conception, design, documentation, implementation and testing',
-      'Developed and modified TypeScript modules used in React Native applications or in a web context',
+      'Participated in the creation of a simple feature on the Field Service app, from gathering requirements and an initial design, through its implementation, documentation and testing using TypeScript and React Native',
       'Built an audio recording pipeline from recording an audio stream and encoding it using the Android NDK (C++)',
     ],
   },
@@ -49,7 +65,6 @@ export const experiences: Experience[] = [
       'Built and deployed a dashboard to help assess cybersecurity risks that affect the institution in a day-to-day basis',
       'Created several graph and hierarchy visualizations rendered with the help of React and D3.js',
       'Developed Python scripts to clean and transform the data from Excel spreadsheets to a variety of JSON and CSV files for easier use in the web app',
-      'Had a hands-on experience on how companies defend their assets against malware and other cyber-threats',
     ],
   },
 ];

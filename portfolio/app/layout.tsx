@@ -1,4 +1,4 @@
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import { fetchOpenGraphImage } from '../lib/fetch-opengraph-image';
 import Header from '../components/Header';
 import styles from '../styles/layout.module.scss';

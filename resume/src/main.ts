@@ -2,12 +2,7 @@ import { myProfile } from 'data';
 import fs from 'fs';
 import path from 'path';
 
-import {
-  additionalSection,
-  educationSection,
-  experienceSection,
-  skillsSection,
-} from './sections';
+import { educationSection, experienceSection, skillsSection } from './sections';
 
 const [firstName, lastName] = myProfile.name.split(' ');
 
@@ -31,7 +26,6 @@ const resumeFile = `
 ${experienceSection}
 ${educationSection}
 ${skillsSection}
-${additionalSection}
 \\end{document}
 `.replaceAll('~', '\\~{}');
 

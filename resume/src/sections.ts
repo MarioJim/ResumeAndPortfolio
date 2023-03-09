@@ -1,4 +1,4 @@
-import { additional, experiences, schools, skills } from 'data';
+import { experiences, schools, skills } from 'data';
 
 import {
   cventryTemplate,
@@ -7,13 +7,6 @@ import {
   cvskillTemplate,
   cvsummarySectionTemplate,
 } from './templates';
-
-export const additionalSection: string = cvsectionTemplate(
-  'Additional Experience and Awards',
-  additional.map(({ date, location, points, title }) =>
-    cventryTemplate(location, title, date, '', points),
-  ),
-);
 
 export const educationSection: string = cvsectionTemplate(
   'Education',
