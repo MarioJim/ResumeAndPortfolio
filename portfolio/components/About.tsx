@@ -7,34 +7,36 @@ import {
 } from './Listings';
 import styles from '../styles/about.module.scss';
 
-const animationClasses = 'animate__animated animate__fadeInUp';
+const Section = ({ children }: { children: React.ReactNode }) => (
+  <section className='animate__animated animate__fadeInUp'>{children}</section>
+);
 
 const About = () => (
   <div className={styles.about}>
-    <section className={animationClasses}>
+    <Section>
       <h2>Experience</h2>
       {experiences.map((exp, key) => (
         <ExperienceListing {...exp} key={key} />
       ))}
-    </section>
-    <section className={animationClasses}>
+    </Section>
+    <Section>
       <h2>Education</h2>
       {schools.map((school, key) => (
         <EducationListing {...school} key={key} />
       ))}
-    </section>
-    <section className={animationClasses}>
+    </Section>
+    <Section>
       <h2>Skills</h2>
       {skills.map((skill, key) => (
         <SkillListing {...skill} key={key} />
       ))}
-    </section>
-    <section className={animationClasses}>
+    </Section>
+    <Section>
       <h2>Additional Experience and Awards</h2>
       {additional.map((add, key) => (
         <AdditionalListing {...add} key={key} />
       ))}
-    </section>
+    </Section>
   </div>
 );
 

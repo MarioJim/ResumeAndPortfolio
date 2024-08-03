@@ -39,14 +39,14 @@ const SideInfo = ({ avatarUrl, bio }: SideInfoRequest) => {
       <h1>{name}</h1>
       <p>{bio}</p>
       <div>
+        <SocialIcon title="LinkedIn" protocol="https://" link={linkedin}>
+          <FaLinkedin size="2.3em" />
+        </SocialIcon>
         <SocialIcon title="Email" protocol="mailto:" link={mail}>
           <FaEnvelope size="2.3em" />
         </SocialIcon>
         <SocialIcon title="GitHub" protocol="https://" link={github}>
           <FaGithub size="2.3em" />
-        </SocialIcon>
-        <SocialIcon title="LinkedIn" protocol="https://" link={linkedin}>
-          <FaLinkedin size="2.3em" />
         </SocialIcon>
       </div>
     </div>

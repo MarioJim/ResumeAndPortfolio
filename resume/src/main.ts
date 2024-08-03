@@ -18,8 +18,8 @@ const resumeFile = `
 \\position{${myProfile.position}}
 \\email{${myProfile.mail}}
 \\homepage{marioj.dev}
-\\github{${myProfile.github}}
 \\linkedin{${myProfile.linkedin}}
+\\github{${myProfile.github}}
 
 \\begin{document}
 \\makecvheader

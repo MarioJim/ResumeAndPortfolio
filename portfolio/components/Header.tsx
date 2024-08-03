@@ -23,8 +23,6 @@ const Header = () => (
     <HeaderLink href="/">about me</HeaderLink>
     <div className="headerSeparator">/</div>
     <HeaderLink href="/resume">resume</HeaderLink>
-    <div className="headerSeparator">/</div>
-    <HeaderLink href="/projects">projects</HeaderLink>
   </header>
 );
 
