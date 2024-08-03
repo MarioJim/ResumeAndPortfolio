@@ -13,6 +13,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "typescript": "^4"
+    "typescript": "^5"
   }
 }

@@ -6,16 +6,16 @@
   "scripts": {
     "generate": "ts-node src/main.ts",
     "compile": "tectonic build/mario_jimenez_resume.tex",
-    "build": "yarn generate && yarn compile",
-    "rebuild": "pushd ../data && yarn build && popd && yarn build"
+    "build": "npm run generate && npm run compile",
+    "rebuild": "pushd ../data && npm run build && popd && npm run build"
   },
   "author": "MarioJim",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@types/node": "^16",
+    "@types/node": "^22",
     "data": "*",
     "ts-node": "^10",
-    "typescript": "^4"
+    "typescript": "^5"
   }
 }

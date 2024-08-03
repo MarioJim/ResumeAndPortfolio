@@ -1,10 +1,9 @@
 {
-  "name": "ResumeAndPortfolio",
+  "name": "resume-and-portfolio",
   "private": true,
   "workspaces": {
     "packages": [
       "data",
-      "languages-widget",
       "resume",
       "portfolio"
     ]
