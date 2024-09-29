@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "animate.css": "^4",
     "data": "*",
     "encoding": "^0.1.13",
     "graphql": "^16",

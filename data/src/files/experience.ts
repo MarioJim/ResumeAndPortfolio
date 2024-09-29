@@ -9,7 +9,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     workPlace: 'Google',
-    title: 'Incoming Software Engineer',
+    title: 'Software Engineer',
     date: 'April 2023 - Current',
     location: 'New York City, NY',
     points: ['Working in the Developer Journeys and Solutions team, in charge of Google\'s CMS for documentation, along with other efforts to understand developer\'s workflows and behaviors'],
