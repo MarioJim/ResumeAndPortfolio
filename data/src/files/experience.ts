@@ -12,7 +12,11 @@ export const experiences: Experience[] = [
     title: 'Software Engineer',
     date: 'April 2023 - Current',
     location: 'New York City, NY',
-    points: ['Working in the Developer Journeys and Solutions team, in charge of Google\'s CMS for documentation, along with other efforts to understand developer\'s workflows and behaviors'],
+    points: [
+      'Working in the Developer Journeys and Solutions team, in charge of Google\'s CMS for documentation, along with efforts to understand developer\'s workflows and behaviors',
+      'Designed and implemented a Go-based service responsible of updating an eventually consistent data source serving metadata for documentation sites across Google (XMs of pages). The service efficiently handles X00 writes/second, while maintaining a minimal 11% overhead over raw SQL statements',
+      'Contributed to the development and launch of an executive-facing internal dashboard, utilizing data insights derived from Google product utilization by developers. Implemented key backend features, designed and integrated frontend chart visualizations, and established ETL pipelines to support data-driven decisions at leadership level'
+    ],
   },
   {
     workPlace: 'Scoville Co., Ltd.',
@@ -54,17 +58,6 @@ export const experiences: Experience[] = [
       'Worked on the Field Service Mobile team from the Dynamics 365 division',
       'Participated in the creation of a simple feature on the Field Service app, from gathering requirements and an initial design, through its implementation, documentation and testing using TypeScript and React Native',
       'Built an audio recording pipeline from recording an audio stream and encoding it using the Android NDK (C++)',
-    ],
-  },
-  {
-    workPlace: 'Grupo Financiero Banorte',
-    title: 'Cybersecurity Intern',
-    date: 'January - July 2020',
-    location: 'Mexico City, Mexico',
-    points: [
-      'Built and deployed a dashboard to help assess cybersecurity risks that affect the institution in a day-to-day basis',
-      'Created several graph and hierarchy visualizations rendered with the help of React and D3.js',
-      'Developed Python scripts to clean and transform the data from Excel spreadsheets to a variety of JSON and CSV files for easier use in the web app',
     ],
   },
 ];

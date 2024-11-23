@@ -7,7 +7,7 @@
     "generate": "ts-node src/main.ts",
     "compile": "tectonic build/mario_jimenez_resume.tex",
     "build": "npm run generate && npm run compile",
-    "rebuild": "pushd ../data && npm run build && popd && npm run build"
+    "rebuild": "cd .. && npm run --workspace=data build && npm run --workspace=resume build"
   },
   "author": "MarioJim",
   "license": "MIT",

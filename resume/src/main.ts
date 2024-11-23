@@ -27,7 +27,7 @@ ${experienceSection}
 ${educationSection}
 ${skillsSection}
 \\end{document}
-`.replaceAll('~', '\\~{}');
+`.replaceAll('~', '\\~{}').replaceAll('%', '\\%');
 
 const filepath = path.join('build', 'mario_jimenez_resume.tex');
 fs.writeFileSync(filepath, resumeFile);
