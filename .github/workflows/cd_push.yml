@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     env:
       COMMIT_MSG: ${{ github.event.head_commit.message }}
@@ -29,7 +29,6 @@ jobs:
         run: |
           cd source
           npm install
-          npm run build --workspace data
           npm run build --workspace resume
 
       - name: Clone GH pages repo

@@ -1,4 +1,4 @@
-FROM node:22-bullseye-slim
+FROM node:24-slim
 LABEL maintainer="mario.emilio.j@gmail.com"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \

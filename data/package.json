@@ -1,18 +1,13 @@
 {
   "name": "data",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Data for my portfolio and resume",
-  "main": "lib/index.js",
+  "main": "src/index.ts",
+  "type": "module",
   "files": [
-    "lib/**/*"
+    "src/**/*"
   ],
-  "scripts": {
-    "build": "tsc"
-  },
   "author": "MarioJim",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "typescript": "^5"
-  }
+  "private": true
 }

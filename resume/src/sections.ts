@@ -6,7 +6,7 @@ import {
   cvskillSectionTemplate,
   cvskillTemplate,
   cvsummarySectionTemplate,
-} from './templates';
+} from './templates.ts';
 
 export const educationSection: string = cvsectionTemplate(
   'Education',

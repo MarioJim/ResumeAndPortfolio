@@ -2,7 +2,11 @@ import { myProfile } from 'data';
 import fs from 'fs';
 import path from 'path';
 
-import { educationSection, experienceSection, skillsSection } from './sections';
+import {
+  educationSection,
+  experienceSection,
+  skillsSection,
+} from './sections.ts';
 
 const [firstName, lastName] = myProfile.name.split(' ');
 
@@ -27,7 +31,9 @@ ${experienceSection}
 ${educationSection}
 ${skillsSection}
 \\end{document}
-`.replaceAll('~', '\\~{}').replaceAll('%', '\\%');
+`
+  .replaceAll('~', '\\~{}')
+  .replaceAll('%', '\\%');
 
 const filepath = path.join('build', 'mario_jimenez_resume.tex');
 fs.writeFileSync(filepath, resumeFile);

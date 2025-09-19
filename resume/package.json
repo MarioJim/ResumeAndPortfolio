@@ -3,19 +3,17 @@
   "version": "1.0.0",
   "description": "My resume",
   "main": "src/main.ts",
+  "type": "module",
   "scripts": {
-    "generate": "ts-node src/main.ts",
+    "generate": "node src/main.ts",
     "compile": "tectonic build/mario_jimenez_resume.tex",
-    "build": "npm run generate && npm run compile",
-    "rebuild": "cd .. && npm run --workspace=data build && npm run --workspace=resume build"
+    "build": "npm run generate && npm run compile"
   },
   "author": "MarioJim",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@types/node": "^22",
-    "data": "*",
-    "ts-node": "^10",
-    "typescript": "^5"
+    "@types/node": "^24",
+    "data": "*"
   }
 }
