@@ -15,21 +15,22 @@ jobs:
       API_KEY_GITHUB_REPO: ${{ secrets.API_KEY_GITHUB_REPO }}
 
     steps:
+      - name: Clone source
+        uses: actions/checkout@v5
+        with:
+          path: 'source'
+
       - name: Update NodeJS
         uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: source/package-lock.json
 
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Clone source
-        uses: actions/checkout@v5
-        with:
-          path: 'source'
 
       - name: Build resume
         run: |

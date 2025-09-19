@@ -78,6 +78,7 @@ export interface ProjectData {
 export const fetchProjects = async (): Promise<ProjectData[]> => {
   const req: any = await GithubGQLClient.request(query);
   return req.viewer.topRepositories.nodes
+    .filter((repo: GitHubRepository | null) => repo !== null)
     .map((repo: GitHubRepository) =>
       repo.databaseId === thisRepoId ? { ...repo, homepageUrl: null } : repo,
     )
