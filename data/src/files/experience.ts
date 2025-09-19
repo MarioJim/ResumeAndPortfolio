@@ -9,23 +9,23 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     workPlace: 'Google',
-    title: 'Software Engineer',
-    date: 'April 2023 - Current',
-    location: 'New York City, NY',
+    title: 'Software Engineer III',
+    date: 'May 2025 - Current',
+    location: 'Sunnyvale, CA',
     points: [
-      'Working in the Developer Journeys and Solutions team, in charge of Google\'s CMS for documentation, along with efforts to understand developer\'s workflows and behaviors',
-      'Designed and implemented a Go-based service responsible of updating an eventually consistent data source serving metadata for documentation sites across Google (XMs of pages). The service efficiently handles X00 writes/second, while maintaining a minimal 11% overhead over raw SQL statements',
-      'Contributed to the development and launch of an executive-facing internal dashboard, utilizing data insights derived from Google product utilization by developers. Implemented key backend features, designed and integrated frontend chart visualizations, and established ETL pipelines to support data-driven decisions at leadership level'
+      'Working in the Borg team, the internal orchestration framework that manages almost all tasks at Google',
+      'Contributing to efforts of virtualizing workloads for multiple use cases, such as running untrusted code or opaque binaries, sandboxing tasks from possible attack vectors from the host or other tasks, and sharing available compute capacity between internal and external users',
     ],
   },
   {
-    workPlace: 'Scoville Co., Ltd.',
-    title: 'Software Engineering Intern',
-    date: 'January 2023',
-    location: 'Tokyo, Japan',
+    workPlace: 'Google',
+    title: 'Software Engineer II',
+    date: 'April 2023 - May 2025',
+    location: 'New York City, NY',
     points: [
-      'Collaborated in a team of 5 interns to research and develop author obfuscation techniques, which involved combining multiple NLP-based methods to conceal the stylometric identity of authors',
-      'Developed a production-ready application using Flask and PostgreSQL to implement the backend, and utilized React and TypeScript to create a performant and scalable interface for calling these AI models',
+      "Worked in the Developer Journeys and Solutions team, in charge of Google's CMS for documentation, along with efforts to understand developer's workflows and behaviors",
+      'Designed and implemented a Go-based service responsible of updating an eventually consistent data source serving metadata for documentation sites across Google (XMs of pages). The service efficiently handles X00 writes/second, while maintaining a minimal 11% overhead over raw SQL statements',
+      'Contributed to the development and launch of an executive-facing internal dashboard, utilizing data insights derived from Google product utilization by developers. Implemented key backend features, designed and integrated frontend chart visualizations, and established ETL pipelines to support data-driven decisions at leadership level',
     ],
   },
   {

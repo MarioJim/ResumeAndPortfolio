@@ -6,7 +6,8 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     title: 'Languages',
-    points: 'TypeScript (proficient), Go (proficient), Kotlin, Rust, C++, Python',
+    points:
+      'C++ (proficient), TypeScript (proficient), Go, Kotlin, Rust, Python',
   },
   {
     title: 'Tools & Platforms',
