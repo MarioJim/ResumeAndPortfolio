@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "make": "cd .. && npm run build --workspace data && npm run build --workspace portfolio",
     "build": "next build",
     "lint": "next lint"
   },
