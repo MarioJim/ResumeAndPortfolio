@@ -13,7 +13,7 @@
     "graphql": "^16",
     "graphql-request": "^7",
     "minireset.css": "^0.0",
-    "next": "^14",
+    "next": "^16",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5",

@@ -13,9 +13,9 @@ export const experiences: Experience[] = [
     date: 'March 2025 - Current',
     location: 'Sunnyvale, CA',
     points: [
-      'Working in the Borg team, the internal orchestration framework that manages almost all tasks at Google',
-      'Contributing to efforts of virtualizing workloads for multiple use cases, such as running untrusted code, isolating jobs from attacks compromising the host or sibling tasks, and sharing available compute capacity between internal and external users',
-      'Improving the infrastructure that powers Google AI programs by leading the design and implementation of a unified interface for managing workloads across VMs and containers',
+      'Working in the Borg team, the internal orchestration framework that manages practically all tasks at Google',
+      'Contributing to the design, implementation, and integration of high-density microVM runtime ecosystems, used mainly as sandboxed environments for running benchmarks and evals during LLM training',
+      'Improving the infrastructure that powers Google AI programs by leading the design and implementation of a unified interface for managing workloads across VMs and containers, aiding efforts of virtualizing workloads for running untrusted code, improving isolation, and sharing available compute capacity between internal and external users',
     ],
   },
   {
